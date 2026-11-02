@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import { CabinLoader } from "@/components/game/cabin-loader";
 import { PaperMap } from "@/components/game/paper-map";
-import { SerpSummit } from "@/components/game/serp-summit";
 import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
   title: "Game Room",
-  description: "Climb the SERP, a short trek through Anish Singh Walia's work: calisthenics, SRE, writing, clients, and the summit.",
+  description: "Walk around a voxel cabin in the Himalayan foothills. My desk, the pager from the SRE years, the kettlebell, and the wall of companies I've worked with. Each one opens a page.",
   alternates: { canonical: "/game" },
 };
 
@@ -14,10 +14,10 @@ export default function GamePage() {
     <main className="mx-auto grid max-w-6xl gap-12 px-4 py-14">
       <PageHeader
         kicker="Game Room"
-        title="Climb the SERP."
-        lede="A short Himalayan switchback that is also a search ranking. Pick up the pager from the SRE years, the kettlebell, a keyword, a client badge, and the flag at position #1."
+        title="My cabin, block by block."
+        lede="A small voxel cabin in the foothills. Walk around as me, open the things on the desk and the walls, and each one takes you to a real page. It runs in the browser, no download."
       />
-      <SerpSummit />
+      <CabinLoader />
       <PaperMap />
     </main>
   );
