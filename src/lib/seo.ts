@@ -1,4 +1,4 @@
-import { site, socials, legacyProfiles } from "@data/site";
+import { award, site, socials, legacyProfiles } from "@data/site";
 
 export function personJsonLd() {
   return {
@@ -26,6 +26,12 @@ export function personJsonLd() {
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: site.education.school,
+    },
+    award: [`${award.name} ${award.edition}: ${award.placement}`, "Medium Top Writer (twice)"],
+    subjectOf: {
+      "@type": "WebPage",
+      name: `${award.name} ${award.edition} winners`,
+      url: award.href,
     },
     knowsAbout: [
       "Technical content creation",

@@ -1,116 +1,121 @@
+export type ClientGroupId = "brands" | "employers" | "writing" | "press";
+
 export type ClientEntry = {
   name: string;
+  /** Short label under the name. */
   relationship: string;
   detail: string;
-  href?: string;
-  group: "banner" | "client" | "writing" | "press";
+  /** A natural link out: the piece itself, an author page, a story. */
+  link?: { label: string; href: string };
+  group: ClientGroupId;
 };
 
 export const clients: ClientEntry[] = [
   {
-    name: "DigitalOcean",
-    relationship: "Employer",
-    detail: "Senior Technical Content Strategist II and Team Lead, since 2023. 347 tutorials authored or refreshed.",
-    href: "https://www.digitalocean.com/community/users/asinghwalia",
-    group: "banner",
-  },
-  {
     name: "Semrush",
-    relationship: "Sponsored essay and affiliate partnership",
-    detail:
-      "Sponsored my Medium essay “SEO-to-GEO Identity Crisis.” Daria Sukhorosolova, Senior Partner Manager, Affiliate Marketing at Semrush, recommended me as a client.",
-    href: "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306",
-    group: "banner",
-  },
-  {
-    name: "Nutanix",
-    relationship: "Former employer",
-    detail: "4 years 8 months. SRE intern, SRE, Sr. SRE, then cloud consultant.",
-    group: "banner",
-  },
-  {
-    name: "American Express",
-    relationship: "Consulting engagement",
-    detail:
-      "Cloud Consultant for the American Express Cloud and Infrastructure Operations team in India, through Nutanix. January 2022 to August 2023, Pune.",
-    group: "banner",
+    relationship: "Sponsored essay and affiliate content",
+    detail: "Sponsored my Medium essay “SEO-to-GEO Identity Crisis” and the affiliate content I write around SEO, digital marketing, and AI.",
+    link: { label: "Read the essay", href: "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306" },
+    group: "brands",
   },
   {
     name: "Hostinger",
-    relationship: "Tutorials author",
-    detail: "My author page includes “How to use the Linux cat command” (25 Feb 2019).",
-    href: "https://www.hostinger.com/tutorials/author/anishsingh/",
-    group: "banner",
+    relationship: "Tutorials",
+    detail: "Linux tutorials for the Hostinger tutorials library, including “How to use the Linux cat command.”",
+    link: { label: "Author page", href: "https://www.hostinger.com/tutorials/author/anishsingh/" },
+    group: "brands",
   },
   {
     name: "Tanot Solutions",
-    relationship: "Client",
-    detail: "Ghostwriting and content strategy for co-founder Renu Sharma, including a LinkedIn rebrand.",
-    group: "client",
+    relationship: "Ghostwriting and LinkedIn rebrand",
+    detail: "Ghostwriting and content strategy for co-founder Renu Sharma: positioning, voice, About section, headline, banner, and the posts.",
+    group: "brands",
   },
   {
-    name: "Datalpulse",
-    relationship: "Client",
-    detail: "A LinkedIn post for CMO Andrew Byzov. I ran the proxy experiment, then wrote it up.",
-    group: "client",
+    name: "DataImpulse",
+    relationship: "LinkedIn post from a live experiment",
+    detail: "A LinkedIn post for CMO Andrew Byzov. I ran the experiment on their proxies, then turned the data into the post.",
+    group: "brands",
   },
   {
     name: "OtterlyAI",
-    relationship: "Client",
-    detail: "A content project with co-founder Klaus-M. Schremser.",
-    group: "client",
+    relationship: "Content project",
+    detail: "A content project with co-founder Klaus-M. Schremser on AI search visibility.",
+    group: "brands",
   },
   {
     name: "Pollo AI",
-    relationship: "Client",
-    detail: "Two Medium pieces with Abby Wang. The second one introduced a new feature.",
-    group: "client",
+    relationship: "Sponsored Medium pieces",
+    detail: "Two Medium pieces with Abby Wang. The first became one of their most successful social campaigns; the second introduced a new feature.",
+    group: "brands",
   },
   {
     name: "La Isla Designs",
-    relationship: "Collaboration",
-    detail: "A LinkedIn carousel with founder Nadia Fernández, while we were at different companies.",
-    group: "client",
+    relationship: "LinkedIn carousel",
+    detail: "A LinkedIn carousel with founder Nadia Fernández: brand prompts and complex ideas turned into something people can follow.",
+    group: "brands",
+  },
+  {
+    name: "DigitalOcean",
+    relationship: "Senior Technical Content Strategist II and Team Lead",
+    detail: "Since 2023. I own the core infrastructure and AI inference tutorial programs and lead the team. 347 tutorials authored or refreshed.",
+    link: { label: "My tutorials", href: "https://www.digitalocean.com/community/users/asinghwalia" },
+    group: "employers",
+  },
+  {
+    name: "Nutanix",
+    relationship: "SRE intern to Sr. SRE",
+    detail: "Four years and eight months on the infrastructure that other people's products ran on.",
+    group: "employers",
+  },
+  {
+    name: "American Express",
+    relationship: "Cloud consultant",
+    detail: "Cloud Consultant for the American Express Cloud and Infrastructure Operations team in India, January 2022 to August 2023, through Nutanix.",
+    group: "employers",
   },
   {
     name: "DataScience+",
     relationship: "Author",
     detail: "Project-based R, statistics, and machine learning tutorials. June 2017 to August 2023.",
-    href: "https://datascienceplus.com/author/anish-singh-walia/",
+    link: { label: "Author page", href: "https://datascienceplus.com/author/anish-singh-walia/" },
     group: "writing",
   },
   {
     name: "GeeksforGeeks",
     relationship: "Contributor",
-    detail: "I wrote for GeeksforGeeks while I was at VIT.",
-    href: "https://auth.geeksforgeeks.org/user/AnishSinghWalia/articles",
+    detail: "Articles I wrote while I was at VIT.",
+    link: { label: "Articles", href: "https://auth.geeksforgeeks.org/user/AnishSinghWalia/articles" },
     group: "writing",
   },
   {
     name: "ActiveCampaign",
-    relationship: "Press",
+    relationship: "Case study",
     detail: "A case study on my Cursor and DataForSEO content-refresh workflow. Maddy Osman, 21 May 2026.",
-    href: "https://autonomous.activecampaign.com/stories/scalable-content-refresh-workflow",
+    link: { label: "Read the story", href: "https://autonomous.activecampaign.com/stories/scalable-content-refresh-workflow" },
     group: "press",
   },
   {
     name: "AllAboutAI",
     relationship: "Podcast",
     detail: "Guest on AI For Thought with Muhammad Hassan Khan. My first podcast.",
-    href: "https://www.youtube.com/watch?v=R_XSFA9q7Dg",
+    link: { label: "Watch", href: "https://www.youtube.com/watch?v=R_XSFA9q7Dg" },
     group: "press",
   },
 ];
 
-export const clientGroups = [
-  { id: "banner" as const, title: "On my banner", lede: "The five I put under “Businesses I have helped” on LinkedIn." },
-  { id: "client" as const, title: "Client work", lede: "Companies named in the LinkedIn recommendations I've received." },
-  { id: "writing" as const, title: "Also written for", lede: "Publications, separate from client work." },
-  { id: "press" as const, title: "Press", lede: "Stories about the work." },
+export const clientGroups: { id: ClientGroupId; title: string; lede: string }[] = [
+  { id: "brands", title: "Brands I've created content for", lede: "Sponsored essays, ghostwriting, LinkedIn posts and carousels, tutorials." },
+  { id: "employers", title: "Where I've worked", lede: "The engineering years, then the content team I lead now." },
+  { id: "writing", title: "Also written for", lede: "Publications I've contributed to over the years." },
+  { id: "press", title: "Press", lede: "Stories about the work." },
 ];
 
+/** The marks that go on the logo strip next to a call to action. */
+export const logoStrip = ["DigitalOcean", "Semrush", "Nutanix", "American Express", "Hostinger", "OtterlyAI", "DataImpulse", "Tanot Solutions", "Pollo AI"];
+
 /** Names I use when I describe client work in one line. */
-export const headlineClients = ["Semrush", "OtterlyAI", "Datalpulse", "Tanot Solutions", "Pollo AI"];
+export const headlineClients = ["Semrush", "OtterlyAI", "DataImpulse", "Tanot Solutions", "Pollo AI"];
 
 /**
  * Medium posts that name a tool. Sponsorship was not stated.

@@ -22,17 +22,28 @@ Facts on the site come from the LinkedIn export, the recommendation transcriptio
 
 - The hero now leads with "Technical content creator. Engineer first." and lists formats for B2B, SaaS, AI-native, and developer-tool companies. Tutorials are one tile, not the lead.
 - Every tile links to a real example: the Semrush-sponsored essay, the LLM inference benchmark tutorial, the five-person video library post, the Nadia Fernández carousel card, the Semrush + ChatGPT LinkedIn post, the Renu Sharma ghostwriting card, Medium for newsletters, the ActiveCampaign story for strategy. Swap any of them in `data/formats.ts` if there is a better example.
-- "Companies I've worked with" is Semrush, OtterlyAI, Datalpulse, Tanot Solutions, Pollo AI. The words you asked to drop (the list is in `src/lib/bot/banned.ts`) appear nowhere, and `tests/banned-words.test.ts` fails if they return.
+- "Companies I've worked with" is Semrush, OtterlyAI, DataImpulse, Tanot Solutions, Pollo AI. The words you asked to drop (the list is in `src/lib/bot/banned.ts`) appear nowhere, and `tests/banned-words.test.ts` fails if they return.
 - The kubectl terminal card is gone. The hero now has a pull-up rep counter that opens four facts. Personal best stays in the browser.
 
 ## Names and quotes
 
-- Company spelling **Datalpulse** follows your transcription. The recommendation is about a proxy experiment. Confirm that spelling.
-- **Daria Sukhorosolova** follows your transcription.
+- Company spelling: the transcription had "Datalpulse" (lower-case L). Andrew Byzov's LinkedIn and the company site say **DataImpulse** (capital I), so the site, the data, and the transcription now use DataImpulse.
+- Name spelling: the transcription had "Sukhorosolova". Her LinkedIn profile (`/in/dariasukhoroslova`) says **Daria Sukhoroslova**, so that is what the site uses.
 - Klaus-M. Schremser's quote follows `research/testimonials.md`. If the live LinkedIn text differs, replace the string in `data/testimonials.ts`.
 - Nadia's quote uses "digestible", as transcribed. Her card includes Founder and Digital Marketing & Growth Consultant.
-- Abby Wang has no job title in the transcription. The card leads with **Pollo AI**.
-- Evgeniia Novikova is on the testimonials page with name and title only. The recommendation text was not in the screenshot.
+- Abby Wang has no job title in the recommendation. Her LinkedIn profile (`/in/abbey-wang`) says Marketing Specialist at Pollo AI, so the card shows that.
+- Nikita Puzanenko's recommendation gives no company. His LinkedIn profile (`/in/nikita-puzanenko-0349b8303`) says SMM & Partnership Manager at DataForSEO, and it carries the recommendation you wrote him, so the card shows DataForSEO.
+- Ifra Aftab's recommendation gives no company. Her LinkedIn shows Disrupt.com at the time (Sep 2023 to Apr 2026) and ei1 now, so the card stays title-only.
+- Evgeniia Novikova is on the testimonials page with name, title, and her LinkedIn profile (`/in/eugeniia-novikova`). I don't have the recommendation text.
+- Recommender LinkedIn URLs (all nine confirmed against the person's own profile page): Daria `/in/dariasukhoroslova`, Klaus `/in/klausmschremser`, Andrew `/in/andrewbizov`, Renu `/in/renusharma074`, Abby `/in/abbey-wang`, Nadia `/in/nadiiafernandez`, Nikita `/in/nikita-puzanenko-0349b8303`, Ifra `/in/ifra-aftab`, Evgeniia `/in/eugeniia-novikova`.
+
+## Document360 Global Writers Awards (v4)
+
+Checked in a headless browser on 2 Nov 2026 at https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners. The page heading says "Document360 Global Writers Awards, 2025 - 2026" (the URL says 2025; the site shows the double year, so that is what the site uses). The list is titled "Meet the Top 50 Winners". Your entry: **#23, Anish Singh Walia, Senior Technical Writer II at DigitalOcean**. The page says winners were selected with 70% of the score from the judges' assessment of submitted portfolios and 30% from public voting. The page does not use the words "finalist" or "top 20", so the site says "Top 50 Winner, #23". Your nominee profile is at `/nominees/anish-singh-walia` and lists you as Senior Technical Writer II, India, 6 years' experience.
+
+## Logos (v4)
+
+All in `public/logos`. Brand marks for DigitalOcean, Semrush, Nutanix, American Express, Hostinger, GeeksforGeeks, Medium, GitHub, and YouTube are from the simple-icons set (CC0), filled with each brand's colour. Tanot Solutions, DataImpulse, La Isla Designs, OtterlyAI, Pollo AI, DataForSEO, ActiveCampaign, and AllAboutAI use the companies' own site icons at 160px. None needed a monogram, but `BrandLogo` falls back to one if a name has no file. Pollo AI's source icon was 128px, so it is the softest of the set; swap in a larger file from them if you have one.
 - Shiva Vinodkumar is excluded. The profile toggle was off.
 - Ellipses are LinkedIn's cutoff. Do not complete them in the data file.
 

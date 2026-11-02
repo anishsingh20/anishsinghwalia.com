@@ -20,11 +20,196 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(ellipse 70% 40% at 0% -10%, rgba(232, 97, 31, 0.16), transparent 55%),
-    #0c0b0a;
+  background: #0c0b0a;
   color: #f4efe6;
   font-family: var(--font-sans);
+  position: relative;
+}
+
+/* ---------- Ambient background: aurora, stars, ridges, voxels ---------- */
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 40% at 0% -10%, rgba(232, 97, 31, 0.14), transparent 55%),
+    radial-gradient(ellipse 50% 35% at 100% 110%, rgba(255, 176, 136, 0.06), transparent 60%),
+    #0c0b0a;
+}
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform;
+}
+
+.ambient-glow-a {
+  width: 70vw;
+  height: 70vw;
+  left: -20vw;
+  top: -35vw;
+  background: radial-gradient(circle, rgba(232, 97, 31, 0.2) 0%, rgba(232, 97, 31, 0.06) 35%, transparent 65%);
+  animation: glow-a 38s ease-in-out infinite alternate;
+}
+
+.ambient-glow-b {
+  width: 60vw;
+  height: 60vw;
+  right: -25vw;
+  top: 20vh;
+  background: radial-gradient(circle, rgba(255, 176, 136, 0.11) 0%, rgba(140, 60, 120, 0.07) 40%, transparent 68%);
+  animation: glow-b 46s ease-in-out infinite alternate;
+}
+
+.ambient-glow-c {
+  width: 55vw;
+  height: 55vw;
+  left: 25vw;
+  bottom: -35vw;
+  background: radial-gradient(circle, rgba(60, 110, 140, 0.1) 0%, rgba(232, 97, 31, 0.05) 45%, transparent 70%);
+  animation: glow-c 52s ease-in-out infinite alternate;
+}
+
+@keyframes glow-a {
+  to { transform: translate(8vw, 6vh) scale(1.08); }
+}
+@keyframes glow-b {
+  to { transform: translate(-9vw, -8vh) scale(1.12); }
+}
+@keyframes glow-c {
+  to { transform: translate(-6vw, -5vh) scale(0.95); }
+}
+
+.ambient-stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  fill: #f4efe6;
+  opacity: 0.35;
+}
+.star-0 { animation: twinkle 4.5s ease-in-out infinite; }
+.star-1 { animation: twinkle 6s ease-in-out infinite 1.5s; }
+.star-2 { animation: twinkle 7.5s ease-in-out infinite 3s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.6; }
+}
+
+.ambient-ridge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: clamp(90px, 14vh, 180px);
+  will-change: transform;
+}
+.ambient-ridge-far {
+  fill: rgba(232, 97, 31, 0.07);
+  animation: ridge-drift 160s linear infinite;
+}
+.ambient-ridge-near {
+  fill: rgba(244, 239, 230, 0.045);
+  height: clamp(70px, 11vh, 140px);
+  animation: ridge-drift 95s linear infinite reverse;
+}
+
+@keyframes ridge-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ambient-voxels {
+  position: absolute;
+  inset: 0;
+}
+
+.voxel {
+  position: absolute;
+  width: 22px;
+  height: 26px;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: voxel-float 26s linear infinite;
+}
+.voxel-0 { left: 8%; animation-delay: 0s; }
+.voxel-1 { left: 23%; width: 16px; animation-delay: -6s; animation-duration: 32s; }
+.voxel-2 { left: 47%; animation-delay: -13s; animation-duration: 29s; }
+.voxel-3 { left: 64%; width: 14px; animation-delay: -19s; animation-duration: 36s; }
+.voxel-4 { left: 81%; animation-delay: -9s; animation-duration: 30s; }
+.voxel-5 { left: 93%; width: 18px; animation-delay: -23s; animation-duration: 34s; }
+
+@media (max-width: 767px) {
+  .voxel-1, .voxel-3, .voxel-5 { display: none; }
+  .ambient-glow-c { display: none; }
+}
+
+@keyframes voxel-float {
+  0% { transform: translateY(105vh) rotate(0deg); opacity: 0; }
+  8% { opacity: 0.6; }
+  92% { opacity: 0.6; }
+  100% { transform: translateY(-10vh) rotate(180deg); opacity: 0; }
+}
+
+/* Voxels that belong to one section instead of the page. */
+.voxel-section {
+  width: 26px;
+  height: 30px;
+  opacity: 0.7;
+  animation: voxel-bob 9s ease-in-out infinite;
+}
+.voxel-section-0 { right: 6%; top: 18%; }
+.voxel-section-1 { right: 14%; top: 62%; width: 18px; animation-delay: -3s; animation-duration: 11s; }
+.voxel-section-2 { right: 3%; top: 78%; width: 14px; animation-delay: -6s; animation-duration: 13s; }
+
+@keyframes voxel-bob {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-14px) rotate(5deg); }
+}
+
+/* ---------- Section backdrops, so pages change texture as you scroll ---------- */
+
+.section-aurora {
+  background:
+    radial-gradient(ellipse 60% 70% at 15% 40%, rgba(232, 97, 31, 0.13), transparent 60%),
+    radial-gradient(ellipse 45% 60% at 85% 70%, rgba(255, 176, 136, 0.07), transparent 65%),
+    linear-gradient(180deg, rgba(22, 19, 17, 0.35), rgba(12, 11, 10, 0));
+}
+
+.section-topo {
+  position: relative;
+  background-color: rgba(22, 19, 17, 0.45);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%23f4efe6' stroke-opacity='0.07' stroke-width='1'%3E%3Cpath d='M20 160c0-50 40-90 90-90s90 40 90 90-40 90-90 90-90-40-90-90Z'/%3E%3Cpath d='M45 160c0-36 29-65 65-65s65 29 65 65-29 65-65 65-65-29-65-65Z'/%3E%3Cpath d='M70 160c0-22 18-40 40-40s40 18 40 40-18 40-40 40-40-18-40-40Z'/%3E%3Cpath d='M200 300c30-40 70-60 120-60M190 320c40-50 80-70 130-70M180 20c40 10 70 40 90 80M160 10c50 10 90 50 110 100M0 60c30 0 60 10 80 40M0 40c40 0 80 15 100 50'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 320px 320px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), #000 30%, #000 70%, rgba(0, 0, 0, 0.75));
+}
+
+.section-ember {
+  background:
+    linear-gradient(135deg, rgba(232, 97, 31, 0.12), rgba(12, 11, 10, 0) 55%),
+    linear-gradient(315deg, rgba(60, 110, 140, 0.08), rgba(12, 11, 10, 0) 60%);
+}
+
+.section-ridge {
+  position: relative;
+  overflow: hidden;
+}
+.section-ridge::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 70px;
+  background:
+    linear-gradient(180deg, transparent, rgba(232, 97, 31, 0.05)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 70' preserveAspectRatio='none'%3E%3Cpath d='M0 70V50L60 38 120 48 190 24 260 44 330 16 400 40 470 28 540 46 610 32 680 50 750 22 820 42 890 14 960 38 1030 30 1100 48 1200 36V70Z' fill='%23f4efe6' fill-opacity='0.05'/%3E%3C/svg%3E") bottom / 100% 70px no-repeat;
+  pointer-events: none;
 }
 
 ::selection {
@@ -107,4 +292,13 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .cursor-blink { animation: none; }
+  .ambient-glow,
+  .star,
+  .ambient-ridge,
+  .voxel,
+  .voxel-section {
+    animation: none;
+  }
+  .voxel { opacity: 0.5; transform: translateY(60vh); }
+  .voxel-1, .voxel-3, .voxel-5 { transform: translateY(25vh); }
 }

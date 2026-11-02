@@ -48,7 +48,7 @@ export function fact(topic: Topic): string {
         )
         .join("\n") + `\n\nHow he got here: ${originNote}`;
     case "clients":
-      return clients.map((client) => `- ${client.name} (${client.relationship}): ${client.detail}${client.href ? ` ${client.href}` : ""}`).join("\n") +
+      return clients.map((client) => `- ${client.name} (${client.relationship}): ${client.detail}${client.link ? ` ${client.link.href}` : ""}`).join("\n") +
         `\nThe work is for ${audiences.join(", ").toLowerCase()}. Describe it as client work or companies he has worked with.`;
     case "testimonials":
       return testimonials

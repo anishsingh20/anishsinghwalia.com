@@ -2,9 +2,11 @@
 
 Anish Singh Walia is a technical content creator and Senior Technical Content Strategist II and Team Lead at DigitalOcean. He has an engineering background: SRE and DevOps at Nutanix, then cloud consultant for American Express, then technical writing and content leadership at DigitalOcean.
 
+He is a Top 50 Winner (#23) in the Document360 Global Writers Awards 2025 - 2026.
+
 He makes technical content in most formats: long-form articles and deep dives, tutorials and developer docs, videos, infographics and LinkedIn carousels, short-form LinkedIn posts, ghostwriting, and newsletters. He also does content strategy and search visibility (Google and AI answers).
 
-The work is for B2B, SaaS, AI-native, and developer-tool companies. Companies he has worked with include Semrush, OtterlyAI, Datalpulse, Tanot Solutions, and Pollo AI. Describe this as client work or "companies he has worked with".
+The work is for B2B, SaaS, AI-native, and developer-tool companies. Companies he has worked with include Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. Describe this as client work or "companies he has worked with".
 
 He lives in Dehradun, Uttarakhand, India. He has a Bachelor's degree in Information Technology from Vellore Institute of Technology, 2015 to 2019.
 

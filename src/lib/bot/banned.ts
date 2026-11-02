@@ -31,6 +31,28 @@ export function scrub(text: string): string {
     .replace(new RegExp(`${parts[5][0]}${parts[5][1]}`, "gi"), "client work");
 }
 
+/**
+ * Audit-trail phrasing. The site shows the work; it does not explain where
+ * each fact was copied from. Used by the content test over copy and built pages.
+ */
+export const metaTells: RegExp[] = [
+  /\b(my|the) (linkedin )?banner\b/i,
+  /\bon my banner\b/i,
+  /\blinkedin banner\b/i,
+  /\bpublic source\b/i,
+  /\bborrowed logo/i,
+  /\bmatch(es)? my linkedin\b/i,
+  /\bas (they|it) (are|is) on linkedin\b/i,
+  /\bquoted from linkedin\b/i,
+  /\bword for word\b/i,
+  /\bas (they|it) (were|was) written\b/i,
+  /\bnamed in (the|my) (linkedin )?recommendations\b/i,
+  /\bbusinesses i have helped\b/i,
+  /\bnot visible in the screenshot\b/i,
+  /\bcopied this one over\b/i,
+  />\s*Source\s*</,
+];
+
 /** AI tells that site copy avoids. Used by the content test. */
 export const aiTells: RegExp[] = [
   /—/,

@@ -20,7 +20,7 @@ Other commands:
 
 ```bash
 npm test            # vitest: facts, banned words, bot, contact form
-npm run eval:bot    # 30 real questions through the bot, report in eval/results.md
+npm run eval:bot    # 32 real questions through the bot, report in eval/results.md
 npm run lint
 npm run typecheck
 npm run build && npm start
@@ -28,7 +28,9 @@ npm run build && npm start
 
 ## Pages
 
-`/`, `/about`, `/experience`, `/clients`, `/testimonials`, `/work`, `/game`, `/ask`, `/contact`. Also `sitemap.xml`, `robots.txt`, `llms.txt`, and an Open Graph image.
+`/`, `/services`, `/about`, `/experience`, `/clients`, `/testimonials`, `/work`, `/game`, `/ask`, `/contact`. Also `sitemap.xml`, `robots.txt`, `llms.txt`, and an Open Graph image.
+
+Company marks live in `public/logos` and are listed in `data/logos.ts`; `BrandLogo` renders them on a light chip and falls back to a monogram. The animated background (aurora glows, stars, drifting ridges, floating voxel blocks) is `src/components/ambient.tsx` plus the `.ambient-*` and `.section-*` rules in `globals.css`. It is CSS and inline SVG only and switches off under `prefers-reduced-motion`.
 
 Everything people read lives in `data/`. The bot's notes live in `knowledge/`. `CONFIRM.md` lists the facts I should double-check before treating the site as final.
 
@@ -73,7 +75,7 @@ Never commit `.env.local`. It's in `.gitignore`.
 
 ## Tests
 
-`npm test` checks: the contact address, that the other inbox appears nowhere, recommendation quotes match the transcription word for word, every game station links to a real page, the bot answers and refusals, and a banned-word scan over source, notes, config, docs, and the built HTML in `.next` when a build exists.
+`npm test` checks: the contact address, that the other inbox appears nowhere, recommendation quotes match the transcription exactly, every game station links to a real page, the bot answers and refusals, and a banned-word scan over source, notes, config, docs, and the built HTML in `.next` when a build exists.
 
 ## License
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Outfit, Syne } from "next/font/google";
 import { site } from "@data/site";
+import { Ambient } from "@/components/ambient";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-orange focus:px-3 focus:py-2 focus:text-ink">
           Skip to content
         </a>
+        <Ambient />
         <TrailProgress />
         <SiteHeader />
         <div id="content">{children}</div>

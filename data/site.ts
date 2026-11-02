@@ -1,7 +1,4 @@
-/**
- * Site-wide facts. Pages read from here.
- * Numbers are the ones I publish on LinkedIn and Medium.
- */
+/** Site-wide facts. Pages read from here. */
 
 export const site = {
   name: "Anish Singh Walia",
@@ -38,28 +35,53 @@ export const site = {
   },
 } as const;
 
-export const socials = [
+/**
+ * Document360 Global Writers Awards. Checked against the winners page on 2 Nov 2026:
+ * the page heading reads "2025 - 2026" and "Meet the Top 50 Winners"; the entry is
+ * "#23 Anish Singh Walia, Senior Technical Writer II at DigitalOcean". The page says
+ * winners were scored 70% by a judging panel on submitted portfolios and 30% by public voting.
+ */
+export const award = {
+  name: "Document360 Global Writers Awards",
+  edition: "2025 - 2026",
+  placement: "Top 50 Winner, #23",
+  rank: 23,
+  listedAs: "Senior Technical Writer II at DigitalOcean",
+  short: "Top 50 Winner, Document360 Global Writers Awards 2025 - 2026",
+  how: "Scored 70% by a judging panel on submitted portfolios and 30% by public voting.",
+  href: "https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners",
+  profileHref: "https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia",
+} as const;
+
+export type SocialIconId = "linkedin" | "medium" | "github" | "digitalocean" | "hostinger";
+
+export const socials: readonly { label: string; href: string; icon: SocialIconId }[] = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/anish-singh-walia/",
+    icon: "linkedin",
   },
   {
     label: "Medium",
     href: "https://medium.com/@anishsingh20",
+    icon: "medium",
   },
   {
     label: "GitHub",
     href: "https://github.com/anishsingh20",
+    icon: "github",
   },
   {
     label: "DigitalOcean",
     href: "https://www.digitalocean.com/community/users/asinghwalia",
+    icon: "digitalocean",
   },
   {
     label: "Hostinger",
     href: "https://www.hostinger.com/tutorials/author/anishsingh/",
+    icon: "hostinger",
   },
-] as const;
+];
 
 /** Older profiles that exist, but are not the main ones. */
 export const legacyProfiles = [
@@ -77,6 +99,7 @@ export const metrics = [
 ] as const;
 
 export const nav = [
+  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/experience", label: "Experience" },
   { href: "/clients", label: "Clients" },

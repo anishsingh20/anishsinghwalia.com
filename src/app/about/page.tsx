@@ -6,9 +6,12 @@ import { formats } from "@data/formats";
 import { certifications, education, languages, stack, tools, topSkills } from "@data/experience";
 import { githubProjects } from "@data/writing";
 import { site } from "@data/site";
+import { trustPoints } from "@data/services";
+import { AwardBadge } from "@/components/award-badge";
 import { JsonLd } from "@/components/json-ld";
 import { OffClock } from "@/components/off-clock";
 import { PageHeader } from "@/components/page-header";
+import { CtaBand } from "@/components/proof-strip";
 import { profilePageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -19,19 +22,37 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto grid max-w-6xl gap-16 px-4 py-14">
+    <main>
+    <div className="mx-auto grid max-w-6xl gap-16 px-4 py-14">
       <JsonLd data={profilePageJsonLd()} />
-      <PageHeader
-        kicker="About"
-        title="I make technical content. I used to carry the pager."
-        lede="SRE and DevOps at Nutanix, cloud consultant for American Express, now Senior Technical Content Strategist II and Team Lead at DigitalOcean. Beyond the day job I make videos, deep dives, LinkedIn posts, docs, and newsletters for B2B, SaaS, AI-native, and developer-tool companies."
-      />
+      <div>
+        <PageHeader
+          kicker="About"
+          title="Engineer first. Now I make technical content in every format."
+          lede="Four years running cloud infrastructure at Nutanix and for American Express, then DigitalOcean, where I lead a content team. For companies I make videos, infographics, long-form deep dives, LinkedIn posts, docs, newsletters, and ghostwritten pieces that sound like the founder wrote them."
+        />
+        <div className="mt-5"><AwardBadge /></div>
+      </div>
       <div className="grid items-start gap-10 lg:grid-cols-[220px_1fr]">
         <Image src="/images/anish.webp" alt="Anish Singh Walia" width={440} height={440} className="h-52 w-52 rounded-full object-cover ring-4 ring-orange/70" />
         <div className="grid gap-4 text-base leading-relaxed text-cream/95">
           {aboutParagraphs.map((paragraph) => <p key={paragraph.slice(0, 24)}>{paragraph}</p>)}
         </div>
       </div>
+      <section className="grid gap-6 lg:grid-cols-[1fr_1.2fr]">
+        <AwardBadge variant="card" />
+        <div>
+          <h2 className="font-display text-2xl">Why engineers trust my content</h2>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+            {trustPoints.map((point) => (
+              <li key={point.title} className="rounded-2xl border border-line bg-panel/70 p-4">
+                <p className="font-medium text-cream">{point.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted">{point.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
       <section>
         <h2 className="font-display text-2xl">What I make</h2>
         <ul className="mt-4 grid gap-3 md:grid-cols-2">
@@ -42,7 +63,7 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-        <Link href="/#what-i-make" className="mt-3 inline-block text-sm text-ember hover:underline">Examples of each, on the home page</Link>
+        <Link href="/services#what-i-make" className="mt-3 inline-block text-sm text-ember hover:underline">Examples of each, on the services page</Link>
       </section>
       <section>
         <h2 className="font-display text-2xl">What I do day to day</h2>
@@ -91,7 +112,7 @@ export default function AboutPage() {
       </section>
       <section>
         <h2 className="font-display text-2xl">Skills and tools</h2>
-        <p className="mt-3 text-sm text-faint">Top skills on LinkedIn: {topSkills.join(", ")}.</p>
+        <p className="mt-3 text-sm text-faint">Top skills: {topSkills.join(", ")}.</p>
         <p className="mt-2 text-sm text-muted">Search and research: {tools.join(", ")}.</p>
         <p className="mt-2 text-sm text-muted">The rest of the stack: {stack.join(", ")}.</p>
         <p className="mt-4 text-sm text-muted">Values I list on GitHub: {values.join(", ")}.</p>
@@ -110,10 +131,8 @@ export default function AboutPage() {
           ))}
         </ul>
       </section>
-      <figure>
-        <Image src="/images/linkedin-banner.jpg" alt="My LinkedIn banner: Helping brands scale with AI, SEO and technology-led high-impact content. 2x Medium Top Writer. 35,000+ subscribers. Businesses I have helped: DigitalOcean, Semrush, Nutanix, American Express, Hostinger." width={1600} height={400} className="w-full rounded-2xl border border-line" />
-        <figcaption className="mt-2 text-xs text-faint">The banner I use on LinkedIn.</figcaption>
-      </figure>
+    </div>
+    <CtaBand quoteId="renu-sharma" title="Need the engineer and the writer in one person?" text="Tell me what you're launching or documenting. I'll reply with how I'd approach it." />
     </main>
   );
 }

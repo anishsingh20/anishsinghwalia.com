@@ -1,4 +1,4 @@
-import { site, socials, audiences } from "@data/site";
+import { award, site, socials, audiences } from "@data/site";
 import { faqs } from "@data/faq";
 import { formats } from "@data/formats";
 import { headlineClients } from "@data/clients";
@@ -18,6 +18,8 @@ export function GET() {
     "",
     "Numbers: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, two Medium Top Writer badges, 347 DigitalOcean tutorials.",
     "",
+    `Recognition: ${award.short}, listed at #${award.rank}. ${award.how} ${award.href}`,
+    "",
     "Hobbies: hiking, trekking, calisthenics, skipping (jump rope), running, and the mountains. I live in Dehradun, in the Himalayan foothills.",
     "",
     `Contact: ${site.email}`,
@@ -28,6 +30,7 @@ export function GET() {
     "## Pages",
     ...[
       ["/", "Home"],
+      ["/services", "Services"],
       ["/about", "About"],
       ["/experience", "Experience"],
       ["/clients", "Clients"],

@@ -1,21 +1,23 @@
 /**
- * LinkedIn recommendations.
- * Quote text is copied from research/testimonials.md and must stay verbatim.
- * Ellipses are LinkedIn's cutoff. Do not finish a sentence.
+ * Recommendations from people I've worked with.
+ * Quote text matches research/testimonials.md exactly. Ellipses stay as they are.
  * Shiva Vinodkumar is excluded (hidden on the profile).
+ * Profile URLs were each checked against the person's own LinkedIn page.
  */
 
 export type Testimonial = {
   id: string;
   name: string;
-  /** Null when the transcription does not state a role. */
+  /** Null when the recommendation does not state a role. */
   role: string | null;
   /** Null when no company is stated. The card then leads with the role. */
   company: string | null;
   dateLabel: string;
   relationship: string;
-  /** Null when the screenshot did not include the recommendation text. */
+  /** Null when I don't have the text yet. */
   quote: string | null;
+  /** The recommender's LinkedIn profile. Null when I could not confirm one. */
+  linkedin: string | null;
 };
 
 export const linkedInRecommendationsUrl =
@@ -23,8 +25,9 @@ export const linkedInRecommendationsUrl =
 
 export const testimonials: Testimonial[] = [
   {
-    id: "daria-sukhorosolova",
-    name: "Daria Sukhorosolova",
+    id: "daria-sukhoroslova",
+    linkedin: "https://www.linkedin.com/in/dariasukhoroslova/",
+    name: "Daria Sukhoroslova",
     role: "Senior Partner Manager, Affiliate Marketing",
     company: "Semrush",
     dateLabel: "December 4, 2025",
@@ -34,6 +37,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "klaus-m-schremser",
+    linkedin: "https://www.linkedin.com/in/klausmschremser/",
     name: "Klaus-M. Schremser",
     role: "Co-Founder",
     company: "OtterlyAI",
@@ -44,16 +48,18 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "andrew-byzov",
+    linkedin: "https://www.linkedin.com/in/andrewbizov/",
     name: "Andrew Byzov",
     role: "CMO",
-    company: "Datalpulse",
+    company: "DataImpulse",
     dateLabel: "April 2, 2026",
     relationship: "Client",
     quote:
-      "Anish delivered a high-quality LinkedIn post for Datalpulse – from concept to publication. He took the brief, ran the actual experiment using our proxies, and turned the raw data into a compelling, well-structured post that felt authentic to his voice. Communication was smooth throughout, he was responsive to feedback, and hit the agreed timeline. Would gladly work with Anish again on future content collaborations.",
+      "Anish delivered a high-quality LinkedIn post for DataImpulse – from concept to publication. He took the brief, ran the actual experiment using our proxies, and turned the raw data into a compelling, well-structured post that felt authentic to his voice. Communication was smooth throughout, he was responsive to feedback, and hit the agreed timeline. Would gladly work with Anish again on future content collaborations.",
   },
   {
     id: "renu-sharma",
+    linkedin: "https://www.linkedin.com/in/renusharma074/",
     name: "Renu Sharma",
     role: "Co-Founder",
     company: "Tanot Solutions",
@@ -64,8 +70,10 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "abby-wang",
+    linkedin: "https://www.linkedin.com/in/abbey-wang/",
     name: "Abby Wang",
-    role: null,
+    /** Her recommendation gives no title; this one is from her LinkedIn profile. */
+    role: "Marketing Specialist",
     company: "Pollo AI",
     dateLabel: "July 25, 2025",
     relationship: "Client",
@@ -74,6 +82,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "nadia-fernandez",
+    linkedin: "https://www.linkedin.com/in/nadiiafernandez/",
     name: "Nadia Fernández",
     role: "Founder, Digital Marketing & Growth Consultant",
     company: "La Isla Designs",
@@ -84,9 +93,11 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "nikita-puzanenko",
+    linkedin: "https://www.linkedin.com/in/nikita-puzanenko-0349b8303/",
     name: "Nikita Puzanenko",
-    role: "Social Media & Partnerships Manager, B2B SaaS",
-    company: null,
+    role: "Social Media & Partnerships Manager",
+    /** Not stated in the recommendation; confirmed on his LinkedIn profile. */
+    company: "DataForSEO",
     dateLabel: "April 27, 2026",
     relationship: "Client",
     quote:
@@ -94,6 +105,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "ifra-aftab",
+    linkedin: "https://www.linkedin.com/in/ifra-aftab/",
     name: "Ifra Aftab",
     role: "Digital Marketing Executive, Content Research & Strategy",
     company: null,
@@ -104,6 +116,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "evgeniia-novikova",
+    linkedin: "https://www.linkedin.com/in/eugeniia-novikova/",
     name: "Evgeniia Novikova",
     role: "Chief Marketing Officer, Head of Partnerships, Head of Affiliate",
     company: null,
@@ -115,7 +128,7 @@ export const testimonials: Testimonial[] = [
 
 /** Landing-page order: company-backed quotes first, then role-led quotes. */
 export const landingTestimonialIds = [
-  "daria-sukhorosolova",
+  "daria-sukhoroslova",
   "klaus-m-schremser",
   "andrew-byzov",
   "renu-sharma",

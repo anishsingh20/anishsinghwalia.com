@@ -67,11 +67,11 @@ export const stations: Station[] = [
     kind: "badges",
     name: "The wall",
     blurb:
-      "Companies I've worked with. DigitalOcean, Semrush, Nutanix, American Express, and Hostinger are the five on my LinkedIn banner.",
+      "Companies I've worked with. Semrush, Hostinger, and the clients I make content for, and DigitalOcean, Nutanix, and American Express, where I've worked.",
     facts: [
-      "Client work for Semrush, OtterlyAI, Datalpulse, Tanot Solutions, and Pollo AI",
+      "Client work for Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI",
       "Tutorials for Hostinger, DataScience+, and GeeksforGeeks",
-      "Every name has a public source",
+      "Top 50 Winner, Document360 Global Writers Awards 2025 - 2026",
     ],
     href: "/clients",
     cta: "See the companies",
@@ -83,11 +83,11 @@ export const stations: Station[] = [
     kind: "bookshelf",
     name: "The bookshelf",
     blurb:
-      "What clients wrote after we worked together. Eight LinkedIn recommendations, quoted as they were written.",
+      "What clients wrote after we worked together. Eight recommendations from the people who hired me.",
     facts: [
-      "Daria Sukhorosolova, Semrush",
+      "Daria Sukhoroslova, Semrush",
       "Klaus-M. Schremser, OtterlyAI",
-      "Andrew Byzov, Datalpulse",
+      "Andrew Byzov, DataImpulse",
     ],
     href: "/testimonials",
     cta: "Read the recommendations",

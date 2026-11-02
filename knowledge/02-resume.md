@@ -16,6 +16,6 @@ DataScience+, Author, June 2017 to August 2023. Project-based data science, mach
 
 Earlier, at VIT: technical member at Microsoft Innovation Center VIT (January to April 2018), VinnovateIT (2016 to 2017), a web developer internship at SelectDine (March to April 2017), the Mechnovate'17 / ICMMM website, the Riviera 2017 developers team, and the Gravitas 2016 technical team.
 
-Top skills on LinkedIn: AI Inference, Linux Server, Cloud Consulting.
+Top skills: AI Inference, Linux Server, Cloud Consulting.
 Languages: Hindi, English, Punjabi, German (limited working).
 Certifications: Data Science 101, Cloud Technical Series '23, Kaggle R Tutorial on Machine Learning, Linux: Bash Shell and Scripts.

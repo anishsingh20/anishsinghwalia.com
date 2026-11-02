@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { earlyDays, experience } from "@data/experience";
 import { PageHeader } from "@/components/page-header";
+import { CtaBand } from "@/components/proof-strip";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -23,11 +24,12 @@ export default function ExperiencePage() {
   const writing = experience.find((group) => group.id === "datascience-plus")!;
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-14">
+    <main>
+    <div className="mx-auto max-w-6xl px-4 py-14">
       <PageHeader
         kicker="Experience"
         title="From base camp to team lead."
-        lede="Dates and titles match my LinkedIn. The trail is how I think about it: summit at the top, SRE internship at the bottom."
+        lede="Summit at the top, SRE internship at the bottom. That is how I think about it: every camp taught me something the next one needed."
       />
       <div className="relative mt-12">
         <svg viewBox="0 0 40 100" className="pointer-events-none absolute left-3 top-0 hidden h-full w-10 md:block" aria-hidden="true" preserveAspectRatio="none">
@@ -67,6 +69,8 @@ export default function ExperiencePage() {
           ))}
         </ul>
       </section>
+    </div>
+    <CtaBand quoteId="nikita-puzanenko" title="Want this background behind your content?" text="Tell me the format and what it's for. I'll write back with how I'd do it." showMetrics={false} />
     </main>
   );
 }

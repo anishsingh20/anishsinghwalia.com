@@ -8,10 +8,10 @@ Shiva Vinodkumar's recommendation is hidden on Anish's profile (toggle off), so 
 2. Renu Sharma | Co-Founder | Company: Tanot Solutions | April 9, 2026 | Client
 "I worked with Anish on a ghostwriting and Content strategy project to establish myself as a thought leader on LinkedIn for my company, Tanot Solutions, and he completely transformed both my content and my overall LinkedIn presence. He helped rebrand and redesign everything end-to-end, from my positioning and voice to my About section, headline, banner, and profile picture, so my profile finally matched the quality of the work I do. He helped me refine the overall content direction, suggested topics and angles that…"
 
-3. Andrew Byzov | CMO | Company: Datalpulse | April 2, 2026 | Client
-"Anish delivered a high-quality LinkedIn post for Datalpulse – from concept to publication. He took the brief, ran the actual experiment using our proxies, and turned the raw data into a compelling, well-structured post that felt authentic to his voice. Communication was smooth throughout, he was responsive to feedback, and hit the agreed timeline. Would gladly work with Anish again on future content collaborations."
+3. Andrew Byzov | CMO | Company: DataImpulse | April 2, 2026 | Client
+"Anish delivered a high-quality LinkedIn post for DataImpulse – from concept to publication. He took the brief, ran the actual experiment using our proxies, and turned the raw data into a compelling, well-structured post that felt authentic to his voice. Communication was smooth throughout, he was responsive to feedback, and hit the agreed timeline. Would gladly work with Anish again on future content collaborations."
 
-4. Daria Sukhorosolova | Senior Partner Manager, Affiliate Marketing | Company: Semrush | December 4, 2025 | Client
+4. Daria Sukhoroslova | Senior Partner Manager, Affiliate Marketing | Company: Semrush | December 4, 2025 | Client
 "I am pleased to recommend Anish, a dedicated affiliate partner whose writing on LinkedIn and Medium is consistently precise, well-researched, and insightful. He approaches each topic with thorough preparation and delivers high-quality content on SEO, digital marketing, and AI. Anish is a reliable professional writer whose work adds real value."
 
 5. Ifra Aftab | Digital Marketing Executive, Content Research & Strategy | Company: not stated | August 20, 2025 | Client

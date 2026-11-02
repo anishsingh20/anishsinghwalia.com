@@ -3,7 +3,7 @@ import { clients, headlineClients } from "@data/clients";
 import { experience, topSkills, tools as researchTools } from "@data/experience";
 import { formats } from "@data/formats";
 import { hobbies, mountainQuote } from "@data/hobbies";
-import { metrics, site, socials } from "@data/site";
+import { award, metrics, site, socials } from "@data/site";
 import { testimonials } from "@data/testimonials";
 import { essays, githubProjects, press, tutorials } from "@data/writing";
 import type { BotEvent, ChatTurn } from "./agent";
@@ -62,7 +62,7 @@ async function stream(text: string, emit: (event: BotEvent) => void) {
 const has = (q: string, ...words: (string | RegExp)[]) =>
   words.some((word) => (typeof word === "string" ? q.includes(word) : word.test(q)));
 
-const ABOUT_ANISH = /\b(anish|he|his|him|you|your|walia|digitalocean|nutanix|amex|american express|medium|github|linkedin|semrush|otterly|pollo|tanot|datalpulse|tutorial|client|hire|work|write|writer|content|video|newsletter|ghostwrit|podcast|press|hobby|hobbies|hik|trek|calisthenic|mountain|vit|vellore|dehradun|india|email|contact|skill|stack|tool|engineer|sre|cloud|experience|career|job|role|team|lead|rate|price|cost|budget|number|reader|subscriber|view|follower|repo|project|education|degree|study|language|testimonial|recommend|linkedin|format|infographic|carousel|deep dive|article|blog|post|book|read|do you|does he|is he|are you|can you|what do|who)\b/;
+const ABOUT_ANISH = /\b(anish|he|his|him|you|your|walia|digitalocean|nutanix|amex|american express|medium|github|linkedin|semrush|otterly|pollo|tanot|dataimpulse|award|awards|finalist|document360|winner|tutorial|client|hire|work|write|writer|content|video|newsletter|ghostwrit|podcast|press|hobby|hobbies|hik|trek|calisthenic|mountain|vit|vellore|dehradun|india|email|contact|skill|stack|tool|engineer|sre|cloud|experience|career|job|role|team|lead|rate|price|cost|budget|number|reader|subscriber|view|follower|repo|project|education|degree|study|language|testimonial|recommend|linkedin|format|infographic|carousel|deep dive|article|blog|post|book|read|do you|does he|is he|are you|can you|what do|who)\b/;
 
 async function route(q: string, previous: string, original: string): Promise<Reply> {
   if (has(q, /\b(phone|mobile|whatsapp|cell)\b/, /\b(home )?address\b/, /where (exactly )?does he live\b/, /\b(salary|how much (does|did) (he|anish) (earn|make)|family|wife|girlfriend|married|kids|children|age|birthday|date of birth|passport|aadhaar)\b/)) {
@@ -173,6 +173,13 @@ async function route(q: string, previous: string, original: string): Promise<Rep
     };
   }
 
+  if (has(q, /\b(awards?|finalist|document360|global writers|top 50|top 20|recognition|prize|honou?rs?|has he won|did he win)\b/)) {
+    return {
+      text: `Yes. In the ${award.name} ${award.edition}, Anish is a ${award.placement.replace(", ", " at ")}, listed as ${award.listedAs}. The page says winners were ${award.how.charAt(0).toLowerCase()}${award.how.slice(1).replace(/\.$/, "")}. He is also a two-time Medium Top Writer. Winners list: ${link("Document360 Global Writers Awards", award.href)}; his ${link("nominee profile", award.profileHref)}.`,
+      sources: [{ title: "Document360 Global Writers Awards winners", url: award.href }, { title: "Nominee profile", url: award.profileHref }],
+    };
+  }
+
   if (has(q, /\b(testimonials?|recommend\w*|reviews?|what do (people|clients) say|feedback)\b/)) {
     const quoted = testimonials.filter((item) => item.quote && item.company).slice(0, 2);
     const lines = quoted.map((item) => `${item.name}, ${item.role} at ${item.company}: "${item.quote}"`).join(" ");
@@ -183,9 +190,9 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   }
 
   if (has(q, /\b(client|clients|companies|brands|worked with|work with|customers|who has he (worked|written) for|portfolio)\b/)) {
-    const named = clients.filter((client) => client.group === "client").map((client) => `${client.name} (${thirdPerson(client.detail.replace(/\.$/, ""))})`);
+    const named = clients.filter((client) => client.group === "brands" && client.name !== "Semrush" && client.name !== "Hostinger").map((client) => `${client.name} (${thirdPerson(client.detail.replace(/\.$/, ""))})`);
     return {
-      text: `Anish has worked with B2B, SaaS, and AI-native companies such as ${listify(headlineClients)}. The specifics: ${named.join("; ")}. Semrush also sponsored his Medium essay ${link("SEO-to-GEO Identity Crisis", "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306")}. Each of these people left a recommendation, on the ${link("testimonials page", `${site.url}/testimonials`)}.`,
+      text: `Anish has worked with B2B, SaaS, and AI-native companies such as ${listify(headlineClients)}. The specifics: ${named.join("; ")}. Semrush sponsored his Medium essay ${link("SEO-to-GEO Identity Crisis", "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306")}, and he has written Linux tutorials for Hostinger. Before that he worked at Nutanix, consulted for American Express, and now leads a content team at DigitalOcean. What the clients said is on the ${link("testimonials page", `${site.url}/testimonials`)}.`,
       sources: [{ title: "Clients", url: `${site.url}/clients` }, { title: "Testimonials", url: `${site.url}/testimonials` }],
     };
   }
@@ -222,7 +229,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
 
   if (has(q, /\b(speak|language|languages|hindi|english|punjabi)\b/) && !has(q, /\b(programming|python|go|javascript|code)\b/)) {
     return {
-      text: `${fact("education").split("Languages: ")[1]?.split(". Certifications")[0] ?? "English and Hindi"}, per his LinkedIn. His writing is in English. Profile: ${link("LinkedIn", LINKS.linkedin)}.`,
+      text: `${fact("education").split("Languages: ")[1]?.split(". Certifications")[0] ?? "English and Hindi"}, His writing is in English. Profile: ${link("LinkedIn", LINKS.linkedin)}.`,
       sources: [{ title: "LinkedIn", url: LINKS.linkedin }],
     };
   }
@@ -230,14 +237,14 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(video|videos|youtube|film)\b/)) {
     const video = formats.find((format) => format.id === "video");
     return {
-      text: `Yes. ${thirdPerson(video?.line ?? "")} The example on the site is ${link("how he helped a five-person team rebuild its video library", video?.example?.href ?? LINKS.medium)}. He also appeared on the ${link("AI For Thought podcast", press[2].href)}. All formats are on the ${link("what-I-make section", `${site.url}/#what-i-make`)}.`,
+      text: `Yes. ${thirdPerson(video?.line ?? "")} The example on the site is ${link("how he helped a five-person team rebuild its video library", video?.example?.href ?? LINKS.medium)}. He also appeared on the ${link("AI For Thought podcast", press[2].href)}. All formats are on the ${link("what-I-make section", `${site.url}/services#what-i-make`)}.`,
       sources: [{ title: video?.example?.label ?? "Medium", url: video?.example?.href ?? LINKS.medium }],
     };
   }
 
   if (has(q, /\b(newsletter|subscribe|substack)\b/)) {
     return {
-      text: `His newsletter runs through Medium, with 35,000+ subscribers. You can subscribe from ${link("medium.com/@anishsingh20", LINKS.medium)}. For clients he writes newsletters too; that is one of the formats on the ${link("what-I-make section", `${site.url}/#what-i-make`)}.`,
+      text: `His newsletter runs through Medium, with 35,000+ subscribers. You can subscribe from ${link("medium.com/@anishsingh20", LINKS.medium)}. For clients he writes newsletters too; that is one of the formats on the ${link("what-I-make section", `${site.url}/services#what-i-make`)}.`,
       sources: [{ title: "Medium", url: LINKS.medium }],
     };
   }
@@ -254,8 +261,8 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(format|formats|what (does|can) (he|anish) (make|do|produce|create|write)|services|offers?|offerings|what kinds? of content|types? of content|deliverables?)\b/)) {
     const list = formats.map((format) => format.title.toLowerCase());
     return {
-      text: `${capitalize(listify(list))}. All of it for B2B, SaaS, AI-native, and developer-tool companies, backed by an engineering background. Each format has a real example on the ${link("home page", `${site.url}/#what-i-make`)}, like ${link(formats[0].example?.label ?? "", formats[0].example?.href ?? site.url)}.`,
-      sources: [{ title: "What I make", url: `${site.url}/#what-i-make` }],
+      text: `${capitalize(listify(list))}. All of it for B2B, SaaS, AI-native, and developer-tool companies, backed by an engineering background. Each format has a real example on the ${link("services page", `${site.url}/services#what-i-make`)}, like ${link(formats[0].example?.label ?? "", formats[0].example?.href ?? site.url)}.`,
+      sources: [{ title: "What I make", url: `${site.url}/services#what-i-make` }],
     };
   }
 

@@ -1,7 +1,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { aiTells, findBanned } from "../src/lib/bot/banned";
+import { aiTells, findBanned, metaTells } from "../src/lib/bot/banned";
 
 /**
  * Two scans. One over everything that ships or feeds the bot, one over the
@@ -75,6 +75,33 @@ describe("banned words", () => {
     for (const file of copySources()) {
       const text = readFileSync(file, "utf8");
       for (const tell of aiTells) {
+        const match = text.match(tell);
+        if (match) hits.push(`${path.relative(root, file)}: ${match[0]}`);
+      }
+    }
+    expect(hits).toEqual([]);
+  });
+
+  it("the copy does not explain where its facts came from", () => {
+    const hits: string[] = [];
+    for (const file of copySources()) {
+      const text = readFileSync(file, "utf8");
+      for (const tell of metaTells) {
+        const match = text.match(tell);
+        if (match) hits.push(`${path.relative(root, file)}: ${match[0]}`);
+      }
+    }
+    expect(hits).toEqual([]);
+  });
+
+  it("the built pages carry no audit-trail phrasing when a build exists", () => {
+    const appDir = path.join(root, ".next", "server", "app");
+    if (!existsSync(appDir) || !existsSync(path.join(root, ".next", "BUILD_ID"))) return;
+    const built = walk(appDir, (file) => /\.(html|rsc|body|txt)$/.test(file));
+    const hits: string[] = [];
+    for (const file of built) {
+      const text = readFileSync(file, "utf8");
+      for (const tell of metaTells) {
         const match = text.match(tell);
         if (match) hits.push(`${path.relative(root, file)}: ${match[0]}`);
       }

@@ -1,4 +1,4 @@
-/** Full-time timeline. Dates and titles match my LinkedIn profile. */
+/** Full-time timeline. */
 
 export type Role = {
   id: string;
