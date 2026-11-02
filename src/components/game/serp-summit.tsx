@@ -206,7 +206,7 @@ export function SerpSummit() {
       ) : (
         <div className="overflow-hidden rounded-2xl border border-line bg-black">
           <canvas ref={canvasRef} className="aspect-[16/9] w-full touch-none" aria-label="Climb the SERP, a short platform trek" role="img" />
-          <div className="flex gap-2 border-t border-line bg-ink p-3 md:hidden">
+          <div className="flex gap-2 border-t border-line bg-ink p-3">
             <Touch label="Left" onDown={() => hold({ left: true }, true)} onUp={() => hold({ left: true }, false)} />
             <Touch label="Right" onDown={() => hold({ right: true }, true)} onUp={() => hold({ right: true }, false)} />
             <Touch label="Jump" onDown={() => hold({ jump: true }, true)} onUp={() => undefined} />
@@ -217,7 +217,7 @@ export function SerpSummit() {
         <p className="max-w-xl text-sm text-muted" aria-live="polite">{note}</p>
         <p className="font-mono text-xs text-faint">{found.length}/5 camps</p>
       </div>
-      <p className="mt-2 text-xs text-faint">Desktop: A D or arrows to move, space or W to jump. Phone: the buttons under the ridge.</p>
+      <p className="mt-2 text-xs text-faint">Hold Left or Right, then Jump. A, D, and the arrow keys do the same when this page is focused. W or space jumps.</p>
       {found.length > 0 ? (
         <ul className="mt-4 flex flex-wrap gap-2">
           {found.map((id) => {
