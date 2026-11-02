@@ -63,7 +63,7 @@ export function OffClock() {
       <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Beyond the keyboard</p>
       <h2 className="mt-2 font-display text-3xl tracking-tight md:text-4xl">Off the clock</h2>
       <p className="mt-3 max-w-2xl text-muted">
-        The work is technical. The rest of him is outdoors: hiking, trekking, calisthenics, skipping, running, and the mountains around Dehradun.
+        The work is technical. The rest of me is outdoors: hiking, trekking, calisthenics, skipping, running, and the mountains around Dehradun.
       </p>
       <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {hobbies.map((hobby) => (

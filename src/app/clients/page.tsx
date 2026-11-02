@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
   title: "Clients",
-  description: "Brands Anish Singh Walia has worked with, including DigitalOcean, Semrush, Nutanix, American Express, Hostinger, Tanot Solutions, Datalpulse, OtterlyAI, and Pollo AI.",
+  description: "Companies I've worked with: DigitalOcean, Semrush, Nutanix, American Express, Hostinger, Tanot Solutions, Datalpulse, OtterlyAI, Pollo AI, and La Isla Designs.",
   alternates: { canonical: "/clients" },
 };
 
@@ -13,8 +13,8 @@ export default function ClientsPage() {
     <main className="mx-auto max-w-6xl px-4 py-14">
       <PageHeader
         kicker="Clients"
-        title="The brands on the wall."
-        lede="Names only, set in type. No borrowed logo files. Each one has a public source: his banner, a recommendation, or a byline."
+        title="Companies I've worked with."
+        lede="B2B, SaaS, and AI-native companies, plus the employers that trained me. Names only, no borrowed logo files. Each one has a public source: my banner, a recommendation, or a byline."
       />
       <div className="mt-12 grid gap-12">
         {clientGroups.map((group) => (

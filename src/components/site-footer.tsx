@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-xl">Anish Singh Walia</p>
           <p className="mt-2 max-w-sm text-sm text-muted">
-            Technical content for SaaS, AI-native, developer-tool, and cloud companies. Based in {site.location.label}.
+            Technical content creator. Videos, deep dives, LinkedIn posts, docs, and newsletters for B2B, SaaS, AI-native, and developer-tool companies. Based in {site.location.label}.
           </p>
           <a className="mt-3 inline-block text-sm text-ember hover:underline" href={`mailto:${site.email}`}>
             {site.email}
@@ -34,11 +34,7 @@ export function SiteFooter() {
             <li><Link href="/ask" className="hover:text-cream">Ask me anything</Link></li>
             <li><Link href="/contact" className="hover:text-cream">Work with me</Link></li>
           </ul>
-          <p className="mt-4 font-mono text-xs text-faint">
-            Eggs: <span className="text-muted">kubectl get all -n anish</span>
-            <span className="mx-1">·</span>
-            Konami code
-          </p>
+          <p className="mt-4 font-mono text-xs text-faint">There is one hidden thing on this site. It needs ten keys.</p>
         </div>
       </div>
     </footer>

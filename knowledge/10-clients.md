@@ -1,24 +1,25 @@
-# Brands and clients
+# Companies he has worked with
 
-Banner brands, the ones he labels businesses he has helped: DigitalOcean, Semrush, Nutanix, American Express, and Hostinger.
+Banner companies, the five he labels "Businesses I have helped" on LinkedIn: DigitalOcean, Semrush, Nutanix, American Express, and Hostinger.
 
 DigitalOcean is his employer since September 2023.
-Semrush sponsored the Medium essay SEO-to-GEO Identity Crisis, and Daria Sukhorosolova of Semrush affiliate marketing recommended him as a client.
+Semrush sponsored the Medium essay "SEO-to-GEO Identity Crisis", and Daria Sukhorosolova of Semrush affiliate marketing recommended him as a client.
 Nutanix is a former employer.
-American Express was the cloud consulting engagement via Nutanix, January 2022 to August 2023.
-Hostinger: he is a tutorials author, including How to use the Linux cat command, 25 February 2019.
+American Express was the cloud consulting engagement through Nutanix, January 2022 to August 2023.
+Hostinger: he is a tutorials author there, including "How to use the Linux cat command", 25 February 2019.
 
 Client work named in LinkedIn recommendations:
-- Tanot Solutions, with co-founder Renu Sharma, ghostwriting and content strategy.
-- Datalpulse, with CMO Andrew Byzov, a LinkedIn post built from a proxy experiment.
-- OtterlyAI, with co-founder Klaus-M. Schremser.
-- Pollo AI, named by Abby Wang in a Medium feature.
-- La Isla Designs, a collaboration with founder Nadia Fernández while they were at different companies.
+- Tanot Solutions, with co-founder Renu Sharma: ghostwriting and content strategy, a full LinkedIn rebrand.
+- Datalpulse, with CMO Andrew Byzov: a LinkedIn post built from a proxy experiment he ran himself.
+- OtterlyAI, with co-founder Klaus-M. Schremser: a content project.
+- Pollo AI, named by Abby Wang: two Medium pieces, the second introducing a new feature.
+- La Isla Designs: a LinkedIn carousel with founder Nadia Fernández, while they were at different companies.
+- Nikita Puzanenko (B2B SaaS), Ifra Aftab, and Evgeniia Novikova also recommended him as clients; their companies are not stated.
 
 Also written for: DataScience+ and GeeksforGeeks.
 
-Press, not clients: ActiveCampaign Autonomous case study, and the AllAboutAI podcast.
+Press, not clients: the ActiveCampaign Autonomous case study, and the AllAboutAI podcast and interview.
 
-These Medium posts name a tool, and sponsorship was not stated, so they are not listed as clients: AI Studios, Zawa.ai, BeautyPlus, Ideogram, and an unnamed multi-market video tool. OtterlyAI the company is a confirmed client via Klaus-M. Schremser even though the Medium review is not marked sponsored.
+These Medium posts name a tool and sponsorship was not stated, so they are not listed as clients: AI Studios, Zawa.ai, BeautyPlus, Ideogram, and an unnamed multi-market video tool.
 
-Readership: LinkedIn About says 3,000,000+ average monthly readers. The banner says 2x Medium Top Writer, 35,000+ subscribers, and 200,000+ monthly views. These figures conflict. Report both. Do not pick a silent winner.
+Readership and reach: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, 200,000+ monthly views, two Medium Top Writer badges, and 347 DigitalOcean tutorials.

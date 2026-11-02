@@ -1,5 +1,7 @@
-import { site, socials } from "@data/site";
+import { site, socials, audiences } from "@data/site";
 import { faqs } from "@data/faq";
+import { formats } from "@data/formats";
+import { headlineClients } from "@data/clients";
 
 export function GET() {
   const lines = [
@@ -8,13 +10,20 @@ export function GET() {
     `> ${site.positioning}`,
     "",
     `${site.jobTitle} at ${site.employer}. Based in ${site.location.label}.`,
-    `Bachelor's degree, Information Technology, Vellore Institute of Technology, 2015–2019.`,
+    `Bachelor's degree, Information Technology, Vellore Institute of Technology, 2015 to 2019.`,
     "",
-    "He came up as an SRE at Nutanix (intern, SRE, Sr. SRE) and as cloud consultant for American Express Cloud and Infrastructure Operations in India, then joined DigitalOcean as a Senior Technical Writer in September 2023 and became Senior Technical Content Strategist II and Team Lead in September 2025.",
+    "I was an SRE at Nutanix (intern, SRE, Sr. SRE) and a cloud consultant for the American Express Cloud and Infrastructure Operations team in India. I joined DigitalOcean as a Senior Technical Writer in September 2023 and became Senior Technical Content Strategist II and Team Lead in September 2025.",
     "",
-    "Hobbies he has stated: hiking, trekking, calisthenics, skipping (jump rope), running, and the mountains. He lives in Dehradun, in the Himalayan foothills. No summit names or rep counts are published.",
+    `Companies I've worked with include ${headlineClients.join(", ")}. The work is for ${audiences.join(", ").toLowerCase()}.`,
+    "",
+    "Numbers: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, 200,000+ monthly views, two Medium Top Writer badges, 347 DigitalOcean tutorials.",
+    "",
+    "Hobbies: hiking, trekking, calisthenics, skipping (jump rope), running, and the mountains. I live in Dehradun, in the Himalayan foothills.",
     "",
     `Contact: ${site.email}`,
+    "",
+    "## What I make",
+    ...formats.map((format) => `- ${format.title}: ${format.line}${format.example ? ` Example: ${format.example.href.startsWith("/") ? site.url + format.example.href : format.example.href}` : ""}`),
     "",
     "## Pages",
     ...[
@@ -34,8 +43,6 @@ export function GET() {
     "",
     "## FAQ",
     ...faqs.flatMap((faq) => ["", `### ${faq.question}`, faq.answer]),
-    "",
-    "Readership figures conflict and both are public: LinkedIn About says 3,000,000+ average monthly readers. His banner says 35,000+ subscribers and 200,000+ monthly views.",
     "",
   ];
   return new Response(lines.join("\n"), {

@@ -55,7 +55,7 @@ export const tutorials: Piece[] = [
     title: "How To Secure Apache with Let's Encrypt on Ubuntu",
     href: "https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu",
     meta: "DigitalOcean · sole author · updated 5 Jun 2026",
-    note: "A long-running tutorial he now authors of record.",
+    note: "A long-running tutorial. I'm the author of record now.",
   },
   {
     title: "Build an AI Agent to Automate Document Analysis with Gradient",
@@ -113,7 +113,7 @@ export const press: Piece[] = [
     title: "Scalable content refresh workflow",
     href: "https://autonomous.activecampaign.com/stories/scalable-content-refresh-workflow",
     meta: "ActiveCampaign Autonomous · Maddy Osman · 21 May 2026",
-    note: "Turnaround fell from about a day to a few hours (60–70% less production time). Throughput rose from 1–2 to 4–5 updated pieces a day.",
+    note: "Turnaround fell from about a day to a few hours, 60 to 70 percent less production time. Output went from 1 or 2 to 4 or 5 updated pieces a day.",
   },
   {
     title: "How Anish used ChatGPT and Semrush",
@@ -123,11 +123,11 @@ export const press: Piece[] = [
   {
     title: "AI For Thought, with Muhammad Hassan Khan",
     href: "https://www.youtube.com/watch?v=R_XSFA9q7Dg",
-    meta: "AllAboutAI podcast · his first podcast · about May 2025",
+    meta: "AllAboutAI podcast · my first podcast · about May 2025",
   },
 ];
 
-/** Titles listed on the LinkedIn export. URLs were not in the export, so they are not linked. */
+/** Publication titles listed on my LinkedIn. No URLs there, so they are not linked. */
 export const linkedInPublicationTitles = [
   "Reverse Morris Traversal",
   "Random Forests",

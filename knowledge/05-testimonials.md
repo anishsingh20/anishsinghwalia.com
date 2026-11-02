@@ -1,6 +1,6 @@
 # What it is like to work with Anish
 
-Clients describe him as precise, responsive, and easy to communicate with.
+Clients describe him as precise, responsive, and easy to talk to. These are LinkedIn recommendations, quoted word for word.
 
 Daria Sukhorosolova, Senior Partner Manager, Affiliate Marketing at Semrush, 4 December 2025, client: "I am pleased to recommend Anish, a dedicated affiliate partner whose writing on LinkedIn and Medium is consistently precise, well-researched, and insightful. He approaches each topic with thorough preparation and delivers high-quality content on SEO, digital marketing, and AI. Anish is a reliable professional writer whose work adds real value."
 

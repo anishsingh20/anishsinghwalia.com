@@ -1,17 +1,19 @@
 export const projectTypes = [
-  "Technical tutorials and deep dives",
-  "Developer docs",
-  "AI and infrastructure content",
-  "Thought leadership and LinkedIn ghostwriting",
-  "Content strategy",
-  "SEO and AI-search visibility",
+  "Long-form articles and deep dives",
+  "Tutorials and developer docs",
+  "Video",
+  "Infographics and carousels",
+  "Short-form LinkedIn posts",
+  "Ghostwriting",
+  "Newsletter",
+  "Content strategy and search visibility",
   "Not sure yet",
 ] as const;
 
 export const budgets = [
   "Under $2,000",
-  "$2,000–$5,000",
-  "$5,000–$10,000",
+  "$2,000 to $5,000",
+  "$5,000 to $10,000",
   "$10,000 or more",
 ] as const;
 

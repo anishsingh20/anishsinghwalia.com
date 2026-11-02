@@ -1,4 +1,4 @@
-/** Full-time timeline from the LinkedIn profile export (source of truth). */
+/** Full-time timeline. Dates and titles match my LinkedIn profile. */
 
 export type Role = {
   id: string;
@@ -7,7 +7,7 @@ export type Role = {
   end: string;
   duration: string;
   location: string;
-  /** His own words, only where the export includes a description. */
+  /** A short description, where there is one. First person. */
   summary?: string;
 };
 
@@ -42,7 +42,7 @@ export const experience: ExperienceGroup[] = [
         duration: "2 years 1 month",
         location: "Remote",
         summary:
-          "I am a Senior Technical Writer at DigitalOcean, where I specialize in creating detailed, user-friendly tutorials, knowledge bases, how-to guides, and technical documentation for developers, startups, and IT professionals. My work involves breaking down complex technical concepts into easily understandable content, ensuring that both novice and experienced users can leverage DigitalOcean's cloud services effectively.",
+          "I wrote tutorials, knowledge bases, how-to guides, and technical documentation for developers, startups, and IT teams. The job was to make hard topics clear enough that a first-timer and an experienced engineer could both use DigitalOcean's cloud from the same page.",
       },
     ],
   },
@@ -100,13 +100,13 @@ export const experience: ExperienceGroup[] = [
         duration: "6 years 3 months",
         location: "Greater Boston",
         summary:
-          "I write project-based data science, machine learning and statistical modelling tutorials with step-by-step instructions and examples in R. It is a platform to practice your skills from the basic to advanced R programming, across different topics including statistics, machine learning, data manipulation and visualization. It's an online community for showcasing R & Python tutorials. It operates as a networking platform for data scientists to promote their talent and get hired.",
+          "I wrote project-based data science, machine learning, and statistical modelling tutorials in R, with step-by-step instructions and worked examples. DataScience+ is a community for R and Python tutorials, where data scientists share work and get hired.",
       },
     ],
   },
 ];
 
-/** VIT-era roles, kept short. Wording follows the LinkedIn export. */
+/** VIT-era teams and a short internship. */
 export const earlyDays: Role[] = [
   {
     id: "mic",
@@ -116,7 +116,7 @@ export const earlyDays: Role[] = [
     duration: "4 months",
     location: "Vellore Area, India",
     summary:
-      "Microsoft Innovation Center — VIT Vellore. A non-profit heading research, development, and education through a partnership with Microsoft at VIT.",
+      "Microsoft Innovation Center at VIT Vellore. A non-profit for research, development, and education, in partnership with Microsoft.",
   },
   {
     id: "vinnovate",
@@ -126,7 +126,7 @@ export const earlyDays: Role[] = [
     duration: "2 years",
     location: "Vellore",
     summary:
-      "VinnovateIT. Cognizant research and innovation lab under VIT's School of Information Technology.",
+      "VinnovateIT, the Cognizant research and innovation lab under VIT's School of Information Technology.",
   },
   {
     id: "selectdine",
@@ -136,7 +136,7 @@ export const earlyDays: Role[] = [
     duration: "2 months",
     location: "India",
     summary:
-      "SelectDine. Web developer intern. Front end with AngularJS, JavaScript, jQuery, Bootstrap, HTML, and CSS: restaurant page, landing page, orders, and table reservation.",
+      "Web developer intern at SelectDine. Front end in AngularJS, JavaScript, jQuery, Bootstrap, HTML, and CSS: the restaurant page, landing page, orders, and table reservations.",
   },
   {
     id: "mechnovate",
@@ -146,7 +146,7 @@ export const earlyDays: Role[] = [
     duration: "4 months",
     location: "India",
     summary:
-      "Technical team for the ICMMM'17 website. Client side in Angular, JavaScript, jQuery, and Bootstrap. Server side and routing in Node.js and Express.",
+      "Built the ICMMM'17 website with the technical team. Client side in Angular, JavaScript, jQuery, and Bootstrap. Server side and routing in Node.js and Express.",
   },
   {
     id: "riviera",
@@ -156,7 +156,7 @@ export const earlyDays: Role[] = [
     duration: "6 months",
     location: "India",
     summary:
-      "Riviera, VIT University. Client side of a live polling app (AngularJS, Node, and MongoDB) for which artists to invite.",
+      "Client side of a live polling app for Riviera, VIT's cultural fest, in AngularJS, Node, and MongoDB. It decided which artists to invite.",
   },
   {
     id: "gravitas",
@@ -166,7 +166,7 @@ export const earlyDays: Role[] = [
     duration: "3 months",
     location: "Vellore",
     summary:
-      "Gravitas, VIT University. Icons, backgrounds, and illustrations for the website in Adobe Illustrator.",
+      "Icons, backgrounds, and illustrations for the Gravitas website, in Adobe Illustrator.",
   },
 ];
 
@@ -174,12 +174,12 @@ export const education = [
   {
     school: "Vellore Institute of Technology",
     credential: "Bachelor's degree, Information Technology",
-    years: "2015–2019",
+    years: "2015 to 2019",
   },
   {
     school: "Gautam international school",
     credential: null,
-    years: "2013–2015",
+    years: "2013 to 2015",
   },
 ];
 
@@ -199,7 +199,7 @@ export const certifications = [
   "Linux: Bash Shell and Scripts",
 ];
 
-/** Tools named in the LinkedIn About. */
+/** Tools I use for research and search work. */
 export const tools = [
   "Semrush",
   "Profound",
@@ -209,7 +209,7 @@ export const tools = [
   "AI search monitoring tools",
 ];
 
-/** Also named in interviews and the GitHub README. */
+/** The rest of the daily stack. */
 export const stack = [
   "ChatGPT",
   "Claude",

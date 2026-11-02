@@ -1,21 +1,23 @@
-# Positioning and services
+# Positioning and what he makes
 
-Anish is a technical content strategist with an SRE and DevOps background. He is not only an SEO or marketing hire.
+Anish is a technical content creator with an SRE and DevOps background. He is not only a tutorial writer and not only an SEO hire. The tutorials are part of his day job at DigitalOcean; the wider practice covers most content formats.
 
-Projects he takes:
-- Technical tutorials and deep dives
-- Developer docs
-- AI and infrastructure content
-- Thought leadership and LinkedIn ghostwriting
-- Content strategy
-- SEO and AI-search visibility, as one part of a broader content practice
+Formats he makes, each with a real example:
+- Long-form articles and deep dives. Example: "SEO-to-GEO Identity Crisis", a Medium essay sponsored by Semrush. His Medium publication averages 3,000,000+ readers a month.
+- Tutorials and developer docs. Example: "How to Benchmark LLM Inference Yourself" on DigitalOcean. 347 DigitalOcean tutorials authored or refreshed.
+- Video. Product walkthroughs and explainers, produced with AI tools where that saves a crew. Example: his Medium piece on helping a five-person team rebuild its video library.
+- Infographics and LinkedIn carousels. Example: the carousel project Nadia Fernández of La Isla Designs wrote a recommendation about.
+- Short-form LinkedIn posts. Example: his post on using Semrush with ChatGPT; the Datalpulse post he wrote for CMO Andrew Byzov after running their proxy experiment.
+- Ghostwriting. Example: Renu Sharma, co-founder of Tanot Solutions, whose LinkedIn presence he rebranded end to end.
+- Newsletters. His Medium newsletter has 35,000+ subscribers.
+- Content strategy and search visibility. Example: the ActiveCampaign case study on his content-refresh workflow.
 
-Audience: SaaS companies, AI-native companies, developer-tool companies, and cloud or infrastructure companies.
+Audience: B2B, SaaS, AI-native, and developer-tool companies.
 
-He leads and mentors content teams at DigitalOcean. He also partners with companies as a writer and strategist.
+He leads and mentors a content team at DigitalOcean. He also works with companies as a content lead or advisor.
 
-Tools he uses while writing and researching: Semrush, Profound, Ahrefs, DataForSEO, Google Search Console, ChatGPT, Claude, and Cursor.
+Tools: Semrush, Profound, Ahrefs, DataForSEO, Google Search Console, AI search monitoring tools, ChatGPT, Claude, and Cursor.
 
 His banner line: Helping brands scale with AI, SEO and technology-led high-impact content.
 
-On LinkedIn he also describes full-funnel strategies for SEO, AI search visibility, and social distribution on Reddit, Quora, and LinkedIn. Treat that as one offering inside the wider technical-content practice.
+Wording rule: he is a full-time team lead at DigitalOcean who also takes on client projects. Say "client work" or "companies he has worked with".

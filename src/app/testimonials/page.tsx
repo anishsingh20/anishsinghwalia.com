@@ -5,7 +5,7 @@ import { TestimonialGrid } from "@/components/testimonial-grid";
 
 export const metadata: Metadata = {
   title: "Testimonials",
-  description: "LinkedIn recommendations for Anish Singh Walia from Semrush, OtterlyAI, Datalpulse, Tanot Solutions, Pollo AI, and other clients.",
+  description: "LinkedIn recommendations I've received from Semrush, OtterlyAI, Datalpulse, Tanot Solutions, Pollo AI, and other clients.",
   alternates: { canonical: "/testimonials" },
 };
 
@@ -15,8 +15,8 @@ export default function TestimonialsPage() {
     <main className="mx-auto max-w-6xl px-4 py-14">
       <PageHeader
         kicker="Testimonials"
-        title="Recommendations, as they were written."
-        lede="Quoted from LinkedIn. An ellipsis is LinkedIn's cutoff, left unfinished on purpose. One recommendation is hidden on his profile and is not included."
+        title="What clients wrote."
+        lede="Quoted from LinkedIn, word for word. An ellipsis is where LinkedIn cut the text off. I left those unfinished on purpose."
       />
       <div className="mt-10">
         <TestimonialGrid items={ordered} detailed />

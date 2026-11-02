@@ -10,7 +10,7 @@ export const clients: ClientEntry[] = [
   {
     name: "DigitalOcean",
     relationship: "Employer",
-    detail: "Senior Technical Content Strategist II and Team Lead, since 2023.",
+    detail: "Senior Technical Content Strategist II and Team Lead, since 2023. 347 tutorials authored or refreshed.",
     href: "https://www.digitalocean.com/community/users/asinghwalia",
     group: "banner",
   },
@@ -18,106 +18,103 @@ export const clients: ClientEntry[] = [
     name: "Semrush",
     relationship: "Sponsored essay and affiliate partnership",
     detail:
-      "Sponsored the Medium essay “SEO-to-GEO Identity Crisis.” Daria Sukhorosolova, Senior Partner Manager, Affiliate Marketing at Semrush, recommended him as a client.",
+      "Sponsored my Medium essay “SEO-to-GEO Identity Crisis.” Daria Sukhorosolova, Senior Partner Manager, Affiliate Marketing at Semrush, recommended me as a client.",
     href: "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306",
     group: "banner",
   },
   {
     name: "Nutanix",
     relationship: "Former employer",
-    detail: "4 years 8 months: SRE intern, SRE, Sr. SRE, then cloud consultant.",
+    detail: "4 years 8 months. SRE intern, SRE, Sr. SRE, then cloud consultant.",
     group: "banner",
   },
   {
     name: "American Express",
     relationship: "Consulting engagement",
     detail:
-      "Cloud Consultant for the American Express Cloud and Infrastructure Operations team in India, employed via Nutanix. January 2022 – August 2023, Pune.",
+      "Cloud Consultant for the American Express Cloud and Infrastructure Operations team in India, through Nutanix. January 2022 to August 2023, Pune.",
     group: "banner",
   },
   {
     name: "Hostinger",
     relationship: "Tutorials author",
-    detail: "Author page includes “How to use the Linux cat command” (25 Feb 2019).",
+    detail: "My author page includes “How to use the Linux cat command” (25 Feb 2019).",
     href: "https://www.hostinger.com/tutorials/author/anishsingh/",
     group: "banner",
   },
   {
     name: "Tanot Solutions",
     relationship: "Client",
-    detail:
-      "Ghostwriting and content strategy for co-founder Renu Sharma, including a LinkedIn rebrand.",
+    detail: "Ghostwriting and content strategy for co-founder Renu Sharma, including a LinkedIn rebrand.",
     group: "client",
   },
   {
     name: "Datalpulse",
     relationship: "Client",
-    detail:
-      "LinkedIn post for CMO Andrew Byzov, from a proxy experiment through to publication.",
+    detail: "A LinkedIn post for CMO Andrew Byzov. I ran the proxy experiment, then wrote it up.",
     group: "client",
   },
   {
     name: "OtterlyAI",
     relationship: "Client",
-    detail: "Content project with co-founder Klaus-M. Schremser.",
+    detail: "A content project with co-founder Klaus-M. Schremser.",
     group: "client",
   },
   {
     name: "Pollo AI",
     relationship: "Client",
-    detail:
-      "Abby Wang: a Medium piece introducing a new feature, their second collaboration.",
+    detail: "Two Medium pieces with Abby Wang. The second one introduced a new feature.",
     group: "client",
   },
   {
     name: "La Isla Designs",
     relationship: "Collaboration",
-    detail:
-      "Nadia Fernández, founder. They worked together from different companies on a LinkedIn carousel.",
+    detail: "A LinkedIn carousel with founder Nadia Fernández, while we were at different companies.",
     group: "client",
   },
   {
     name: "DataScience+",
     relationship: "Author",
-    detail: "Project-based R, statistics, and machine learning tutorials. June 2017 – August 2023.",
+    detail: "Project-based R, statistics, and machine learning tutorials. June 2017 to August 2023.",
     href: "https://datascienceplus.com/author/anish-singh-walia/",
     group: "writing",
   },
   {
     name: "GeeksforGeeks",
     relationship: "Contributor",
-    detail: "Wrote for GeeksforGeeks while at VIT.",
+    detail: "I wrote for GeeksforGeeks while I was at VIT.",
     href: "https://auth.geeksforgeeks.org/user/AnishSinghWalia/articles",
     group: "writing",
   },
   {
     name: "ActiveCampaign",
     relationship: "Press",
-    detail:
-      "Autonomous case study on his Cursor and DataForSEO content-refresh workflow. Maddy Osman, 21 May 2026.",
+    detail: "A case study on my Cursor and DataForSEO content-refresh workflow. Maddy Osman, 21 May 2026.",
     href: "https://autonomous.activecampaign.com/stories/scalable-content-refresh-workflow",
     group: "press",
   },
   {
     name: "AllAboutAI",
     relationship: "Podcast",
-    detail:
-      "Guest on AI For Thought with Muhammad Hassan Khan. He has called it his first podcast.",
+    detail: "Guest on AI For Thought with Muhammad Hassan Khan. My first podcast.",
     href: "https://www.youtube.com/watch?v=R_XSFA9q7Dg",
     group: "press",
   },
 ];
 
 export const clientGroups = [
-  { id: "banner" as const, title: "On his banner", lede: "The five marks he puts under “Businesses I have helped.”" },
-  { id: "client" as const, title: "Client and collaboration work", lede: "Named in LinkedIn recommendations he received." },
-  { id: "writing" as const, title: "Also written for", lede: "Publications, separate from client engagements." },
-  { id: "press" as const, title: "Press", lede: "Stories about the work, not clients." },
+  { id: "banner" as const, title: "On my banner", lede: "The five I put under “Businesses I have helped” on LinkedIn." },
+  { id: "client" as const, title: "Client work", lede: "Companies named in the LinkedIn recommendations I've received." },
+  { id: "writing" as const, title: "Also written for", lede: "Publications, separate from client work." },
+  { id: "press" as const, title: "Press", lede: "Stories about the work." },
 ];
+
+/** Names I use when I describe client work in one line. */
+export const headlineClients = ["Semrush", "OtterlyAI", "Datalpulse", "Tanot Solutions", "Pollo AI"];
 
 /**
  * Medium posts that name a tool. Sponsorship was not stated.
- * Kept out of the public client wall until Anish confirms them.
+ * Kept off the public client wall until confirmed.
  */
 export const unconfirmedToolPosts = [
   {

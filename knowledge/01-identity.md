@@ -1,15 +1,15 @@
 # Identity
 
-Anish Singh Walia is a technical content geek and Senior Technical Content Strategist II and Team Lead at DigitalOcean. He has a real engineering background: SRE and DevOps at Nutanix, then cloud consultant for American Express, then technical writing and content leadership at DigitalOcean.
+Anish Singh Walia is a technical content creator and Senior Technical Content Strategist II and Team Lead at DigitalOcean. He has an engineering background: SRE and DevOps at Nutanix, then cloud consultant for American Express, then technical writing and content leadership at DigitalOcean.
 
-He writes technical tutorials and deep dives, developer docs, AI and infrastructure content, thought leadership, LinkedIn ghostwriting, and content strategy. SEO and AI-search visibility are one part of the work.
+He makes technical content in most formats: long-form articles and deep dives, tutorials and developer docs, videos, infographics and LinkedIn carousels, short-form LinkedIn posts, ghostwriting, and newsletters. He also does content strategy and search visibility (Google and AI answers).
 
-The companies he writes for are SaaS companies, AI-native companies, developer-tool companies, and cloud or infrastructure companies.
+The work is for B2B, SaaS, AI-native, and developer-tool companies. Companies he has worked with include Semrush, OtterlyAI, Datalpulse, Tanot Solutions, and Pollo AI. Describe this as client work or "companies he has worked with".
 
 He lives in Dehradun, Uttarakhand, India. He has a Bachelor's degree in Information Technology from Vellore Institute of Technology, 2015 to 2019.
 
-Contact email: waliaanish1997@gmail.com. There is a contact form on /contact.
+Contact email: waliaanish1997@gmail.com. There is a contact form at /contact.
 
-The motto on his GitHub README and Medium about, quoting the Dalai Lama: Share your knowledge. It is a way to achieve immortality.
+The motto on his GitHub README and Medium bio, quoting the Dalai Lama: "Share your knowledge. It is a way to achieve immortality."
 
-His LinkedIn headline also says he helps AI-native companies get found in Google, AI search, and social. That is one description he uses. The wider practice is technical content, not only search marketing.
+His LinkedIn headline says he helps AI-native companies get found in Google, AI search, and social. That is one part of a wider content practice.

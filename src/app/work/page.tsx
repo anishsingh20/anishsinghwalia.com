@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "DigitalOcean tutorials, Medium essays, and press about Anish Singh Walia, including the ActiveCampaign workflow story and the AllAboutAI podcast.",
+  description: "My DigitalOcean tutorials, Medium essays, and press, including the ActiveCampaign workflow story and the AllAboutAI podcast.",
   alternates: { canonical: "/work" },
 };
 
@@ -14,7 +14,7 @@ export default function WorkPage() {
       <PageHeader
         kicker="Work"
         title="Tutorials, essays, and the stories about the work."
-        lede="He has authored or refreshed 347 tutorials on DigitalOcean. The ones below were checked, author by author, on 2 November 2026. Many of the 347 are refreshes of older tutorials."
+        lede="I've authored or refreshed 347 tutorials on DigitalOcean. The ones below are a sample I picked. Many of the 347 are refreshes of older tutorials, which is its own skill."
       />
       <Section title="DigitalOcean" items={tutorials} />
       <Section title="Essays and earlier tutorials" items={essays} />
@@ -31,8 +31,8 @@ export default function WorkPage() {
         </ul>
       </section>
       <section className="mt-12">
-        <h2 className="font-display text-2xl">Titles listed on LinkedIn</h2>
-        <p className="mt-2 text-sm text-muted">The export names these publications and does not include URLs, so they are not linked.</p>
+        <h2 className="font-display text-2xl">Older titles on my LinkedIn</h2>
+        <p className="mt-2 text-sm text-muted">Early writing, mostly from college. LinkedIn lists the titles without links.</p>
         <ul className="mt-4 grid gap-2 text-sm text-cream">
           {linkedInPublicationTitles.map((title) => <li key={title}>{title}</li>)}
         </ul>
