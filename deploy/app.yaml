@@ -27,3 +27,9 @@ services:
         value: https://inference.do-ai.run/v1
       - key: LLM_MODEL
         value: llama3.3-70b-instruct
+      # Set these as encrypted env vars in the dashboard. Never commit values.
+      # - key: SMTP_USER
+      # - key: SMTP_PASS
+      # - key: LLM_API_KEY
+      # - key: TAVILY_API_KEY   # or BRAVE_SEARCH_API_KEY / SERPER_API_KEY / EXA_API_KEY
+      # - key: GITHUB_TOKEN

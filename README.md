@@ -1,57 +1,79 @@
-# Anish Singh Walia
+# anishsinghwalia.com
 
-Personal site for Anish Singh Walia, technical content strategist and team lead at DigitalOcean. It is built to introduce him to a brand or a hiring manager: who he is, who he has worked with, what people say, and how to start a project.
+My personal site. I'm Anish Singh Walia: technical content creator, Senior Technical Content Strategist II and Team Lead at DigitalOcean, former SRE. The site shows what I make (deep dives, tutorials, video, infographics, LinkedIn posts, ghostwriting, newsletters), the companies I've worked with, what they said, and how to start a project.
 
-Stack: Next.js, TypeScript, Tailwind CSS. It runs on DigitalOcean App Platform or Vercel.
+Next.js 15, React 19, TypeScript, Tailwind v4, three.js for the game room. Runs on DigitalOcean App Platform or Vercel.
 
-## Run locally
+## Run it on a Mac
+
+You need Node 20 or newer. Check with `node --version`. If you don't have it, install from [nodejs.org](https://nodejs.org) or run `nvm use` (there's an `.nvmrc`).
 
 ```bash
 npm install
+npm run setup
 npm run dev
 ```
 
-The dev server listens on [http://127.0.0.1:3847](http://127.0.0.1:3847).
+Open [http://localhost:3847](http://localhost:3847). That's it. No keys needed: the contact form uses a mock transport and the Ask bot runs in keyless mode (live Medium, GitHub, and DigitalOcean data plus the notes in `knowledge/`). The terminal prints `[ask] mode=keyless` or `[ask] mode=agent` on the first question so you know which one is running.
+
+Other commands:
 
 ```bash
-npm test
-npm run build
-npm start
+npm test            # vitest: facts, banned words, bot, contact form
+npm run eval:bot    # 30 real questions through the bot, report in eval/results.md
+npm run lint
+npm run typecheck
+npm run build && npm start
 ```
 
-Copy `.env.example` to `.env.local` when you want email delivery or the live model. With no keys, the contact form uses a mock transport and the Ask bot answers from `knowledge/`.
+## Pages
+
+`/`, `/about`, `/experience`, `/clients`, `/testimonials`, `/work`, `/game`, `/ask`, `/contact`. Also `sitemap.xml`, `robots.txt`, `llms.txt`, and an Open Graph image.
+
+Everything people read lives in `data/`. The bot's notes live in `knowledge/`. `CONFIRM.md` lists the facts I should double-check before treating the site as final.
+
+## The Ask bot
+
+`/ask` is a server-side agent (`src/lib/bot/`). With `LLM_API_KEY` set it runs a tool-calling loop against any OpenAI-compatible endpoint and streams the answer. Tools:
+
+- `knowledge_base`: the curated notes and the structured facts from `data/`. Always called first.
+- `medium_feed`, `github_profile`, `digitalocean_profile`: live, keyless fetchers with a 30 to 60 minute cache.
+- `web_search`: Tavily, Brave, Serper, or Exa, whichever key is present. Queries are biased with my name.
+- `fetch_page`: readable text from a URL, SSRF-safe.
+
+Without a key it uses an intent router over the same facts and live fetchers. Both modes refuse private details (phone, address, salary), deflect off-topic questions, cite inline links, and run through a word filter so the bot never describes my client work with words I don't use. Rate limit: 20 questions per IP per 10 minutes.
+
+`npm run eval:bot` asks 30 questions (current job, Nutanix and American Express, clients, tutorial count, Medium numbers, latest post, hobbies, hiring, VIT, podcasts, GitHub, formats, off-topic, private info) and writes `eval/results.md` and `eval/results.json`. It exits 1 if any case fails.
 
 ## Environment
+
+All optional. See `.env.example`.
 
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin. Production: `https://anishsinghwalia.com` |
 | `CONTACT_TO` | Inbox for the form. Default `waliaanish1997@gmail.com` |
-| `CONTACT_FROM` | From address on the message. For Gmail, use the same account as `SMTP_USER` |
-| `SMTP_HOST` | SMTP server. Gmail: `smtp.gmail.com` |
-| `SMTP_PORT` | `587` for STARTTLS. `465` turns on implicit TLS |
-| `SMTP_USER` | SMTP username |
-| `SMTP_PASS` | SMTP password or Gmail app password |
-| `CONTACT_TRANSPORT` | Set to `mock` to accept the form without sending. Visitors still see a normal thank-you |
-| `LLM_BASE_URL` | OpenAI-compatible base. DigitalOcean Serverless Inference: `https://inference.do-ai.run/v1` |
-| `LLM_API_KEY` | Inference key. Empty keeps the on-site notes fallback |
-| `LLM_MODEL` | Model slug from the DigitalOcean control panel, for example `llama3.3-70b-instruct` |
+| `CONTACT_FROM` | From address on the message. For Gmail, the same account as `SMTP_USER` |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | Mail server. Gmail: `smtp.gmail.com`, `587`, an app password |
+| `CONTACT_TRANSPORT` | `mock` accepts the form without sending. Automatic when SMTP is not set |
+| `LLM_BASE_URL` | OpenAI-compatible base. Default `https://inference.do-ai.run/v1` |
+| `LLM_API_KEY` | Model key. Empty means keyless mode |
+| `LLM_MODEL` | Model slug. Default `llama3.3-70b-instruct` |
+| `TAVILY_API_KEY`, `BRAVE_SEARCH_API_KEY`, `SERPER_API_KEY`, `EXA_API_KEY` | Web search for the bot. Set one |
+| `SEARCH_PROVIDER` | Force one provider when several keys are set |
+| `GITHUB_TOKEN` | Optional. Higher GitHub API rate limit |
+
+Never commit `.env.local`. It's in `.gitignore`.
 
 ## Deploy
 
-### DigitalOcean App Platform
+**DigitalOcean App Platform.** `deploy/app.yaml` is the spec. Add `SMTP_USER`, `SMTP_PASS`, `LLM_API_KEY`, and a search key as encrypted env vars in the dashboard. Point `anishsinghwalia.com` at the app. The start script reads `PORT`.
 
-`deploy/app.yaml` is a starting spec. Set `SMTP_USER`, `SMTP_PASS`, and `LLM_API_KEY` as encrypted env vars in the dashboard, point the domain `anishsinghwalia.com` at the app, and use Node. The start script reads `PORT` (App Platform sets it; the spec uses 8080). Gmail needs an app password in `SMTP_PASS`, with `SMTP_HOST=smtp.gmail.com` and `SMTP_PORT=587`.
+**Vercel.** Import the repo, framework preset Next.js, add the same env vars.
 
-### Vercel
+## Tests
 
-Import the repo. Framework preset Next.js. Add the same env vars. `npm run build` is the build command.
-
-## Where the words live
-
-Editable content is in `data/`. The Ask bot reads `knowledge/`. `CONFIRM.md` lists facts Anish should check before treating the site as final.
-
-Pages: `/`, `/about`, `/experience`, `/clients`, `/testimonials`, `/work`, `/game`, `/ask`, `/contact`. Also `sitemap.xml`, `robots.txt`, and `llms.txt`.
+`npm test` checks: the contact address, that the other inbox appears nowhere, recommendation quotes match the transcription word for word, every game station links to a real page, the bot answers and refusals, and a banned-word scan over source, notes, config, docs, and the built HTML in `.next` when a build exists.
 
 ## License
 
