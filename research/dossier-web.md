@@ -8,7 +8,7 @@ Compiled 2 Nov 2026 (IST) from public web sources only. Every fact carries a sou
 | Current headline: "Helping AI-native companies get found in Google, AI search, and social \| Technical Content Strategist & Team Lead @ DOCN" | LinkedIn snippet https://www.linkedin.com/in/anish-singh-walia/ ; GitHub https://github.com/anishsingh20 ; Medium https://medium.com/@anishsingh20/about |
 | Location: Dehradun, Uttarakhand, India | LinkedIn snippet; DO profile https://www.digitalocean.com/community/users/asinghwalia ("Dehradun, IN") |
 | Education: Bachelor's degree, Information Technology, Vellore Institute of Technology (VIT), 2015–2019. NOTE: LinkedIn says *Information Technology*. The brief says "CS degree", so use "B.Tech/Bachelor's in IT (Computer Science & Engineering field)" only if Anish confirms the wording | LinkedIn snippet |
-| Total experience per LinkedIn: 10 yrs 8 mos (includes freelance writing since ~2017) | LinkedIn snippet |
+| Total experience per LinkedIn: 10 yrs 8 mos (includes independent writing since ~2017) | LinkedIn snippet |
 | DO bio: "7+ years of experience as a DevOps SRE at Nutanix and Cloud consultant at AMEX, and technical writing at DOCN, shipping deep infra and AI inference tutorials that help AI-Native Enterprises…" | https://www.digitalocean.com/community/users/asinghwalia |
 | Positioning (About): "Most AI-native companies publish content. Very few actually get found. I fix that." Builds full-funnel strategies for SEO, GEO/AI-search visibility, and social (Reddit, Quora, LinkedIn); leads and mentors content teams; content briefs, editorial automation, SEO frameworks; fractional content lead / strategic advisor for AI-native companies | LinkedIn snippet; GitHub README https://github.com/anishsingh20/anishsingh20 |
 | Tools expertise: Semrush, Profound, Ahrefs, DataForSEO, Google Search Console, AI search monitoring tools; AI tools: ChatGPT, Claude, Cursor, Ideogram | LinkedIn snippet; AllAboutAI interview (below) |
@@ -27,7 +27,7 @@ Compiled 2 Nov 2026 (IST) from public web sources only. Every fact carries a sou
 | Senior Technical Writer (Engineering & Technical) | DigitalOcean | Sep 2023 – Sep 2025, Remote | LinkedIn snippet |
 | Cloud Consultant for American Express Cloud & Infrastructure Operations team (India), employed via Nutanix (Consulting) | Nutanix → American Express | Jan 2022 – Aug 2023, Pune | LinkedIn snippet |
 | Site Reliability Engineer intern → SRE → Senior SRE (DevOps) | Nutanix | ~Jan 2019 – Jan 2022 **[UNVERIFIED: search-summary only; titles and dates need confirmation from LinkedIn]** | search summary of LinkedIn |
-| Freelance technical writer / content creator | Self (Hostinger, Semrush, AI tools, etc.) | ~2017 – present ("7+ years freelance") | GitHub README; Hostinger author bio |
+| Independent technical writer / content creator | Self (Hostinger, Semrush, AI tools, etc.) | ~2017 – present ("7+ years" of client work) | GitHub README; Hostinger author bio |
 
 DigitalOcean impact story: ActiveCampaign's "Autonomous" publication covered his Cursor + DataForSEO MCP content-refresh workflow. Turnaround fell from about a full day to a few hours (60–70% less production time), and throughput rose from 1–2 to 4–5 updated pieces/day (3–4x). Other writers and solutions architects at DO adopted it. Author: Maddy Osman (Sr Content Marketing Manager, DigitalOcean), 21 May 2026. https://autonomous.activecampaign.com/stories/scalable-content-refresh-workflow
 

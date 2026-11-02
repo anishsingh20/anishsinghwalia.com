@@ -53,8 +53,8 @@ export function ContactForm({ mailto }: { mailto: string }) {
   if (done) {
     return (
       <div className="rounded-2xl border border-orange/40 bg-panel p-6" role="status">
-        <h2 className="font-display text-2xl">Thanks. I'll get back to you.</h2>
-        <p className="mt-3 text-muted">Your note is in. I'll reply to the email you entered.</p>
+        <h2 className="font-display text-2xl">Thanks. I&apos;ll get back to you.</h2>
+        <p className="mt-3 text-muted">Your note is in. I&apos;ll reply to the email you entered.</p>
         <a className="mt-4 inline-block text-ember hover:underline" href={`mailto:${site.email}`}>
           {site.email}
         </a>

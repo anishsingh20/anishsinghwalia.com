@@ -8,8 +8,6 @@ export type Chunk = {
   text: string;
 };
 
-export type ChatTurn = { role: "user" | "assistant"; content: string };
-
 const STOP = new Set([
   "the", "and", "for", "with", "his", "her", "you", "your", "what", "how", "does",
   "did", "has", "have", "about", "from", "that", "this", "are", "was", "who", "can",
@@ -104,98 +102,4 @@ export function scoreChunks(query: string, chunks: Chunk[]) {
       return { chunk, score };
     })
     .sort((a, b) => b.score - a.score);
-}
-
-export function fallbackAnswer(query: string, chunks: Chunk[]) {
-  const ranked = scoreChunks(query, chunks);
-  const best = ranked[0];
-  const terms = tokenize(query);
-  if (!best || best.score < 2.4 || terms.length === 0) {
-    return {
-      answer:
-        "I don't have that in Anish's notes, so I won't guess. Ask him directly on the contact form at /contact, or email waliaanish1997@gmail.com.",
-      sources: [] as string[],
-      confident: false,
-    };
-  }
-
-  const picked = ranked.filter((item, index) => index === 0 || item.score >= best.score * 0.72).slice(0, 2);
-  const body = picked
-    .map((item) =>
-      item.chunk.text
-        .replace(/^#+\s.*$/gm, "")
-        .replace(/^Do not .+$/gim, "")
-        .trim(),
-    )
-    .filter(Boolean)
-    .join("\n\n");
-  const clipped = body.length > 850 ? `${body.slice(0, 850).replace(/\s+\S*$/, "")}…` : body;
-  return {
-    answer: `From Anish's notes:\n\n${clipped}`,
-    sources: [...new Set(picked.map((item) => item.chunk.file))],
-    confident: true,
-  };
-}
-
-const SYSTEM_RULES = `You are ask.anish, the assistant on Anish Singh Walia's portfolio.
-Speak about Anish in the third person. Be warm, specific, and brief.
-Use only the CONTEXT. Do not invent clients, quotes, metrics, job titles, summit names, distances, or rep counts.
-If the context does not contain the answer, say you don't know and point to /contact and waliaanish1997@gmail.com.
-Anish is a technical content strategist with an SRE and DevOps background. His work includes technical tutorials, deep dives, developer docs, AI and infrastructure content, thought leadership, LinkedIn ghostwriting, and content strategy. SEO and AI-search visibility are one part of the work. The audience is SaaS, AI-native, developer-tool, and cloud or infrastructure companies.
-If asked about price, invite them to the contact form. Do not bring up a rate card.
-Do not discuss his family.
-If asked about readership, mention both public figures and that they conflict: LinkedIn About says 3,000,000+ average monthly readers; his banner says 35,000+ subscribers and 200,000+ monthly views.
-Quote recommendations only when the exact words are in the context.
-The only email you may share is waliaanish1997@gmail.com.`;
-
-export async function answerQuestion(message: string, history: ChatTurn[] = []) {
-  const chunks = await loadKnowledge();
-  const ranked = scoreChunks(message, chunks).slice(0, 4);
-  const context = ranked
-    .filter((item) => item.score > 0)
-    .map((item) => `## ${item.chunk.title} (${item.chunk.file})\n${item.chunk.text}`)
-    .join("\n\n");
-  const notes = fallbackAnswer(message, chunks);
-  const key = process.env.LLM_API_KEY;
-  const base = (process.env.LLM_BASE_URL || "https://inference.do-ai.run/v1").replace(/\/$/, "");
-  const model = process.env.LLM_MODEL;
-
-  if (!key || !model) {
-    return { ...notes, mode: "notes" as const };
-  }
-
-  try {
-    const response = await fetch(`${base}/chat/completions`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${key}`,
-        "Content-Type": "application/json",
-      },
-      signal: AbortSignal.timeout(20000),
-      body: JSON.stringify({
-        model,
-        temperature: 0.2,
-        messages: [
-          { role: "system", content: `${SYSTEM_RULES}\n\nCONTEXT:\n${context || "No matching notes."}` },
-          ...history.slice(-6).map((turn) => ({ role: turn.role, content: turn.content.slice(0, 2000) })),
-          { role: "user", content: message.slice(0, 1000) },
-        ],
-      }),
-    });
-    if (!response.ok) throw new Error(`LLM ${response.status}`);
-    const data = (await response.json()) as {
-      choices?: { message?: { content?: string } }[];
-    };
-    const answer = data.choices?.[0]?.message?.content?.trim();
-    if (!answer) throw new Error("empty completion");
-    return {
-      answer,
-      sources: ranked.filter((item) => item.score > 0).map((item) => item.chunk.file),
-      confident: true,
-      mode: "model" as const,
-    };
-  } catch (error) {
-    console.error("llm fallback", error instanceof Error ? error.message : error);
-    return { ...notes, mode: "notes" as const };
-  }
 }

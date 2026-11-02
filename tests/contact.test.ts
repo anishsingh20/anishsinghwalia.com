@@ -8,7 +8,7 @@ const valid = {
   name: "Amina Shah",
   email: "amina@example.com",
   company: "Northwind",
-  projectType: "Technical tutorials and deep dives",
+  projectType: "Long-form articles and deep dives",
   budget: "",
   timeline: "This quarter",
   message: "We publish technical posts and they are not showing up in AI answers.",

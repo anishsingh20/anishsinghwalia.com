@@ -52,8 +52,8 @@ function renderBody(input: ContactInput) {
     `Email: ${oneLine(input.email)}`,
     `Company: ${oneLine(input.company)}`,
     `Project: ${input.projectType}`,
-    `Budget: ${oneLine(input.budget || "—")}`,
-    `Timeline: ${oneLine(input.timeline || "—")}`,
+    `Budget: ${oneLine(input.budget || "not given")}`,
+    `Timeline: ${oneLine(input.timeline || "not given")}`,
     "",
     input.message.trim(),
   ].join("\n");
@@ -62,7 +62,7 @@ function renderBody(input: ContactInput) {
 async function deliver(input: ContactInput): Promise<{ transport: "smtp" | "mock"; id: string }> {
   const transport = resolveTransport();
   const to = destination();
-  const subject = oneLine(`Work with Anish — ${input.name} (${input.company})`);
+  const subject = oneLine(`Work with Anish: ${input.name} (${input.company})`);
   const text = renderBody(input);
   const from = process.env.CONTACT_FROM || process.env.CONTACT_FROM_EMAIL || process.env.SMTP_USER || site.email;
 

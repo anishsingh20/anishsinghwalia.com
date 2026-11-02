@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Tap, click, or press Space/Enter on the button to do a pull-up.
- * Milestones unlock a fact about me. Personal best stays in this browser.
+ * Every milestone opens a fact about me. Personal best stays in this browser.
  */
 
 const milestones: { reps: number; label: string; text: string }[] = [
@@ -51,8 +51,8 @@ export function PullupChallenge() {
   }
 
   const next = milestones.find((item) => item.reps > reps);
-  const unlocked = milestones.filter((item) => item.reps <= reps);
-  const latest = unlocked[unlocked.length - 1];
+  const reached = milestones.filter((item) => item.reps <= reps);
+  const latest = reached[reached.length - 1];
   const progress = next ? reps / next.reps : 1;
 
   return (
@@ -101,7 +101,7 @@ export function PullupChallenge() {
             <div className="h-full bg-orange transition-[width] duration-200" style={{ width: `${Math.min(100, progress * 100)}%` }} />
           </div>
           <p className="mt-2 text-xs text-faint">
-            {next ? `${next.reps - reps} more to ${next.label}` : "You've unlocked all four. Go outside."}
+            {next ? `${next.reps - reps} more to ${next.label}` : "That's all four. Go outside."}
           </p>
         </div>
       </div>
@@ -131,7 +131,7 @@ export function PullupChallenge() {
             {latest.text}
           </p>
         ) : (
-          <p className="text-muted">Every five reps unlocks a fact. Space or Enter works when the button is focused.</p>
+          <p className="text-muted">Every five reps opens a fact. Space or Enter works when the button is focused.</p>
         )}
       </div>
     </section>

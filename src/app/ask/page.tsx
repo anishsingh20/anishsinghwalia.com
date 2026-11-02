@@ -7,7 +7,7 @@ import { faqJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Ask",
-  description: "Ask about Anish Singh Walia's experience, clients, services, hobbies, and how to start a project. Answers come from his notes, with a model when one is configured.",
+  description: "Ask about Anish Singh Walia's work, clients, career, numbers, and hobbies. The bot reads his notes plus live Medium, GitHub, and DigitalOcean data, and links what it cites.",
   alternates: { canonical: "/ask" },
 };
 
@@ -16,13 +16,13 @@ export default function AskPage() {
     <main className="mx-auto grid max-w-6xl gap-12 px-4 py-14">
       <JsonLd data={faqJsonLd(faqs)} />
       <PageHeader
-        kicker="Ask me anything"
-        title="Questions a brand or a hiring manager actually asks."
-        lede="The bot answers from a folder of notes about Anish. With an API key it can call DigitalOcean Serverless Inference. Without one, it still answers from the same notes."
+        kicker="Ask"
+        title="Ask the bot what you'd ask me."
+        lede="It knows my work, clients, career, numbers, and hobbies. It reads live from Medium, GitHub, and my DigitalOcean author page, searches the web when it needs to, and links its sources. It won't share private details, and it says so when it can't find something."
       />
       <AmaChat />
       <section>
-        <h2 className="font-display text-2xl">Straight answers</h2>
+        <h2 className="font-display text-2xl">The short answers</h2>
         <dl className="mt-4 grid gap-4">
           {faqs.map((faq) => (
             <div key={faq.question} className="rounded-2xl border border-line p-4">
