@@ -159,7 +159,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
     const nutanix = experience.find((group) => group.id === "nutanix");
     const roles = nutanix?.roles.map((role) => `${role.title.replace(/ for American Express.*$/, " for American Express")} (${role.start} to ${role.end})`).reverse().join("; ");
     return {
-      text: `Before he wrote full-time, Anish spent ${nutanix?.span ?? "4 years 8 months"} at Nutanix in Pune: ${roles}. The American Express role was a cloud consulting engagement for their Cloud and Infrastructure Operations team in India, through Nutanix. That is why the code in his tutorials runs. Full timeline on the ${link("experience page", `${site.url}/experience`)} and ${link("LinkedIn", LINKS.linkedin)}.`,
+      text: `Before he wrote full-time, Anish spent ${nutanix?.span ?? "4 years 8 months"} at Nutanix: ${roles}. The American Express role was a cloud consulting engagement for their Cloud and Infrastructure Operations team in India, through Nutanix. That is why the code in his tutorials runs. Full timeline on the ${link("experience page", `${site.url}/experience`)} and ${link("LinkedIn", LINKS.linkedin)}.`,
       sources: [{ title: "Experience", url: `${site.url}/experience` }, { title: "LinkedIn", url: LINKS.linkedin }],
     };
   }
@@ -208,7 +208,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
 
   if (has(q, /\b(vit|vellore|college|university|degree|study|studied|education|graduate|school|b\.?tech|bachelor)\b/)) {
     return {
-      text: `Anish has a Bachelor's degree in Information Technology from Vellore Institute of Technology, ${site.education.years}. He wrote about data science on DataScience+ while he was still studying, then joined Nutanix as an SRE intern in 2018. Timeline on the ${link("experience page", `${site.url}/experience`)}.`,
+      text: `Anish has a Bachelor's degree in Information Technology from Vellore Institute of Technology, ${site.education.years}. He wrote about data science on DataScience+ while he was still studying, then joined Nutanix as an SRE intern in January 2019. Timeline on the ${link("experience page", `${site.url}/experience`)}.`,
       sources: [{ title: "Experience", url: `${site.url}/experience` }],
     };
   }
@@ -269,14 +269,14 @@ async function route(q: string, previous: string, original: string): Promise<Rep
 
   if (has(q, /\b(technical|how deep|kubernetes|k8s|linux|docker|inference|llm|gpu|rag|devops|gitops|argo|postgres|skills|stack|tools|semrush|ahrefs|profound|seo|geo|search console)\b/)) {
     return {
-      text: `Deep enough to run it. Anish was an SRE at Nutanix for over four years before writing full-time. His LinkedIn top skills are ${listify(topSkills)}. His sole-author DigitalOcean tutorials cover ${link("LLM inference benchmarking", tutorials[0].href)}, ${link("RAG agents with MCP", tutorials[2].href)}, ${link("Postgres on Kubernetes", tutorials[5].href)}, and ${link("Argo CD and GitOps", tutorials[6].href)}. For search and research he uses ${listify(researchTools.slice(0, 5))}.`,
+      text: `Deep enough to run it. Anish spent 4 years 8 months at Nutanix, first as an SRE and then as a cloud consultant, before writing full-time. His LinkedIn top skills are ${listify(topSkills)}. His sole-author DigitalOcean tutorials cover ${link("LLM inference benchmarking", tutorials[0].href)}, ${link("RAG agents with MCP", tutorials[2].href)}, ${link("Postgres on Kubernetes", tutorials[5].href)}, and ${link("Argo CD and GitOps", tutorials[6].href)}. For search and research he uses ${listify(researchTools.slice(0, 5))}.`,
       sources: [{ title: "DigitalOcean author page", url: LINKS.digitalocean }, { title: "Work", url: `${site.url}/work` }],
     };
   }
 
   if (has(q, /\b(career|history|story|journey|background|how did he (start|get)|timeline|path|experience)\b/)) {
     return {
-      text: `${originNote} Full timeline: Nutanix from 2018 to 2023 (SRE intern, SRE, Sr. SRE, then cloud consultant for American Express), DigitalOcean since September 2023 (Senior Technical Writer, then ${site.jobTitle} from September 2025). The ${link("experience page", `${site.url}/experience`)} has every role and date.`,
+      text: `${originNote} Full timeline: Nutanix from January 2019 to August 2023 (SRE intern, SRE, Sr. SRE, then cloud consultant for American Express), DigitalOcean since September 2023 (Senior Technical Writer, then ${site.jobTitle} from September 2025). The ${link("experience page", `${site.url}/experience`)} has every role and date.`,
       sources: [{ title: "Experience", url: `${site.url}/experience` }, { title: "LinkedIn", url: LINKS.linkedin }],
     };
   }

@@ -1,5 +1,5 @@
 {
-  "run": "2026-11-02T10:19:53.462Z",
+  "run": "2026-11-02T10:31:18.465Z",
   "mode": "keyless",
   "passed": 30,
   "total": 30,
@@ -24,7 +24,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 204
+      "ms": 202
     },
     {
       "id": "who-is",
@@ -46,7 +46,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 202
+      "ms": 201
     },
     {
       "id": "nutanix",
@@ -58,30 +58,7 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Before he wrote full-time, Anish spent 4 years 8 months at Nutanix in Pune: Site Reliability Engineer - Intern (January 2019 to June 2019); SRE (July 2019 to January 2021); Sr. SRE (January 2021 to January 2022); Cloud Consultant for American Express (January 2022 to August 2023). The American Express role was a cloud consulting engagement for their Cloud and Infrastructure Operations team in India, through Nutanix. That is why the code in his tutorials runs. Full timeline on the [experience page](https://anishsinghwalia.com/experience) and [LinkedIn](https://www.linkedin.com/in/anish-singh-walia/).",
-      "sources": [
-        {
-          "title": "Experience",
-          "url": "https://anishsinghwalia.com/experience"
-        },
-        {
-          "title": "LinkedIn",
-          "url": "https://www.linkedin.com/in/anish-singh-walia/"
-        }
-      ],
-      "ms": 201
-    },
-    {
-      "id": "amex",
-      "question": "Did Anish work with American Express?",
-      "expect": [
-        {},
-        {},
-        {}
-      ],
-      "pass": true,
-      "failures": [],
-      "answer": "Before he wrote full-time, Anish spent 4 years 8 months at Nutanix in Pune: Site Reliability Engineer - Intern (January 2019 to June 2019); SRE (July 2019 to January 2021); Sr. SRE (January 2021 to January 2022); Cloud Consultant for American Express (January 2022 to August 2023). The American Express role was a cloud consulting engagement for their Cloud and Infrastructure Operations team in India, through Nutanix. That is why the code in his tutorials runs. Full timeline on the [experience page](https://anishsinghwalia.com/experience) and [LinkedIn](https://www.linkedin.com/in/anish-singh-walia/).",
+      "answer": "Before he wrote full-time, Anish spent 4 years 8 months at Nutanix: Site Reliability Engineer - Intern (January 2019 to June 2019); SRE (July 2019 to January 2021); Sr. SRE (January 2021 to January 2022); Cloud Consultant for American Express (January 2022 to August 2023). The American Express role was a cloud consulting engagement for their Cloud and Infrastructure Operations team in India, through Nutanix. That is why the code in his tutorials runs. Full timeline on the [experience page](https://anishsinghwalia.com/experience) and [LinkedIn](https://www.linkedin.com/in/anish-singh-walia/).",
       "sources": [
         {
           "title": "Experience",
@@ -93,6 +70,29 @@
         }
       ],
       "ms": 200
+    },
+    {
+      "id": "amex",
+      "question": "Did Anish work with American Express?",
+      "expect": [
+        {},
+        {},
+        {}
+      ],
+      "pass": true,
+      "failures": [],
+      "answer": "Before he wrote full-time, Anish spent 4 years 8 months at Nutanix: Site Reliability Engineer - Intern (January 2019 to June 2019); SRE (July 2019 to January 2021); Sr. SRE (January 2021 to January 2022); Cloud Consultant for American Express (January 2022 to August 2023). The American Express role was a cloud consulting engagement for their Cloud and Infrastructure Operations team in India, through Nutanix. That is why the code in his tutorials runs. Full timeline on the [experience page](https://anishsinghwalia.com/experience) and [LinkedIn](https://www.linkedin.com/in/anish-singh-walia/).",
+      "sources": [
+        {
+          "title": "Experience",
+          "url": "https://anishsinghwalia.com/experience"
+        },
+        {
+          "title": "LinkedIn",
+          "url": "https://www.linkedin.com/in/anish-singh-walia/"
+        }
+      ],
+      "ms": 201
     },
     {
       "id": "clients",
@@ -158,7 +158,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 370
+      "ms": 667
     },
     {
       "id": "medium-stats",
@@ -226,7 +226,7 @@
           "url": "https://medium.com/@anishsingh20"
         }
       ],
-      "ms": 728
+      "ms": 380
     },
     {
       "id": "hobbies",
@@ -241,14 +241,14 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Hiking, trekking, calisthenics, skipping, running, and mountains. He lives in Dehradun, in the Himalayan foothills, so the trail starts close to home. Calisthenics is bodyweight work at home, twice a day, with sessions he designs using AI. His GitHub README still says \"fitness freak\". On weekends he cook. He's asked ChatGPT for biryani and beetroot patty recipes. He follow investing: PE ratios, earnings reports, valuation models. He doesn't publish summit names, distances, or rep counts. His line on it: \"When AI writes my blogs… I'll be in the mountains.\" More on the [about page](https://anishsinghwalia.com/about#off-hours).",
+      "answer": "Hiking, trekking, calisthenics, skipping, running, and mountains. He lives in Dehradun, in the Himalayan foothills, so the trail starts close to home. Calisthenics is bodyweight work at home, twice a day, with sessions he designs using AI. His GitHub README still says \"fitness freak\". On weekends he cooks; he's asked ChatGPT for biryani and beetroot patty recipes. He follows investing: PE ratios, earnings reports, valuation models. He doesn't publish summit names, distances, or rep counts. His line on it: \"When AI writes my blogs… I'll be in the mountains.\" More on the [about page](https://anishsinghwalia.com/about#off-hours).",
       "sources": [
         {
           "title": "About",
           "url": "https://anishsinghwalia.com/about#off-hours"
         }
       ],
-      "ms": 362
+      "ms": 321
     },
     {
       "id": "hire",
@@ -304,7 +304,7 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Anish has a Bachelor's degree in Information Technology from Vellore Institute of Technology, 2015 to 2019. He wrote about data science on DataScience+ while he was still studying, then joined Nutanix as an SRE intern in 2018. Timeline on the [experience page](https://anishsinghwalia.com/experience).",
+      "answer": "Anish has a Bachelor's degree in Information Technology from Vellore Institute of Technology, 2015 to 2019. He wrote about data science on DataScience+ while he was still studying, then joined Nutanix as an SRE intern in January 2019. Timeline on the [experience page](https://anishsinghwalia.com/experience).",
       "sources": [
         {
           "title": "Experience",
@@ -357,7 +357,7 @@
           "url": "https://github.com/anishsingh20"
         }
       ],
-      "ms": 759
+      "ms": 896
     },
     {
       "id": "technical",
@@ -369,7 +369,7 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Deep enough to run it. Anish was an SRE at Nutanix for over four years before writing full-time. His LinkedIn top skills are AI Inference, Linux Server, and Cloud Consulting. His sole-author DigitalOcean tutorials cover [LLM inference benchmarking](https://www.digitalocean.com/community/tutorials/how-to-benchmark-llm-inference), [RAG agents with MCP](https://www.digitalocean.com/community/tutorials/build-rag-agent-digitalocean-knowledge-bases-mcp), [Postgres on Kubernetes](https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster), and [Argo CD and GitOps](https://www.digitalocean.com/community/tutorials/how-to-deploy-to-kubernetes-using-argo-cd-and-gitops). For search and research he uses Semrush, Profound, Ahrefs, DataForSEO, and Google Search Console.",
+      "answer": "Deep enough to run it. Anish spent 4 years 8 months at Nutanix, first as an SRE and then as a cloud consultant, before writing full-time. His LinkedIn top skills are AI Inference, Linux Server, and Cloud Consulting. His sole-author DigitalOcean tutorials cover [LLM inference benchmarking](https://www.digitalocean.com/community/tutorials/how-to-benchmark-llm-inference), [RAG agents with MCP](https://www.digitalocean.com/community/tutorials/build-rag-agent-digitalocean-knowledge-bases-mcp), [Postgres on Kubernetes](https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster), and [Argo CD and GitOps](https://www.digitalocean.com/community/tutorials/how-to-deploy-to-kubernetes-using-argo-cd-and-gitops). For search and research he uses Semrush, Profound, Ahrefs, DataForSEO, and Google Search Console.",
       "sources": [
         {
           "title": "DigitalOcean author page",
@@ -400,7 +400,7 @@
           "url": "https://anishsinghwalia.com/#what-i-make"
         }
       ],
-      "ms": 121
+      "ms": 120
     },
     {
       "id": "video",
@@ -436,7 +436,7 @@
           "url": "https://anishsinghwalia.com/testimonials"
         }
       ],
-      "ms": 322
+      "ms": 321
     },
     {
       "id": "testimonials",
@@ -458,7 +458,7 @@
           "url": "https://www.linkedin.com/in/anish-singh-walia/details/recommendations/"
         }
       ],
-      "ms": 321
+      "ms": 322
     },
     {
       "id": "location",
@@ -504,7 +504,7 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "After about four years in SRE and cloud consulting I was bored and drained. In 2023 I hit reset, joined DigitalOcean as a full-time technical writer, and restarted my Medium blog. I automated 60 to 70 percent of my workflow. ActiveCampaign wrote about it in May 2026: turnaround went from about a day to a few hours, and from 1 or 2 updated pieces a day to 4 or 5. Full timeline: Nutanix from 2018 to 2023 (SRE intern, SRE, Sr. SRE, then cloud consultant for American Express), DigitalOcean since September 2023 (Senior Technical Writer, then Senior Technical Content Strategist II and Team Lead from September 2025). The [experience page](https://anishsinghwalia.com/experience) has every role and date.",
+      "answer": "After about four years in SRE and cloud consulting I was bored and drained. In 2023 I hit reset, joined DigitalOcean as a full-time technical writer, and restarted my Medium blog. I automated 60 to 70 percent of my workflow. ActiveCampaign wrote about it in May 2026: turnaround went from about a day to a few hours, and from 1 or 2 updated pieces a day to 4 or 5. Full timeline: Nutanix from January 2019 to August 2023 (SRE intern, SRE, Sr. SRE, then cloud consultant for American Express), DigitalOcean since September 2023 (Senior Technical Writer, then Senior Technical Content Strategist II and Team Lead from September 2025). The [experience page](https://anishsinghwalia.com/experience) has every role and date.",
       "sources": [
         {
           "title": "Experience",
@@ -552,7 +552,7 @@
       "failures": [],
       "answer": "I only answer questions about Anish Singh Walia, so I'll pass on that one. Things I can help with: what he makes, who he has worked with, his career before DigitalOcean, his numbers, his hobbies, and how to start a project with him.",
       "sources": [],
-      "ms": 81
+      "ms": 82
     },
     {
       "id": "off-topic-code",
@@ -567,7 +567,7 @@
       "failures": [],
       "answer": "I only answer questions about Anish Singh Walia, so I'll pass on that one. Things I can help with: what he makes, who he has worked with, his career before DigitalOcean, his numbers, his hobbies, and how to start a project with him.",
       "sources": [],
-      "ms": 81
+      "ms": 80
     },
     {
       "id": "private-phone",
@@ -628,7 +628,7 @@
           "url": "https://anishsinghwalia.com/contact"
         }
       ],
-      "ms": 121
+      "ms": 120
     }
   ]
 }

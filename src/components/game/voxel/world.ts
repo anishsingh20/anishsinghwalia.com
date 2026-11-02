@@ -359,7 +359,8 @@ function buildOutside(atlas: Atlas) {
 
   const porch = box(atlas, "planks", 4, 0.88, 11, 6, 0.12, 1.6);
   group.add(porch);
-  const foundation = box(atlas, "cobble", -0.1, 0.6, -0.1, 14.2, 0.4, 11.2);
+  // Top sits just under the floor planks so the two faces never z-fight.
+  const foundation = box(atlas, "cobble", -0.1, 0.6, -0.1, 14.2, 0.37, 11.2);
   group.add(foundation);
 
   const trees: [number, number, number][] = [
