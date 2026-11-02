@@ -16,7 +16,7 @@ export const aboutDo = [
 
 export const aboutTrack = [
   "3+ years at DigitalOcean. I own the core infrastructure content program and now the AI inference one.",
-  "A Medium publication with 3,000,000+ average monthly readers, 35,000+ subscribers, 200,000+ monthly views, and two Top Writer badges.",
+  "A Medium publication with 3,000,000+ average monthly readers, 35,000+ subscribers, and two Top Writer badges.",
   "Daily tools: Semrush, Profound, Ahrefs, DataForSEO, Google Search Console, and AI search monitoring.",
 ];
 

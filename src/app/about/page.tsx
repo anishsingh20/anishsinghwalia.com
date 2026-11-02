@@ -111,7 +111,7 @@ export default function AboutPage() {
         </ul>
       </section>
       <figure>
-        <Image src="/images/linkedin-banner.jpg" alt="My LinkedIn banner: Helping brands scale with AI, SEO and technology-led high-impact content. 2x Medium Top Writer. 35,000+ subscribers and 200,000+ monthly views. Businesses I have helped: DigitalOcean, Semrush, Nutanix, American Express, Hostinger." width={1600} height={400} className="w-full rounded-2xl border border-line" />
+        <Image src="/images/linkedin-banner.jpg" alt="My LinkedIn banner: Helping brands scale with AI, SEO and technology-led high-impact content. 2x Medium Top Writer. 35,000+ subscribers. Businesses I have helped: DigitalOcean, Semrush, Nutanix, American Express, Hostinger." width={1600} height={400} className="w-full rounded-2xl border border-line" />
         <figcaption className="mt-2 text-xs text-faint">The banner I use on LinkedIn.</figcaption>
       </figure>
     </main>

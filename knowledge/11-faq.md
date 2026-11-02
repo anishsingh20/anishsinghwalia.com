@@ -19,7 +19,7 @@ Hiking, trekking, calisthenics, skipping (jump rope), running, and the mountains
 347 DigitalOcean tutorials authored or refreshed.
 
 ## What are his Medium numbers?
-3,000,000+ average monthly readers, 35,000+ newsletter subscribers, 200,000+ monthly views, and two Medium Top Writer badges.
+3,000,000+ average monthly readers, 35,000+ newsletter subscribers, two Medium Top Writer badges, and 347 DigitalOcean tutorials.
 
 ## Has he been on podcasts?
 Yes. AI For Thought by AllAboutAI, with Muhammad Hassan Khan, around May 2025. He calls it his first podcast. AllAboutAI also published a written interview with him.

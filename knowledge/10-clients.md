@@ -22,4 +22,4 @@ Press, not clients: the ActiveCampaign Autonomous case study, and the AllAboutAI
 
 These Medium posts name a tool and sponsorship was not stated, so they are not listed as clients: AI Studios, Zawa.ai, BeautyPlus, Ideogram, and an unnamed multi-market video tool.
 
-Readership and reach: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, 200,000+ monthly views, two Medium Top Writer badges, and 347 DigitalOcean tutorials.
+Readership and reach: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, two Medium Top Writer badges, and 347 DigitalOcean tutorials.

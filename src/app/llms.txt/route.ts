@@ -16,7 +16,7 @@ export function GET() {
     "",
     `Companies I've worked with include ${headlineClients.join(", ")}. The work is for ${audiences.join(", ").toLowerCase()}.`,
     "",
-    "Numbers: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, 200,000+ monthly views, two Medium Top Writer badges, 347 DigitalOcean tutorials.",
+    "Numbers: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, two Medium Top Writer badges, 347 DigitalOcean tutorials.",
     "",
     "Hobbies: hiking, trekking, calisthenics, skipping (jump rope), running, and the mountains. I live in Dehradun, in the Himalayan foothills.",
     "",

@@ -150,7 +150,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(medium)\b.*\b(stat|number|reader|view|subscriber|top writer|follower|audience|big|large|traffic)/, /\b(reader|readers|views|subscribers|newsletter subscribers|top writer|audience|traffic|numbers|stats|metrics|how big)\b/)) {
     const byId = Object.fromEntries(metrics.map((metric) => [metric.id, metric]));
     return {
-      text: `The numbers Anish publishes: ${byId.readers.value} ${byId.readers.label}, ${byId.subscribers.value} ${byId.subscribers.label}, ${byId.views.value} ${byId.views.label}, ${byId["top-writer"].value} ${byId["top-writer"].label}, and ${byId.tutorials.value} ${byId.tutorials.label}. The Medium figures are from his ${link("Medium profile", LINKS.medium)}; the tutorial count is from his ${link("DigitalOcean author page", LINKS.digitalocean)}.`,
+      text: `The numbers Anish publishes: ${byId.readers.value} ${byId.readers.label}, ${byId.subscribers.value} ${byId.subscribers.label}, ${byId["top-writer"].value} ${byId["top-writer"].label}, and ${byId.tutorials.value} ${byId.tutorials.label}. The Medium figures are from his ${link("Medium profile", LINKS.medium)}; the tutorial count is from his ${link("DigitalOcean author page", LINKS.digitalocean)}.`,
       sources: [{ title: "Medium", url: LINKS.medium }, { title: "DigitalOcean author page", url: LINKS.digitalocean }],
     };
   }

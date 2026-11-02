@@ -49,7 +49,7 @@ const cases: Case[] = [
   { id: "clients-framing", question: "Does he do client work?", expect: [/client work|companies he has worked with|worked with/i, /Semrush/] },
   { id: "tutorial-count", question: "How many DigitalOcean tutorials has he written?", expect: [/\b3\d\d\b/, /digitalocean\.com\/community\/users\/asinghwalia/], live: true },
   { id: "medium-stats", question: "What are his Medium stats?", expect: [/3,000,000\+/, /35,000\+/, /Top Writer/] },
-  { id: "numbers", question: "Give me the numbers.", expect: [/3,000,000\+/, /200,000\+/, /347/] },
+  { id: "numbers", question: "Give me the numbers.", expect: [/3,000,000\+/, /35,000\+/, /347/], reject: [/200,000/] },
   { id: "latest-medium", question: "What's his latest Medium post?", expect: [/medium\.com\/@anishsingh20/], live: true },
   { id: "hobbies", question: "What does he do outside work?", expect: [/hiking/i, /calisthenics/i, /mountain/i], reject: [/\d+ (reps|km|miles)/i] },
   { id: "hire", question: "How do I hire him?", expect: [/\/contact/, /waliaanish1997@gmail\.com/] },

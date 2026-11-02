@@ -62,7 +62,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16">
         <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">The numbers</p>
         <h2 className="mt-2 font-display text-3xl">Where the writing has landed</h2>
-        <ul className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-5">
+        <ul className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
           {metrics.map((metric) => (
             <li key={metric.id} className="rounded-2xl border border-line bg-panel p-4">
               <p className="font-display text-2xl text-cream md:text-3xl">{metric.value}</p>

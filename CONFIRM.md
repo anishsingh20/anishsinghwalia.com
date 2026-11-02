@@ -4,7 +4,7 @@ Facts on the site come from the LinkedIn export, the recommendation transcriptio
 
 ## Numbers that disagree
 
-- LinkedIn About says **3,000,000+ average monthly readers**. The banner says **35,000+ subscribers** and **200,000+ monthly views**. All three are on the site as plain numbers, with no source label next to them (v3 change). The bot still names the source when asked.
+- LinkedIn About says **3,000,000+ average monthly readers**. The banner says **35,000+ subscribers**. Both are on the site as plain numbers, with no source label next to them (v3 change). The banner's monthly-views figure is not displayed anywhere, per the v3 brief. The bot still names the source when asked.
 - The AllAboutAI interview title and write-up have also been summarized as 2 to 3 million monthly views. That third figure is not displayed.
 - Medium Top Writer is shown as **2×**, from the banner and Medium bio. The categories were not found.
 - DigitalOcean tutorial count **347**, and GitHub **322 public repos / 497 followers**, are the 2 November 2026 snapshot.

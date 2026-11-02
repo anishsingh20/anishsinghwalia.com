@@ -72,7 +72,6 @@ export const legacyProfiles = [
 export const metrics = [
   { id: "readers", value: "3,000,000+", label: "average monthly readers on Medium" },
   { id: "subscribers", value: "35,000+", label: "newsletter subscribers" },
-  { id: "views", value: "200,000+", label: "monthly views" },
   { id: "top-writer", value: "2×", label: "Medium Top Writer" },
   { id: "tutorials", value: "347", label: "DigitalOcean tutorials" },
 ] as const;
