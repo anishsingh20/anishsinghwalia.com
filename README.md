@@ -52,3 +52,7 @@ Import the repo. Framework preset Next.js. Add the same env vars. `npm run build
 Editable content is in `data/`. The Ask bot reads `knowledge/`. `CONFIRM.md` lists facts Anish should check before treating the site as final.
 
 Pages: `/`, `/about`, `/experience`, `/clients`, `/testimonials`, `/work`, `/game`, `/ask`, `/contact`. Also `sitemap.xml`, `robots.txt`, and `llms.txt`.
+
+## License
+
+[MIT](LICENSE). Copyright 2026 Anish Singh Walia.
