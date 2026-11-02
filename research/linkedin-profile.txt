@@ -1,0 +1,242 @@
+Contact
+[address redacted — the site publishes the GitHub contact address only]
+                                       Anish Singh Walia
+                                       Helping AI-native companies get found in Google, AI search, and
+www.linkedin.com/in/anish-singh-       social | Technical Content Strategist & Team Lead @ DOCN
+walia (LinkedIn)                       Dehradun, Uttarakhand, India
+medium.com/@anishsingh20
+(Blog)
+                                       Summary
+Top Skills                             Most AI-native companies publish content. Very few actually
+AI Inference                           get found. I fix that.I’m Anish Singh Walia, Sr Technical Content
+Linux Server                           Strategist and Team Lead at DigitalOcean, where I write infra and
+Cloud Consulting                       deep AI Inference tutorials that take developers and AI-native
+                                       Enterprises from idea to production on our AI-native cloud. With
+Languages                              7+ years of experience working with AI‑native and top-tier cloud
+Hindi                                  companies as an SRE in the DevOps team at NTNX, a cloud
+English                                ops engineer for AMEX, and currently a technical content lead
+punjabi
+                                       at DOCN, I ensure the code, architectures, and AI workflows I
+German (Limited Working)
+                                       document actually ship to production and are discoverable in
+                                       modern search.What I bring that most content strategists don't: A
+Certifications
+                                       technical foundation. Before I was a technical content strategist,
+Data Science 101
+                                       I was an SRE at Nutanix and a Cloud infrastructure consultant
+Cloud Technical Series '23
+                                       for AMEX. I understand your product, your architecture, and your
+Kaggle R Tutorial on Machine
+                                       technical buyer, which means the content I create doesn't just
+Learning
+Linux: Bash Shell and Scripts
+                                       rank, it resonates with the people who actually make purchasing
+                                       decisions.What I do:1) Build full-funnel content strategies optimized
+Publications                           for SEO, AI search visibility (GEO), and social distribution(Reddit,
+Reverse Morris Traversal
+                                       Quora and LinkedIn). 2) Lead and mentor content teams to produce
+Random Forests
+                                       technically accurate, high-quality output at scale.3) Create content
+Binary tree to Binary search tree      briefs, editorial automation systems, and SEO frameworks that
+conversion using Sets in C++           compound over time.4) Partner with AI-native companies as a
+Activation functions and it’s types-   fractional content lead or strategic advisor.My track record:1) 3+
+Which is better?
+                                       years at DigitalOcean, owning and scaling a core Infra and now deep
+Implementing Deep Learning in R
+                                       AI Inference content program.2) Medium publication with 3,000,000+
+using Keras and Tensorflow
+                                       average monthly readers3) Deep expertise with Semrush, Profound,
+                                       Ahrefs, DataForSEO, GSC, and AI search monitoring tools.Who I
+                                       work with: AI-native startups and companies that need a content
+                                       partner who understands the technical product and knows how to
+                                       make it visible in the new search landscape, Google, AI Overviews,
+                                       LLM citations, and social.You are a fit if:→ Your content isn't showing
+                                       up in AI-generated answers or Google's AI Overviews.→ You're
+                                       publishing but not seeing organic growth or leads.→ You need
+                                                                      Page 1 of 5
+someone technical enough to understand your product and strategic
+enough to market it.Work samples &amp; writing:✍️ Medium:
+https://medium.com/@anishsingh20 GitHub: https://github.com/
+anishsingh20
+
+
+
+Experience
+DigitalOcean
+3 years 3 months
+
+Senior Technical Content Strategist II and Team Lead
+September 2025 - Present (1 year 3 months)
+India
+
+
+Senior Technical Writer
+September 2023 - September 2025 (2 years 1 month)
+Remote
+
+I am a Senior Technical Writer at DigitalOcean, where I specialize in creating
+detailed, user-friendly tutorials, knowledge bases, how-to guides, and technical
+documentation for developers, startups, and IT professionals. My work
+involves breaking down complex technical concepts into easily understandable
+content, ensuring that both novice and experienced users can leverage
+DigitalOcean's cloud services effectively.
+
+
+I enjoy diving deep into topics related to cloud computing, application
+deployment, and performance optimization, and I often focus on practical
+applications and real-world scenarios to illustrate key points.
+
+
+In my role, I engage with a wide audience, from developers looking to
+optimize their applications to system administrators seeking efficient ways to
+manage infrastructure. I particularly enjoy discussing the latest trends in cloud
+technology, innovative use cases for containerization and orchestration tools,
+and best practices for security and scalability.
+
+
+
+
+Outside of work, I have a keen interest in AI-driven applications, data
+visualization, and financial technology, which I explore through side projects
+and blog posts. I aim to share knowledge that not only addresses immediate
+technical challenges but also inspires and empowers others to innovate and
+improve their workflows for personal and professional development.
+
+
+                                    Page 2 of 5
+Nutanix
+4 years 8 months
+
+Cloud Consultant for American Express Cloud and Infrastructure
+Operations team India
+January 2022 - August 2023 (1 year 8 months)
+Pune Division, Maharashtra, India
+
+
+Sr. SRE
+January 2021 - January 2022 (1 year 1 month)
+Pune Division, Maharashtra, India
+
+
+SRE
+July 2019 - January 2021 (1 year 7 months)
+Pune/Pimpri-Chinchwad Area
+
+
+Site Reliability Engineer - Intern
+January 2019 - June 2019 (6 months)
+Bengaluru, Karnataka, India
+
+
+DataScience+
+Author
+June 2017 - August 2023 (6 years 3 months)
+Greater Boston
+
+https://datascienceplus.com/author/anish-singh-walia/
+
+
+I write project-based data science,machine learning and statistical modelling
+tutorials with step-by-step instructions and examples in R. It is a platform
+to practice your skills from the basic to advanced R programming, across
+different topics including statistics,machine learning, data manipulation and
+visualization.It's an online community for showcasing R & Python tutorials. It
+operates as a networking platform for data scientists to promote their talent
+and get hired.
+
+
+Microsoft Innovation Center — VIT Vellore
+Technical Member
+January 2018 - April 2018 (4 months)
+Vellore Area, India
+
+Microsoft Innovation Center — VIT Vellore is a non-profit organization heading
+various research, development and educational activities through a partnership
+with Microsoft in Vellore Institute of Technology, Vellore.
+
+
+
+                                    Page 3 of 5
+VinnovateIT
+Technical Member
+January 2016 - December 2017 (2 years)
+Vellore
+
+Being a part of an Cognizant Research and innovation lab which operates
+under VIT SITE(School Of Information Technology) school , we create and
+innovate here as a team and make projects with an objective of creating
+something which would benefit the society.
+
+
+SelectDine
+Intern at Selectdine Services Pvt Ltd.
+March 2017 - April 2017 (2 months)
+India
+
+I was recruited as a Intern for the post of a Web Developer. My job was to
+develop and Design the front end applications using AngularJs , javascript ,
+Jquery , Bootstrap and HTML and CSS . Developed Client side Restaurant's
+page , Landing Page ,Order's page , Table reservation Module with my fellow
+teammates. It was a Great experience working with the wonderful team of
+Interns and the Selectdine family.
+
+
+Vellore Institute of Technology
+Technical Member at International Symposium Mechnovate'17 ,VIT
+University
+December 2016 - March 2017 (4 months)
+India
+
+I was part of The Technical Team and responsible for development of
+ICMMM'17 website. The client side developement was done using Angular,
+Javascript ,Jquery along with Bootstrap CSS framework. The serverside
+development and basic routing was done using NodeJS and ExpressJS.
+The International Conference on Materials, Manufacturing and Modelling
+(ICMMM) is an international conference to be hosted in VIT University, Vellore.
+It was organized by the School of Mechanical Engineering, VIT University and
+State University of New York, Binghamton, United States in association with
+American Society of Mechanical Engineers (ASME), VIT University.
+
+
+Riviera, VIT University
+Riviera 2017 Developers Team
+September 2016 - February 2017 (6 months)
+India
+
+I was the part of Riviera 2017 Development Team (A cultural fest organised
+by VIT University annually) and I was responsible for developing a Live
+                                     Page 4 of 5
+Polling App -a web application to conduct a poll among VIT Students for which
+artists should be invited in Riviera 2017 made using AngularJs and Node
+& MongoDB. Specifically I did the complete client side development using
+Javascript and mostly Angular HTTP services to send the live responses
+to the server and at the same time fetch the responses from server and
+visualizing the Votes for each Artist using a Data Visualization library.
+
+
+Gravitas, VIT University
+Gravitas 2016 Technical Team
+July 2016 - September 2016 (3 months)
+Vellore
+
+I was the part of Gravitas Tech Team ,Specifically Web Development team .
+Where i designed Gravitas 2016 website's icons , backgrounds(wallpapers) ,
+illustrations etc using Adobe Illustrator . It was a great experience of being part
+of the Developer's Team of such a big Technical event.
+
+
+
+
+Education
+Vellore Institute of Technology
+Bachelor's degree, Information Technology · (2015 - 2019)
+
+
+Gautam international school
+· (2013 - 2015)
+
+
+
+
+                                    Page 5 of 5
+
