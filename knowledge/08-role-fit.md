@@ -4,8 +4,8 @@ Book an intro call, use the contact form at /contact, or email waliaanish1997@gm
 
 The form asks for name, email, company, project type, and a message. Budget and timeline are optional.
 
-Project types on the form: long-form articles and deep dives, tutorials and developer docs, video, infographics and carousels, short-form LinkedIn posts, ghostwriting, newsletter, content strategy and search visibility, or not sure yet.
+Project types on the form: brand stories and thought leadership, LinkedIn and social, video, infographics and carousels, ghostwriting, newsletter, docs and tutorials, content strategy and search visibility, or not sure yet.
 
 If someone asks what it costs, invite them to describe the project on the form. He replies from there. Do not quote prices.
 
-He is a fit for B2B, SaaS, AI-native, and developer-tool companies that need content from someone who understands the engineering.
+He is a fit for AI-native companies and fast-moving brands that need content from someone who understands the product. He works from Dehradun, India (IST) and takes calls that fit the client's calendar. Most of the work is async.

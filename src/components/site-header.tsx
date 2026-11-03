@@ -6,15 +6,6 @@ import { nav } from "@data/site";
 import { BookIntroButton } from "@/components/book-intro";
 import { Button } from "@/components/ui/button";
 
-function CubeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <path d="M12 3 20 7.5v9L12 21 4 16.5v-9L12 3Z" />
-      <path d="M12 12 20 7.5M12 12v9M12 12 4 7.5" />
-    </svg>
-  );
-}
-
 function ChatIcon() {
   return (
     <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -41,14 +32,6 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/game"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted hover:text-cream"
-            aria-label="Game room"
-            title="Game room"
-          >
-            <CubeIcon />
-          </Link>
           <Link
             href="/ask"
             className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted hover:text-cream"
@@ -86,11 +69,6 @@ export function SiteHeader() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href="/game" className="block rounded-lg px-2 py-2 text-cream hover:bg-panel" onClick={() => setOpen(false)}>
-                Game room
-              </Link>
-            </li>
             <li>
               <Link href="/ask" className="block rounded-lg px-2 py-2 text-cream hover:bg-panel" onClick={() => setOpen(false)}>
                 Ask

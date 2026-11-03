@@ -1,24 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { engagements } from "@data/engagements";
-import { homeMedia } from "@data/media";
-import { caseStudies } from "@data/services";
+import { buyerFaqs } from "@data/services";
 import { icp, site } from "@data/site";
 import { testimonials } from "@data/testimonials";
 import { RidgeBand } from "@/components/ambient";
 import { AwardBadge } from "@/components/award-badge";
-import { ClientWorkRows } from "@/components/client-work-rows";
+import { HowWeWork } from "@/components/how-we-work";
 import { OffClock } from "@/components/off-clock";
-import { MetricsRow } from "@/components/proof-strip";
+import { LogoStrip, MetricsRow } from "@/components/proof-strip";
+import { PullQuotes } from "@/components/pull-quotes";
 import { SelectedClients } from "@/components/selected-clients";
+import { ShowcaseGallery } from "@/components/showcase-gallery";
 import { TestimonialGrid } from "@/components/testimonial-grid";
 import { WorkCtas } from "@/components/work-ctas";
 
 const homeQuotes = ["daria-sukhoroslova", "andrew-byzov", "renu-sharma"] as const;
+const homeFaqQuestions = [
+  "What formats do you take on?",
+  "Do you ghostwrite, and whose name goes on it?",
+  "I am not in India. Can we still work together?",
+  "How do we start?",
+];
 
 export default function HomePage() {
   const quotes = homeQuotes.map((id) => testimonials.find((item) => item.id === id)!);
-  const teaser = homeMedia();
+  const faqs = homeFaqQuestions.map((question) => buyerFaqs.find((faq) => faq.question === question)!);
 
   return (
     <main>
@@ -27,21 +34,20 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-16">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">
-              Anish Singh Walia / Technical content
+              Anish Singh Walia / Content
             </p>
             <h1 className="mt-4 font-display text-5xl tracking-tight text-cream md:text-6xl">
-              Technical content
+              Content that
               <br />
-              <span className="text-orange">developers trust</span>
-              <br />
-              and search engines find.
+              <span className="text-orange">gets you found.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-cream/90">{site.positioning}</p>
+            <p className="mt-3 max-w-xl text-sm text-muted">{icp}</p>
             <div className="mt-6"><AwardBadge /></div>
             <div className="mt-8">
-              <WorkCtas secondaryHref="#work" secondaryLabel="See client work ↓" />
+              <WorkCtas secondaryHref="#work" secondaryLabel="See the work" />
             </div>
-            <p className="mt-4 text-sm text-faint">Dehradun · Working worldwide</p>
+            <p className="mt-4 text-sm text-faint">Dehradun · IST · Working worldwide</p>
           </div>
           <Image
             src="/images/anish.webp"
@@ -54,21 +60,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-4 py-6">
+          <LogoStrip names={["Semrush", "DigitalOcean", "Tanot Solutions", "DataImpulse", "OtterlyAI", "Pollo AI"]} />
+        </div>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-4 py-10">
+          <PullQuotes />
+        </div>
+      </section>
+
       <SelectedClients />
 
       <section id="work" className="scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Proof</p>
-              <h2 className="mt-2 font-display text-4xl">Client work.</h2>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Work</p>
+              <h2 className="mt-2 font-display text-4xl">What I make.</h2>
+              <p className="mt-3 max-w-2xl text-muted">Live pieces, grouped by format. Each one opens the published work.</p>
             </div>
-            <Link href="/work" className="text-sm text-ember hover:underline">All work ↗</Link>
+            <Link href="/work" className="text-sm text-ember hover:underline">All work</Link>
           </div>
           <div className="mt-10">
-            <ClientWorkRows items={caseStudies} />
+            <ShowcaseGallery limitPerGroup={2} />
+          </div>
+          <div className="mt-10">
+            <WorkCtas />
           </div>
         </div>
+      </section>
+
+      <section className="border-t border-line">
+        <HowWeWork />
       </section>
 
       <section className="border-y border-line">
@@ -77,24 +103,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section>
+      <section id="faq" className="scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 py-14">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Talks and press</p>
-              <h2 className="mt-2 font-display text-4xl">In the room.</h2>
-            </div>
-            <Link href="/media" className="text-sm text-ember hover:underline">All media ↗</Link>
-          </div>
-          <ul className="mt-8 grid gap-4 md:grid-cols-3">
-            {teaser.map((item) => (
-              <li key={item.id}>
-                <a href={item.href} className="block h-full overflow-hidden rounded-2xl border border-line bg-ink hover:border-orange/40">
-                  <TeaserBody item={item} />
-                </a>
-              </li>
+          <h2 className="font-display text-4xl">Questions clients ask</h2>
+          <dl className="mt-8 grid gap-4 md:grid-cols-2">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-2xl border border-line bg-panel p-5">
+                <dt className="font-medium text-cream">{faq.question}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-muted">{faq.answer}</dd>
+              </div>
             ))}
-          </ul>
+          </dl>
         </div>
       </section>
 
@@ -102,7 +121,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-14">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-display text-4xl">What clients say.</h2>
-            <Link href="/testimonials" className="text-sm text-ember hover:underline">Read all ↗</Link>
+            <Link href="/testimonials" className="text-sm text-ember hover:underline">Read all</Link>
           </div>
           <div className="mt-8">
             <TestimonialGrid items={quotes} />
@@ -114,7 +133,6 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-14">
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Work together</p>
           <h2 className="mt-2 font-display text-4xl">Three ways in.</h2>
-          <p className="mt-3 max-w-2xl text-muted">{icp}</p>
           <ul className="mt-8 grid gap-4 md:grid-cols-3">
             {engagements.map((item) => (
               <li key={item.id} className="rounded-2xl border border-line bg-ink p-6">
@@ -130,26 +148,23 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Game room</p>
+          <h2 className="mt-2 font-display text-4xl">Walk the cabin.</h2>
+          <p className="mt-3 max-w-xl text-muted">
+            A voxel cabin in the foothills. Desk, pager, kettlebell. Each object opens a page.
+          </p>
+          <Link href="/game" className="mt-6 inline-block text-sm text-ember hover:underline">
+            Open the cabin
+          </Link>
+        </div>
+      </section>
+
+      <section className="border-t border-line">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <OffClock compact />
         </div>
       </section>
     </main>
-  );
-}
-
-function TeaserBody({ item }: { item: { title: string; outlet: string; meta: string; category: string; image?: { src: string; alt: string } } }) {
-  return (
-    <>
-      {item.image ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={item.image.src} alt={item.image.alt} className="aspect-[16/9] w-full object-cover object-top" />
-      ) : null}
-      <div className="p-5">
-        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ember">{item.category}</p>
-        <p className="mt-2 font-display text-xl leading-tight text-cream">{item.title}</p>
-        <p className="mt-2 text-sm text-muted">{item.outlet} · {item.meta}</p>
-      </div>
-    </>
   );
 }

@@ -19,11 +19,11 @@ export default function ClientsPage() {
         <PageHeader
           kicker="Clients"
           title="Companies I've worked with."
-          lede="B2B SaaS, developer-tool, cloud and AI-native companies. The four case studies are on Work."
+          lede="AI-native companies and brands. Logo, name, and how we worked."
         />
         <div className="mt-6 flex flex-wrap gap-3">
           <Button asChild><Link href="/contact">Tell me about your project</Link></Button>
-          <Button asChild variant="outline"><Link href="/work">See client work</Link></Button>
+          <Button asChild variant="outline"><Link href="/work">See the work</Link></Button>
         </div>
         <div className="mt-12 grid gap-12">
           {clientGroups.map((group) => (
@@ -31,25 +31,31 @@ export default function ClientsPage() {
               <h2 className="font-display text-2xl">{group.title}</h2>
               <p className="mt-2 text-sm text-muted">{group.lede}</p>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {clients.filter((client) => client.group === group.id).map((client) => (
-                  <li key={client.name} className="flex flex-col rounded-2xl border border-line bg-panel p-5 transition hover:border-orange/40">
-                    <div className="flex items-center gap-3">
-                      <BrandLogo name={client.name} size="md" />
-                      <div>
-                        <p className="font-display text-xl tracking-tight">{client.name}</p>
-                        <p className="mt-0.5 text-xs uppercase tracking-[0.14em] text-ember">{client.relationship}</p>
+                {clients.filter((client) => client.group === group.id).map((client) => {
+                  const body = (
+                    <>
+                      <div className="flex items-center gap-3">
+                        <BrandLogo name={client.name} size="md" />
+                        <div>
+                          <p className="font-display text-xl tracking-tight">{client.name}</p>
+                          <p className="mt-0.5 text-xs uppercase tracking-[0.14em] text-ember">{client.tag}</p>
+                        </div>
                       </div>
-                    </div>
-                    <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">{client.detail}</p>
-                    {client.link ? (
-                      client.link.href.startsWith("/") ? (
-                        <Link href={client.link.href} className="mt-3 inline-block text-sm text-ember hover:underline">{client.link.label} ↗</Link>
+                      {client.note ? <p className="mt-3 text-sm text-muted">{client.note}</p> : null}
+                    </>
+                  );
+                  return (
+                    <li key={client.name} className="flex flex-col rounded-2xl border border-line bg-panel p-5 transition hover:border-orange/40">
+                      {client.link ? (
+                        <a href={client.link.href} className="flex h-full flex-col">
+                          {body}
+                        </a>
                       ) : (
-                        <a href={client.link.href} className="mt-3 inline-block text-sm text-ember hover:underline">{client.link.label} ↗</a>
-                      )
-                    ) : null}
-                  </li>
-                ))}
+                        body
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </section>
           ))}

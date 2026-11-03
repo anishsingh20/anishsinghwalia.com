@@ -11,7 +11,7 @@ const valid = {
   projectType: "Long-form articles and deep dives",
   budget: "",
   timeline: "This quarter",
-  message: "We publish technical posts and they are not showing up in AI answers.",
+  message: "We need a brand story and thought leadership that shows up in AI answers.",
   company_fax: "",
 };
 

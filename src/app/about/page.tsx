@@ -14,7 +14,7 @@ import { profilePageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Engineer first. Nutanix to American Express to DigitalOcean, where I lead the team that writes infra and AI tutorials.",
+  description: "An engineer who writes. Brand stories, thought leadership, LinkedIn, ghostwriting, video, and docs for AI-native companies and brands.",
   alternates: { canonical: "/about" },
 };
 
@@ -26,7 +26,7 @@ export default function AboutPage() {
         <div>
           <PageHeader
             kicker="About"
-            title="Engineer first."
+            title="An engineer who writes."
             lede={throughLine}
           />
           <div className="mt-5"><AwardBadge /></div>
@@ -55,7 +55,7 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
-          <Link href="/experience" className="mt-4 inline-block text-sm text-ember hover:underline">Full timeline ↗</Link>
+          <Link href="/experience" className="mt-4 inline-block text-sm text-ember hover:underline">Full timeline</Link>
         </section>
         <section>
           <h2 className="font-display text-2xl">How I work</h2>
@@ -106,7 +106,7 @@ export default function AboutPage() {
           <ul className="mt-4 grid gap-2 text-sm">
             {githubProjects.map((project) => (
               <li key={project.href}>
-                <a href={project.href} className="text-ember hover:underline">{project.name} ↗</a>
+                <a href={project.href} className="text-ember hover:underline">{project.name}</a>
                 <span className="text-faint"> · {project.note}</span>
               </li>
             ))}

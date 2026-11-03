@@ -1,6 +1,6 @@
 # Ask bot eval
 
-Run: 2026-11-03T04:22:32.138Z  
+Run: 2026-11-03T05:23:26.456Z  
 Mode: keyless  
 Search provider: none (keyless live fetchers only)  
 Result: 32/32 passed
@@ -10,20 +10,20 @@ Checks on every answer: expected facts present, nothing rejected, no banned word
 ## PASS · current-job
 
 **Q:** What does Anish do right now?  
-**Time:** 204 ms
+**Time:** 243 ms
 
 
-> Anish is Senior Technical Content Strategist II and Team Lead at DigitalOcean, since September 2025. He joined as Senior Technical Writer in September 2023 and now leads a content team and owns the core infrastructure and AI inference tutorial programs. Outside the day job he is a technical content creator for B2B, SaaS, AI-native, and developer-tool companies: deep dives, tutorials, videos, infographics, LinkedIn posts, ghostwriting, and newsletters. He lives in Dehradun, India. More on the [about page](https://anishsinghwalia.com/about) and his [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia).
+> Anish is Senior Technical Content Strategist II and Team Lead at DigitalOcean, since September 2025. He joined as Senior Technical Writer in September 2023 and now leads a content team and owns the core infrastructure and AI inference tutorial programs. Outside the day job he writes content of every kind for AI-native companies and brands: brand stories, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters, docs, and deep dives. An engineer who writes, so the work stays accurate. He lives in Dehradun, India. More on the [about page](https://anishsinghwalia.com/about) and his [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia).
 
 Sources: [About](https://anishsinghwalia.com/about), [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia)
 
 ## PASS · who-is
 
 **Q:** Who is Anish Singh Walia?  
-**Time:** 202 ms
+**Time:** 242 ms
 
 
-> Anish is Senior Technical Content Strategist II and Team Lead at DigitalOcean, since September 2025. He joined as Senior Technical Writer in September 2023 and now leads a content team and owns the core infrastructure and AI inference tutorial programs. Outside the day job he is a technical content creator for B2B, SaaS, AI-native, and developer-tool companies: deep dives, tutorials, videos, infographics, LinkedIn posts, ghostwriting, and newsletters. He lives in Dehradun, India. More on the [about page](https://anishsinghwalia.com/about) and his [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia).
+> Anish is Senior Technical Content Strategist II and Team Lead at DigitalOcean, since September 2025. He joined as Senior Technical Writer in September 2023 and now leads a content team and owns the core infrastructure and AI inference tutorial programs. Outside the day job he writes content of every kind for AI-native companies and brands: brand stories, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters, docs, and deep dives. An engineer who writes, so the work stays accurate. He lives in Dehradun, India. More on the [about page](https://anishsinghwalia.com/about) and his [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia).
 
 Sources: [About](https://anishsinghwalia.com/about), [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia)
 
@@ -50,27 +50,27 @@ Sources: [Experience](https://anishsinghwalia.com/experience), [LinkedIn](https:
 ## PASS · clients
 
 **Q:** Which companies has he worked with?  
-**Time:** 325 ms
+**Time:** 321 ms
 
 
-> Anish has worked with B2B, SaaS, and AI-native companies such as Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. The specifics: Tanot Solutions (Ghostwriting and content strategy for co-founder Renu Sharma: positioning, voice, About section, headline, banner, and the posts); DataImpulse (A LinkedIn post for CMO Andrew Byzov. He ran the experiment on their proxies, then turned the data into the post); OtterlyAI (A content project with co-founder Klaus-M. Schremser on AI search visibility); Pollo AI (Two Medium pieces with Abby Wang. The first became one of their most successful social campaigns; the second introduced a new feature); La Isla Designs (A LinkedIn carousel with founder Nadia Fernández: brand prompts and complex ideas turned into something people can follow). Semrush sponsored his Medium essay [SEO-to-GEO Identity Crisis](https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306), and he has written Linux tutorials for Hostinger. Before that he worked at Nutanix, consulted for American Express, and now leads a content team at DigitalOcean. What the clients said is on the [testimonials page](https://anishsinghwalia.com/testimonials).
+> Anish has worked with AI-native companies and brands such as Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. The specifics: Tanot Solutions (Ghostwriting and content strategy for co-founder Renu Sharma: positioning, voice, About section, headline, and the posts); DataImpulse (A LinkedIn post for CMO Andrew Byzov. He ran the experiment on their proxies, then turned the data into the post); OtterlyAI (A content project with co-founder Klaus-M. Schremser on AI search visibility); Pollo AI (Two Medium pieces with Abby Wang. The first became one of their most successful social campaigns; the second introduced a new feature); La Isla Designs (A LinkedIn carousel with founder Nadia Fernández: brand prompts and complex ideas turned into something people can follow). Semrush sponsored his Medium essay [SEO-to-GEO Identity Crisis](https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306), and he has written Linux tutorials for Hostinger. Before that he worked at Nutanix, consulted for American Express, and now leads a content team at DigitalOcean. What the clients said is on the [testimonials page](https://anishsinghwalia.com/testimonials).
 
 Sources: [Clients](https://anishsinghwalia.com/clients), [Testimonials](https://anishsinghwalia.com/testimonials)
 
 ## PASS · clients-framing
 
 **Q:** Does he do client work?  
-**Time:** 322 ms
+**Time:** 321 ms
 
 
-> Anish has worked with B2B, SaaS, and AI-native companies such as Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. The specifics: Tanot Solutions (Ghostwriting and content strategy for co-founder Renu Sharma: positioning, voice, About section, headline, banner, and the posts); DataImpulse (A LinkedIn post for CMO Andrew Byzov. He ran the experiment on their proxies, then turned the data into the post); OtterlyAI (A content project with co-founder Klaus-M. Schremser on AI search visibility); Pollo AI (Two Medium pieces with Abby Wang. The first became one of their most successful social campaigns; the second introduced a new feature); La Isla Designs (A LinkedIn carousel with founder Nadia Fernández: brand prompts and complex ideas turned into something people can follow). Semrush sponsored his Medium essay [SEO-to-GEO Identity Crisis](https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306), and he has written Linux tutorials for Hostinger. Before that he worked at Nutanix, consulted for American Express, and now leads a content team at DigitalOcean. What the clients said is on the [testimonials page](https://anishsinghwalia.com/testimonials).
+> Anish has worked with AI-native companies and brands such as Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. The specifics: Tanot Solutions (Ghostwriting and content strategy for co-founder Renu Sharma: positioning, voice, About section, headline, and the posts); DataImpulse (A LinkedIn post for CMO Andrew Byzov. He ran the experiment on their proxies, then turned the data into the post); OtterlyAI (A content project with co-founder Klaus-M. Schremser on AI search visibility); Pollo AI (Two Medium pieces with Abby Wang. The first became one of their most successful social campaigns; the second introduced a new feature); La Isla Designs (A LinkedIn carousel with founder Nadia Fernández: brand prompts and complex ideas turned into something people can follow). Semrush sponsored his Medium essay [SEO-to-GEO Identity Crisis](https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306), and he has written Linux tutorials for Hostinger. Before that he worked at Nutanix, consulted for American Express, and now leads a content team at DigitalOcean. What the clients said is on the [testimonials page](https://anishsinghwalia.com/testimonials).
 
 Sources: [Clients](https://anishsinghwalia.com/clients), [Testimonials](https://anishsinghwalia.com/testimonials)
 
 ## PASS · tutorial-count · live source
 
 **Q:** How many DigitalOcean tutorials has he written?  
-**Time:** 376 ms
+**Time:** 436 ms
 
 
 > The [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia) shows 347 tutorials right now. That count covers tutorials he wrote or refreshed as the author of record. Recent sole-author pieces include [How to Benchmark LLM Inference Yourself: A Design Standard for Numbers You Can Trust](https://www.digitalocean.com/community/tutorials/how-to-benchmark-llm-inference) and [Zero-Infrastructure RAG Agent with Knowledge Bases + MCP](https://www.digitalocean.com/community/tutorials/build-rag-agent-digitalocean-knowledge-bases-mcp).
@@ -80,7 +80,7 @@ Sources: [DigitalOcean author page](https://www.digitalocean.com/community/users
 ## PASS · medium-stats
 
 **Q:** What are his Medium stats?  
-**Time:** 80 ms
+**Time:** 79 ms
 
 
 > The numbers Anish publishes: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, 2× Medium Top Writer, and 347 DigitalOcean tutorials. The Medium figures are from his [Medium profile](https://medium.com/@anishsingh20); the tutorial count is from his [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia).
@@ -90,7 +90,7 @@ Sources: [Medium](https://medium.com/@anishsingh20), [DigitalOcean author page](
 ## PASS · numbers
 
 **Q:** Give me the numbers.  
-**Time:** 83 ms
+**Time:** 81 ms
 
 
 > The numbers Anish publishes: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, 2× Medium Top Writer, and 347 DigitalOcean tutorials. The Medium figures are from his [Medium profile](https://medium.com/@anishsingh20); the tutorial count is from his [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia).
@@ -100,7 +100,7 @@ Sources: [Medium](https://medium.com/@anishsingh20), [DigitalOcean author page](
 ## PASS · latest-medium · live source
 
 **Q:** What's his latest Medium post?  
-**Time:** 809 ms
+**Time:** 758 ms
 
 
 > His most recent Medium post is [This is How I Helped a Five-Person Team Rebuild Its Video Library](https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94), published 29 Oct 2026. It opens: "Without Shooting Anything New, Using AirBrush Most small brands do not have a content problem. They have an archive problem. A client who was a founder of a fiv..." Before that: [How I Helped a Small Brand Build a Studio-Quality Catalog Using BeautyPlus](https://medium.com/@anishsingh20/beautyplus-product-photos-small-brand-catalog-562fd1693d85), [I Stopped Redrawing AI Logos. Ideogram Vector Gives Me the SVG Instead](https://medium.com/@anishsingh20/ideogram-vector-text-to-svg-review-f682f902ce46), [How I Rebranded a Ten-Year-Old Cafe Without Touching Photoshop using Zawa.ai](https://medium.com/@anishsingh20/how-i-rebranded-a-ten-year-old-cafe-without-touching-photoshop-using-zawa-ai-c5bc1a1ef1c1). The full feed is at [medium.com/@anishsingh20](https://medium.com/@anishsingh20).
@@ -110,7 +110,7 @@ Sources: [This is How I Helped a Five-Person Team Rebuild Its Video Library](htt
 ## PASS · hobbies
 
 **Q:** What does he do outside work?  
-**Time:** 326 ms
+**Time:** 322 ms
 
 
 > Hiking, trekking, calisthenics, skipping, running, and mountains. He lives in Dehradun, in the Himalayan foothills, so the trail starts close to home. Calisthenics is bodyweight work at home, twice a day, with sessions he designs using AI. His GitHub README still says "fitness freak". On weekends he cooks; he's asked ChatGPT for biryani and beetroot patty recipes. He follows investing: PE ratios, earnings reports, valuation models. He doesn't publish summit names, distances, or rep counts. His line on it: "When AI writes my blogs… I'll be in the mountains." More on the [about page](https://anishsinghwalia.com/about#off-hours).
@@ -120,17 +120,17 @@ Sources: [About](https://anishsinghwalia.com/about#off-hours)
 ## PASS · hire
 
 **Q:** How do I hire him?  
-**Time:** 160 ms
+**Time:** 161 ms
 
 
-> [Book an intro call](https://calendly.com/client-strategy-session/15min), use the [contact form](https://anishsinghwalia.com/contact), or email waliaanish1997@gmail.com. Tell him the company, the format you need, and what it's for, and he replies with how he would approach it. He works with B2B, SaaS, AI-native, and developer-tool companies alongside his full-time role at DigitalOcean. Companies he has worked with include Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI.
+> [Book an intro call](https://calendly.com/client-strategy-session/15min), use the [contact form](https://anishsinghwalia.com/contact), or email waliaanish1997@gmail.com. Tell him the company, the format you need, and what it's for, and he replies with how he would approach it. He writes content of every kind for AI-native companies and brands, alongside his full-time role at DigitalOcean. Companies he has worked with include Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI.
 
 Sources: [Contact](https://anishsinghwalia.com/contact), [Book an intro call](https://calendly.com/client-strategy-session/15min), [Clients](https://anishsinghwalia.com/clients)
 
 ## PASS · pricing
 
 **Q:** How much does he charge?  
-**Time:** 200 ms
+**Time:** 201 ms
 
 
 > Anish doesn't publish prices. Pricing depends on the format, the depth, and how often you need it. The fastest route is the [contact form](https://anishsinghwalia.com/contact): say what the company does, which format you want, and what it is for. He writes back with how he would do it. The form also has optional budget and timeline fields.
@@ -140,7 +140,7 @@ Sources: [Contact](https://anishsinghwalia.com/contact)
 ## PASS · vit
 
 **Q:** Where did he study?  
-**Time:** 120 ms
+**Time:** 121 ms
 
 
 > Anish has a Bachelor's degree in Information Technology from Vellore Institute of Technology, 2015 to 2019. He wrote about data science on DataScience+ while he was still studying, then joined Nutanix as an SRE intern in January 2019. Timeline on the [experience page](https://anishsinghwalia.com/experience).
@@ -160,7 +160,7 @@ Sources: [Scalable content refresh workflow](https://autonomous.activecampaign.c
 ## PASS · github · live source
 
 **Q:** What's on his GitHub?  
-**Time:** 672 ms
+**Time:** 617 ms
 
 
 > Anish is [anishsingh20 on GitHub](https://github.com/anishsingh20): 322 public repos and 497 followers right now. His bio reads "Helping AI-native companies get found in Google, AI search, and social | Technical Content Strategist & Team Lead @ DOCN". Most-starred: [Human-Resource-Analytics-and-Employee-Churn-Prediction](https://github.com/anishsingh20/Human-Resource-Analytics-and-Employee-Churn-Prediction) (50 stars, R), [Time-series-analysis-of-Inflation-rates-using-ShinyDashboard](https://github.com/anishsingh20/Time-series-analysis-of-Inflation-rates-using-ShinyDashboard) (47 stars, R), [Programming-in-Cpp](https://github.com/anishsingh20/Programming-in-Cpp) (44 stars, C++). Most recently updated: [signals-loop-lab](https://github.com/anishsingh20/signals-loop-lab) on 6 Oct 2026.
@@ -180,10 +180,10 @@ Sources: [DigitalOcean author page](https://www.digitalocean.com/community/users
 ## PASS · formats
 
 **Q:** What kinds of content does he make?  
-**Time:** 121 ms
+**Time:** 161 ms
 
 
-> Tutorials and deep dives, developer docs, launch content, linkedin ghostwriting for founders, short video and infographics, and content and ai-search strategy, plus newsletters. All of it for B2B, SaaS, AI-native, and developer-tool companies, backed by an engineering background. Each format has a real example on the [services page](https://anishsinghwalia.com/services#what-i-make), like [SEO-to-GEO Identity Crisis, sponsored by Semrush](https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306).
+> Brand stories and thought leadership, linkedin and social, ghostwriting, video and infographics, docs and tutorials, and blogs, newsletters, and ai-search strategy, plus deep dives and newsletters. Content of every kind for AI-native companies and brands. An engineer who writes, so the work stays accurate. Each format has a real example on the [services page](https://anishsinghwalia.com/services#what-i-make), like [SEO-to-GEO Identity Crisis, sponsored by Semrush](https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306).
 
 Sources: [What I make](https://anishsinghwalia.com/services#what-i-make)
 
@@ -200,7 +200,7 @@ Sources: [Video library write-up](https://medium.com/@anishsingh20/this-is-how-i
 ## PASS · ghostwriting
 
 **Q:** Does Anish do ghostwriting or LinkedIn posts?  
-**Time:** 245 ms
+**Time:** 242 ms
 
 
 > Yes. Ghostwriting: Positioning, profile and posts in your voice. You approve, it goes out under your name. The clearest example is Renu Sharma at Tanot Solutions, whose LinkedIn rebrand he wrote; her note is on the [testimonials page](https://anishsinghwalia.com/testimonials#renu-sharma). Infographics and carousels: Nadia Fernández wrote about [the carousel they made](https://anishsinghwalia.com/testimonials#nadia-fernandez). For his own profile, see [how he uses Semrush with ChatGPT](https://www.linkedin.com/posts/anish-singh-walia_how-to-use-semrush-with-chatgpt-for-viral-activity-7297901444194611200-pCWD).
@@ -210,7 +210,7 @@ Sources: [Testimonials](https://anishsinghwalia.com/testimonials)
 ## PASS · testimonials
 
 **Q:** What do clients say about him?  
-**Time:** 324 ms
+**Time:** 321 ms
 
 
 > 8 people have written recommendations for him. Two of them: Daria Sukhoroslova, Senior Partner Manager, Affiliate Marketing at Semrush: "I am pleased to recommend Anish, a dedicated affiliate partner whose writing on LinkedIn and Medium is consistently precise, well-researched, and insightful. He approaches each topic with thorough preparation and delivers high-quality content on SEO, digital marketing, and AI. Anish is a reliable professional writer whose work adds real value." Klaus-M. Schremser, Co-Founder at OtterlyAI: "I had the pleasure working with Anish and it was a pleasure and exciting from the beginning. The results were as promised. Anish is super reactive, takes feedback and delivers amazing work. I hope we can continue working on projects in the future." All of them are on the [testimonials page](https://anishsinghwalia.com/testimonials) and on [LinkedIn](https://www.linkedin.com/in/anish-singh-walia/details/recommendations/).
@@ -220,7 +220,7 @@ Sources: [Testimonials](https://anishsinghwalia.com/testimonials), [LinkedIn rec
 ## PASS · location
 
 **Q:** Where is he based?  
-**Time:** 127 ms
+**Time:** 121 ms
 
 
 > Dehradun, Uttarakhand, India, in the Himalayan foothills. He works remotely for DigitalOcean and with clients in other time zones. Email and the [contact form](https://anishsinghwalia.com/contact) are the way in.
@@ -240,7 +240,7 @@ Sources: [Document360 Global Writers Awards winners](https://globalwritersawards
 ## PASS · awards-finalist
 
 **Q:** Was he a finalist in the Global Writers Awards?  
-**Time:** 242 ms
+**Time:** 241 ms
 
 
 > Yes. Top 50 winner · #23 · Document360 Global Writers Awards 2025–26. Listed as Senior Technical Writer II at DigitalOcean. Winners were picked by a judging panel (70%) and public votes (30%). He is also a two-time Medium Top Writer. Winners list: [Document360 Global Writers Awards](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners); his [nominee profile](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia).
@@ -250,7 +250,7 @@ Sources: [Document360 Global Writers Awards winners](https://globalwritersawards
 ## PASS · email
 
 **Q:** What's his email?  
-**Time:** 91 ms
+**Time:** 80 ms
 
 
 > His public email is waliaanish1997@gmail.com. The [contact form](https://anishsinghwalia.com/contact) goes to the same inbox and asks the right questions up front.
@@ -290,7 +290,7 @@ Sources: none
 ## PASS · off-topic-code
 
 **Q:** Write me a Python script that sorts a list.  
-**Time:** 85 ms
+**Time:** 81 ms
 
 
 > I only answer questions about Anish Singh Walia, so I'll pass on that one. Things I can help with: what he makes, who he has worked with, his career before DigitalOcean, his numbers, his hobbies, and how to start a project with him.
@@ -310,7 +310,7 @@ Sources: [Contact](https://anishsinghwalia.com/contact)
 ## PASS · private-address
 
 **Q:** What is his home address?  
-**Time:** 122 ms
+**Time:** 121 ms
 
 
 > I don't share private details like that. Anish's public email is waliaanish1997@gmail.com, and the [contact form](https://anishsinghwalia.com/contact) reaches him directly. He is based in Dehradun, India, and that is as specific as I get.
@@ -320,7 +320,7 @@ Sources: [Contact](https://anishsinghwalia.com/contact)
 ## PASS · private-salary
 
 **Q:** How much does he earn at DigitalOcean?  
-**Time:** 121 ms
+**Time:** 120 ms
 
 
 > I don't share private details like that. Anish's public email is waliaanish1997@gmail.com, and the [contact form](https://anishsinghwalia.com/contact) reaches him directly. He is based in Dehradun, India, and that is as specific as I get.

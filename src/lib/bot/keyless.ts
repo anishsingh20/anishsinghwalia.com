@@ -88,7 +88,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
 
   if (has(q, /\b(hire|hiring|work with (him|you|anish)|start a project|commission|book (him|you)|engage|collaborat\w*|available|availability|get in touch|reach (him|you|out)|contact)\b/)) {
     return {
-      text: `${site.bookingUrl ? `${link("Book an intro call", site.bookingUrl)}, ` : ""}use the ${link("contact form", LINKS.contact)}, or email ${site.email}. Tell him the company, the format you need, and what it's for, and he replies with how he would approach it. He works with B2B, SaaS, AI-native, and developer-tool companies alongside his full-time role at DigitalOcean. Companies he has worked with include ${listify(headlineClients)}.`,
+      text: `${site.bookingUrl ? `${link("Book an intro call", site.bookingUrl)}, ` : ""}use the ${link("contact form", LINKS.contact)}, or email ${site.email}. Tell him the company, the format you need, and what it's for, and he replies with how he would approach it. He writes content of every kind for AI-native companies and brands, alongside his full-time role at DigitalOcean. Companies he has worked with include ${listify(headlineClients)}.`,
       sources: [
         { title: "Contact", url: LINKS.contact },
         ...(site.bookingUrl ? [{ title: "Book an intro call", url: site.bookingUrl }] : []),
@@ -172,7 +172,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
     const digitalocean = experience.find((group) => group.id === "digitalocean");
     const lead = digitalocean?.roles[0];
     return {
-      text: `Anish is ${site.jobTitle} at DigitalOcean, since ${lead?.start ?? "September 2025"}. He joined as Senior Technical Writer in September 2023 and now leads a content team and owns the core infrastructure and AI inference tutorial programs. Outside the day job he is a technical content creator for B2B, SaaS, AI-native, and developer-tool companies: deep dives, tutorials, videos, infographics, LinkedIn posts, ghostwriting, and newsletters. He lives in Dehradun, India. More on the ${link("about page", `${site.url}/about`)} and his ${link("DigitalOcean author page", LINKS.digitalocean)}.`,
+      text: `Anish is ${site.jobTitle} at DigitalOcean, since ${lead?.start ?? "September 2025"}. He joined as Senior Technical Writer in September 2023 and now leads a content team and owns the core infrastructure and AI inference tutorial programs. Outside the day job he writes content of every kind for AI-native companies and brands: brand stories, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters, docs, and deep dives. An engineer who writes, so the work stays accurate. He lives in Dehradun, India. More on the ${link("about page", `${site.url}/about`)} and his ${link("DigitalOcean author page", LINKS.digitalocean)}.`,
       sources: [{ title: "About", url: `${site.url}/about` }, { title: "DigitalOcean author page", url: LINKS.digitalocean }],
     };
   }
@@ -194,9 +194,9 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   }
 
   if (has(q, /\b(client|clients|companies|brands|worked with|work with|customers|who has he (worked|written) for|portfolio)\b/)) {
-    const named = clients.filter((client) => client.group === "brands" && client.name !== "Semrush" && client.name !== "Hostinger").map((client) => `${client.name} (${thirdPerson(client.detail.replace(/\.$/, ""))})`);
+    const named = clients.filter((client) => client.group === "brands" && client.name !== "Semrush" && client.name !== "Hostinger").map((client) => `${client.name} (${thirdPerson(client.brief.replace(/\.$/, ""))})`);
     return {
-      text: `Anish has worked with B2B, SaaS, and AI-native companies such as ${listify(headlineClients)}. The specifics: ${named.join("; ")}. Semrush sponsored his Medium essay ${link("SEO-to-GEO Identity Crisis", "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306")}, and he has written Linux tutorials for Hostinger. Before that he worked at Nutanix, consulted for American Express, and now leads a content team at DigitalOcean. What the clients said is on the ${link("testimonials page", `${site.url}/testimonials`)}.`,
+      text: `Anish has worked with AI-native companies and brands such as ${listify(headlineClients)}. The specifics: ${named.join("; ")}. Semrush sponsored his Medium essay ${link("SEO-to-GEO Identity Crisis", "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306")}, and he has written Linux tutorials for Hostinger. Before that he worked at Nutanix, consulted for American Express, and now leads a content team at DigitalOcean. What the clients said is on the ${link("testimonials page", `${site.url}/testimonials`)}.`,
       sources: [{ title: "Clients", url: `${site.url}/clients` }, { title: "Testimonials", url: `${site.url}/testimonials` }],
     };
   }
@@ -264,7 +264,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(format|formats|what (does|can) (he|anish) (make|do|produce|create|write)|services|offers?|offerings|what kinds? of content|types? of content|deliverables?)\b/)) {
     const list = formats.map((format) => format.title.toLowerCase());
     return {
-      text: `${capitalize(listify(list))}, plus newsletters. All of it for B2B, SaaS, AI-native, and developer-tool companies, backed by an engineering background. Each format has a real example on the ${link("services page", `${site.url}/services#what-i-make`)}, like ${link(formats[0].example?.label ?? "", formats[0].example?.href ?? site.url)}.`,
+      text: `${capitalize(listify(list))}, plus deep dives and newsletters. Content of every kind for AI-native companies and brands. An engineer who writes, so the work stays accurate. Each format has a real example on the ${link("services page", `${site.url}/services#what-i-make`)}, like ${link(formats[0].example?.label ?? "", formats[0].example?.href ?? site.url)}.`,
       sources: [{ title: "What I make", url: `${site.url}/services#what-i-make` }],
     };
   }

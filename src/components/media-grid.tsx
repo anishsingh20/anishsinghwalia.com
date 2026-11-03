@@ -35,7 +35,7 @@ function Card({ item }: { item: MediaItem }) {
         <p className="mt-2 text-sm text-muted">{item.outlet} · {item.meta}</p>
         {item.note ? <p className="mt-2 flex-1 text-sm text-muted">{item.note}</p> : <div className="flex-1" />}
         <a href={item.href} className="mt-4 text-sm text-ember hover:underline">
-          {item.category === "Podcast" ? "Watch" : "Open"} ↗
+          {item.category === "Podcast" ? "Watch" : "Open"}
         </a>
       </div>
     </article>

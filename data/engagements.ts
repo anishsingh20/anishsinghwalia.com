@@ -12,7 +12,7 @@ export const engagements: Engagement[] = [
   {
     id: "flagship",
     title: "Flagship piece",
-    deliverable: "One deep dive, tutorial, video or infographic set, delivered publish-ready.",
+    deliverable: "One flagship piece: essay, video, infographic set or tutorial, delivered publish-ready.",
   },
   {
     id: "founder-voice",

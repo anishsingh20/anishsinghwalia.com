@@ -1,18 +1,18 @@
 # Positioning and what he makes
 
-Anish makes technical content for B2B SaaS, developer-tool, cloud and AI-native companies. Buyers: heads of marketing, content leads, DevRel and developer-marketing managers, and founders. The content is meant for developers, and it is built to rank in Google and show up in AI answers.
+Anish writes content of every kind for AI-native companies and fast-moving brands. Buyers: heads of marketing, content leads, and founders. The engineering background is why the work stays accurate, not the whole pitch.
 
 Three named engagements:
-- Flagship piece: one deep dive, tutorial, video or infographic set, delivered publish-ready.
+- Flagship piece: one essay, video, infographic set or tutorial, delivered publish-ready.
 - Founder voice on LinkedIn: profile rewrite plus a posting rhythm, ghostwritten in the client's voice.
 - Content and AI-search partner: briefs, refreshes and a GEO/SEO plan, ongoing, as a content lead or advisor.
 
-Formats: tutorials and deep dives, developer docs, launch content, LinkedIn ghostwriting for founders, short video and infographics, content and AI-search strategy (including newsletters).
+Formats: brand stories and thought leadership, LinkedIn and social, ghostwriting, video and infographics, docs and tutorials, blogs, newsletters, and AI-search strategy.
 
 Examples:
 - Long-form: "SEO-to-GEO Identity Crisis", a Medium essay sponsored by Semrush. Medium publication averages 3,000,000+ readers a month.
 - Tutorials: "How to Benchmark LLM Inference Yourself" on DigitalOcean. 347 DigitalOcean tutorials authored or refreshed.
-- Ghostwriting: Renu Sharma, co-founder of Tanot Solutions.
+- Ghostwriting: Renu Sharma, co-founder of Tanot Solutions. Pieces go out under the client's name, with no byline.
 - LinkedIn post from a live experiment: DataImpulse, for CMO Andrew Byzov.
 - Strategy: ActiveCampaign story on his content-refresh workflow.
 

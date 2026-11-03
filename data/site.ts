@@ -16,12 +16,12 @@ export const site = {
     country: "IN",
     label: "Dehradun, Uttarakhand, India",
   },
-  headline: "Technical content developers trust.",
+  headline: "Content for AI-native companies and brands.",
   positioning:
-    "I make technical content for B2B SaaS, developer-tool, cloud and AI-native companies: deep dives, docs, videos, infographics, LinkedIn posts and ghostwriting.",
+    "Brand stories, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters, docs. An engineer who writes, so the work stays accurate.",
   description:
-    "Technical content for B2B SaaS, developer-tool, cloud and AI-native companies. Tutorials, docs, launch pieces, LinkedIn ghostwriting, video and infographics that rank in Google and show up in AI answers. Anish Singh Walia, team lead at DigitalOcean.",
-  title: "Anish Singh Walia · Technical content for B2B SaaS and AI-native companies",
+    "Content of every kind for AI-native companies and fast-moving brands. Brand storytelling, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters and docs. Anish Singh Walia, team lead at DigitalOcean.",
+  title: "Anish Singh Walia · Content for AI-native companies and brands",
   motto: "Share your knowledge. It is a way to achieve immortality.",
   mottoAttribution: "Dalai Lama. It's on my GitHub README and my Medium bio.",
   recommendationsUrl:
@@ -109,12 +109,13 @@ export const metrics = [
   { id: "tutorials", value: "347", label: "DigitalOcean tutorials" },
 ] as const;
 
-/** Primary nav. Work with me is the accent CTA. Game room and Ask are icon links. */
+/** Primary nav. Work with me is the accent CTA. Game is a labelled item. */
 export const nav = [
   { href: "/work", label: "Work" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/media", label: "Media" },
+  { href: "/game", label: "Game" },
 ] as const;
 
 export const footerNav = [
@@ -125,14 +126,15 @@ export const footerNav = [
   { href: "/experience", label: "Experience" },
   { href: "/clients", label: "Clients" },
   { href: "/testimonials", label: "Testimonials" },
+  { href: "/game", label: "Game" },
   { href: "/contact", label: "Work with me" },
 ] as const;
 
 /** Who the work is for. */
-export const audiences = ["B2B companies", "SaaS companies", "AI-native companies", "Developer-tool companies"] as const;
+export const audiences = ["AI-native companies", "Fast-moving brands"] as const;
 
 export const icp =
-  "Heads of marketing, content leads, DevRel and developer-marketing managers, and founders at B2B SaaS, developer-tool, cloud and AI-native companies.";
+  "Heads of marketing, content leads, and founders at AI-native companies and fast-moving brands.";
 
 export const lastUpdated = "2026-11-03";
 

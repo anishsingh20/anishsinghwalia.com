@@ -37,7 +37,7 @@ export function fact(topic: Topic): string {
   switch (topic) {
     case "identity":
       return [
-        `${site.name} is a technical content creator and ${site.jobTitle} at ${site.employer}. Based in ${site.location.label}.`,
+        `${site.name} writes content of every kind for AI-native companies and brands, and is ${site.jobTitle} at ${site.employer}. Based in ${site.location.label}.`,
         ...aboutParagraphs,
       ].join("\n");
     case "role":
@@ -50,7 +50,7 @@ export function fact(topic: Topic): string {
         )
         .join("\n") + `\n\nHow he got here: ${originNote}`;
     case "clients":
-      return clients.map((client) => `- ${client.name} (${client.relationship}): ${client.detail}${client.link ? ` ${client.link.href}` : ""}`).join("\n") +
+      return clients.map((client) => `- ${client.name} (${client.tag}): ${client.brief}${client.link ? ` ${client.link.href}` : ""}`).join("\n") +
         `\nThe work is for ${audiences.join(", ").toLowerCase()}. Describe it as client work or companies he has worked with.`;
     case "testimonials":
       return testimonials

@@ -1,15 +1,15 @@
 /** About page copy. First person. Short. */
 
 export const aboutLede =
-  "Four years running infrastructure at Nutanix and for American Express, then DigitalOcean, where I lead the team that writes the infra and AI tutorials.";
+  "An engineer who writes. Four years running infrastructure, then DigitalOcean, where I lead the team that writes the infra and AI tutorials.";
 
 export const aboutParagraphs = [
-  "I'm Anish. I make technical content for B2B SaaS, developer-tool, cloud and AI-native companies: tutorials and deep dives, docs, launch pieces, LinkedIn, video and infographics.",
-  "Day job: Senior Technical Content Strategist II and Team Lead at DigitalOcean. Before that I was the engineer on call.",
+  "I'm Anish. I write brand stories, thought leadership, LinkedIn, video, infographics, blogs, newsletters and docs for AI-native companies and brands.",
+  "Day job: Senior Technical Content Strategist II and Team Lead at DigitalOcean. The engineering years are why the work stays accurate.",
 ];
 
 export const throughLine =
-  "Four years running infrastructure at Nutanix and for American Express, then DigitalOcean, where I now lead the team that writes the infra and AI tutorials.";
+  "I used to run the infrastructure. Now I write the content companies need to get found, and I lead the team that writes DigitalOcean's infra and AI tutorials.";
 
 export const numberedRoles = [
   {
@@ -28,12 +28,12 @@ export const numberedRoles = [
 
 export const principles = [
   {
-    title: "I run the code before I write about it",
-    text: "If a command is in the piece, it ran. Kubernetes, Linux, GPU Droplets, LLM inference.",
+    title: "I run it before I write it",
+    text: "If a command is in the piece, it ran. Same standard for a product story or a founder post: I check the claim.",
   },
   {
-    title: "Write for the person who will actually run it",
-    text: "Developers can tell when the writer has never run the thing. I have.",
+    title: "Write for the person who will act",
+    text: "A founder, a marketer, an engineer. They can tell when the writer has never used the thing.",
   },
   {
     title: "Content has to get found",
@@ -43,8 +43,8 @@ export const principles = [
 
 export const aboutDo = [
   "Plan content that gets found in Google, in AI answers, and on LinkedIn.",
-  "Lead a content team so the output stays technically right at volume.",
-  "Work with companies as a content lead or advisor on their technical content.",
+  "Lead a content team so the output stays accurate at volume.",
+  "Work with companies as a content lead or advisor.",
 ];
 
 export const aboutTrack = [

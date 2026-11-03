@@ -1,10 +1,11 @@
 import { award, icp, lastUpdated, site, socials, audiences } from "@data/site";
 import { engagements } from "@data/engagements";
-import { buyerFaqs, caseStudies } from "@data/services";
+import { buyerFaqs } from "@data/services";
 import { faqs } from "@data/faq";
 import { formats } from "@data/formats";
 import { mediaItems } from "@data/media";
 import { headlineClients } from "@data/clients";
+import { showcase } from "@data/showcase";
 
 export function GET() {
   const lines = [
@@ -30,8 +31,8 @@ export function GET() {
     "## Formats",
     ...formats.map((format) => `- ${format.title}: ${format.line}${format.example ? ` Example: ${format.example.href.startsWith("/") ? site.url + format.example.href : format.example.href}` : ""}`),
     "",
-    "## Case studies",
-    ...caseStudies.map((study) => `- ${study.company} (${study.year}, ${study.format}, ${study.role}): ${study.summary}. ${site.url}/work/${study.slug} ${study.link.href}`),
+    "## Published work",
+    ...showcase.map((item) => `- ${item.group}: ${item.title} (${item.outlet}) ${item.href}`),
     "",
     "## Press, podcasts, awards",
     ...mediaItems.map((item) => `- ${item.outlet}: ${item.title} (${item.category}, ${item.meta}) ${item.href}`),
@@ -56,9 +57,6 @@ export function GET() {
       ["/ask", "Ask me anything"],
       ["/contact", "Work with me"],
     ].map(([path, label]) => `- [${label}](${site.url}${path})`),
-    "",
-    "## Case study URLs",
-    ...caseStudies.map((study) => `- [${study.company}](${site.url}/work/${study.slug})`),
     "",
     "## Profiles",
     ...socials.map((item) => `- [${item.label}](${item.href})`),

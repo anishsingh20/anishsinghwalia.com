@@ -14,7 +14,7 @@ export function BookIntroButton({
   return (
     <Button asChild size={size} variant={variant}>
       <a href={site.bookingUrl} target="_blank" rel="noopener">
-        {bookingLabel} ↗
+        {bookingLabel}
       </a>
     </Button>
   );
@@ -24,7 +24,7 @@ export function BookIntroText({ className = "text-sm text-ember hover:underline"
   if (!site.bookingUrl) return null;
   return (
     <a href={site.bookingUrl} target="_blank" rel="noopener" className={className}>
-      {bookingLabel} ↗
+      {bookingLabel}
     </a>
   );
 }

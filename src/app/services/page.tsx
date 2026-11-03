@@ -13,7 +13,7 @@ import { breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Flagship technical pieces, founder voice on LinkedIn, and ongoing content plus AI-search partnership for B2B SaaS, developer-tool, cloud and AI-native companies.",
+  description: "Brand stories, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters and docs for AI-native companies and brands.",
   alternates: { canonical: "/services" },
 };
 
@@ -25,7 +25,7 @@ export default function ServicesPage() {
       <div className="mx-auto max-w-6xl px-4 py-12">
         <PageHeader
           kicker="Services"
-          title="Technical content developers trust, that search engines find."
+          title="Content that gets you found."
           lede={icp}
         />
         <div className="mt-5"><AwardBadge /></div>
@@ -58,9 +58,9 @@ export default function ServicesPage() {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{format.line}</p>
                 {format.example ? (
                   format.example.href.startsWith("/") ? (
-                    <Link href={format.example.href} className="mt-4 text-sm text-ember hover:underline">{format.example.label} ↗</Link>
+                    <Link href={format.example.href} className="mt-4 text-sm text-ember hover:underline">{format.example.label}</Link>
                   ) : (
-                    <a href={format.example.href} className="mt-4 text-sm text-ember hover:underline">{format.example.label} ↗</a>
+                    <a href={format.example.href} className="mt-4 text-sm text-ember hover:underline">{format.example.label}</a>
                   )
                 ) : null}
               </li>
@@ -72,7 +72,7 @@ export default function ServicesPage() {
       <section className="border-t border-line">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 lg:grid-cols-2">
           <div>
-            <h2 className="font-display text-3xl">Why engineers trust it</h2>
+            <h2 className="font-display text-3xl">Why the work holds up</h2>
             <ul className="mt-6 grid gap-3">
               {trustPoints.map((point) => (
                 <li key={point.title} className="rounded-2xl border border-line bg-panel p-4">
@@ -108,7 +108,7 @@ export default function ServicesPage() {
 
       <section id="faq" className="scroll-mt-24 border-t border-line">
         <div className="mx-auto max-w-6xl px-4 py-14">
-          <h2 className="font-display text-3xl">Questions buyers ask</h2>
+          <h2 className="font-display text-3xl">Questions clients ask</h2>
           <dl className="mt-8 grid gap-4 md:grid-cols-2">
             {buyerFaqs.map((faq) => (
               <div key={faq.question} className="rounded-2xl border border-line bg-panel p-5">

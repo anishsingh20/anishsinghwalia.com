@@ -35,7 +35,7 @@ export const stations: Station[] = [
     kind: "desk",
     name: "My desk",
     blurb:
-      "This is where the content gets made. Deep dives, tutorials, video, LinkedIn, ghostwriting. 347 DigitalOcean tutorials came off this desk too.",
+      "This is where the content gets made. Brand stories, thought leadership, LinkedIn, ghostwriting, video, docs. 347 DigitalOcean tutorials came off this desk too.",
     facts: [
       "Senior Technical Content Strategist II and Team Lead at DigitalOcean",
       "Tutorials on LLM inference, Postgres on Kubernetes, Argo CD, Linux permissions",
@@ -135,8 +135,8 @@ export const stations: Station[] = [
     kind: "mailbox",
     name: "The mailbox",
     blurb:
-      "Need a deep dive, a video, a tutorial set, or someone to write your LinkedIn? Tell me about the company and the project. I'll write back.",
-    facts: ["Long-form articles, tutorials, and docs", "Video, infographics, and LinkedIn posts", "Ghostwriting, newsletters, and content strategy"],
+      "Need a brand story, a founder voice, a video, or someone to write your LinkedIn? Tell me about the company and the project. I'll write back.",
+    facts: ["Brand stories, thought leadership, and blogs", "Video, infographics, and LinkedIn posts", "Ghostwriting, newsletters, docs, and content strategy"],
     href: "/contact",
     cta: "Work with me",
     x: 9.5,

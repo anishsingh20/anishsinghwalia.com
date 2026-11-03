@@ -9,7 +9,7 @@ import { mailtoHref } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Work with me",
-  description: "Tell me about the company, the format, and what it's for. Technical content for B2B SaaS, developer-tool, cloud and AI-native companies.",
+  description: "Tell me about the company, the format, and what it's for. Content for AI-native companies and brands.",
   alternates: { canonical: "/contact" },
 };
 

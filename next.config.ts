@@ -2,6 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [
+      { source: "/work/semrush", destination: "/work", permanent: true },
+      { source: "/work/tanot-solutions", destination: "/work", permanent: true },
+      { source: "/work/dataimpulse", destination: "/work", permanent: true },
+      { source: "/work/digitalocean-inference-benchmarks", destination: "/work", permanent: true },
+      { source: "/work/:slug", destination: "/work", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

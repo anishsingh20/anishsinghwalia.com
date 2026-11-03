@@ -1,6 +1,6 @@
 # anishsinghwalia.com
 
-Technical content for B2B SaaS, developer-tool, cloud and AI-native companies. I'm Anish Singh Walia, Senior Technical Content Strategist II and Team Lead at DigitalOcean. The site shows the work, the companies, what they said, and how to start a project.
+Content for AI-native companies and brands. I'm Anish Singh Walia, Senior Technical Content Strategist II and Team Lead at DigitalOcean. Brand stories, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters and docs. The site shows the work, the companies, what they said, and how to start a project.
 
 Next.js 15, React 19, TypeScript, Tailwind v4, three.js for the game room. Runs on DigitalOcean App Platform or Vercel.
 
@@ -28,9 +28,9 @@ npm run build && npm start
 
 ## Pages
 
-`/`, `/work`, `/work/<slug>`, `/services`, `/about`, `/media`, `/experience`, `/clients`, `/testimonials`, `/game`, `/ask`, `/contact`. Also `sitemap.xml`, `robots.txt`, `llms.txt`, and an Open Graph image.
+`/`, `/work`, `/services`, `/about`, `/media`, `/experience`, `/clients`, `/testimonials`, `/game`, `/ask`, `/contact`. Also `sitemap.xml`, `robots.txt`, `llms.txt`, and an Open Graph image.
 
-Case studies live at `/work/semrush`, `/work/tanot-solutions`, `/work/dataimpulse`, and `/work/digitalocean-inference-benchmarks`. Talks and press live on `/media`.
+The work page is a showcase gallery of live published pieces, grouped by format. Old `/work/<slug>` URLs redirect to `/work`. Talks and press live on `/media`. The game room is at `/game` and is labelled in the main nav.
 
 Company marks live in `public/logos` and are listed in `data/logos.ts`. The animated background is `src/components/ambient.tsx` plus the `.ambient-*` rules in `globals.css`. It is CSS and inline SVG only and switches off under `prefers-reduced-motion`.
 

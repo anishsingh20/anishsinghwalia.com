@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { caseStudies } from "@data/services";
 import { lastUpdated, site } from "@data/site";
 
 const paths = [
@@ -14,7 +13,6 @@ const paths = [
   "/game",
   "/ask",
   "/contact",
-  ...caseStudies.map((study) => `/work/${study.slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,6 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${site.url}${path || "/"}`,
     lastModified: now,
     changeFrequency: "monthly",
-    priority: path === "" ? 1 : path.startsWith("/work/") ? 0.8 : 0.7,
+    priority: path === "" ? 1 : path === "/work" ? 0.8 : 0.7,
   }));
 }
