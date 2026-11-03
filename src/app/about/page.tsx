@@ -45,7 +45,7 @@ export default function AboutPage() {
           <h2 className="font-display text-2xl">Why engineers trust my content</h2>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
             {trustPoints.map((point) => (
-              <li key={point.title} className="rounded-2xl border border-line bg-panel/70 p-4">
+              <li key={point.title} className="rounded-2xl border border-line bg-panel p-4">
                 <p className="font-medium text-cream">{point.title}</p>
                 <p className="mt-1 text-sm leading-relaxed text-muted">{point.text}</p>
               </li>

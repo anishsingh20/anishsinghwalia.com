@@ -45,7 +45,7 @@ export function Ambient() {
 /** A few voxel blocks scattered inside one section, for variety between sections. */
 export function SectionVoxels({ className = "" }: { className?: string }) {
   return (
-    <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`} aria-hidden="true">
+    <div className={`pointer-events-none absolute inset-0 z-0 overflow-hidden ${className}`} aria-hidden="true">
       {[0, 1, 2].map((index) => (
         <svg key={index} className={`voxel voxel-section voxel-section-${index}`} viewBox="0 0 24 28">
           <path d="M12 2 22 7v14l-10 5L2 21V7z" fill="#e8611f" fillOpacity="0.4" />

@@ -8,7 +8,7 @@ export function CaseStudyCards({ items }: { items: CaseStudy[] }) {
       {items.map((study) => {
         const internal = study.link.href.startsWith("/");
         return (
-          <li key={study.id} className="flex h-full flex-col rounded-3xl border border-line bg-ink/70 p-6 backdrop-blur-[2px]">
+          <li key={study.id} className="flex h-full flex-col rounded-3xl border border-line bg-ink p-6">
             <div className="flex items-center gap-3">
               <BrandLogo name={study.company} size="sm" />
               <p className="font-mono text-xs uppercase tracking-[0.16em] text-ember">{study.company}</p>

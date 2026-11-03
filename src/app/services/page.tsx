@@ -45,7 +45,7 @@ export default function ServicesPage() {
             {services.map((service) => {
               const internal = service.example.href.startsWith("/");
               return (
-                <li key={service.id} id={service.id} className="flex scroll-mt-24 flex-col rounded-3xl border border-line bg-ink/80 p-6">
+                <li key={service.id} id={service.id} className="flex scroll-mt-24 flex-col rounded-3xl border border-line bg-ink p-6">
                   <h3 className="font-display text-2xl text-cream">{service.title}</h3>
                   <p className="mt-3 text-base leading-relaxed text-cream/95">{service.outcome}</p>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{service.detail}</p>
@@ -69,7 +69,7 @@ export default function ServicesPage() {
           <h2 className="font-display text-3xl">Why engineers trust my content</h2>
           <ul className="mt-6 grid gap-3">
             {trustPoints.map((point) => (
-              <li key={point.title} className="rounded-2xl border border-line bg-panel/70 p-4">
+              <li key={point.title} className="rounded-2xl border border-line bg-panel p-4">
                 <p className="font-medium text-cream">{point.title}</p>
                 <p className="mt-1 text-sm leading-relaxed text-muted">{point.text}</p>
               </li>
@@ -97,7 +97,7 @@ export default function ServicesPage() {
           <h2 className="mt-2 font-display text-3xl">Four steps, no surprises</h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-4">
             {processSteps.map((step, index) => (
-              <li key={step.title} className="rounded-2xl border border-line bg-panel/70 p-5">
+              <li key={step.title} className="rounded-2xl border border-line bg-panel p-5">
                 <p className="font-mono text-xs text-ember">0{index + 1}</p>
                 <h3 className="mt-2 font-display text-xl text-cream">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{step.text}</p>
@@ -113,7 +113,7 @@ export default function ServicesPage() {
           <h2 className="mt-2 font-display text-3xl">Pick a format. I&apos;ve shipped it.</h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {formats.map((format) => (
-              <li key={format.id} className="flex flex-col rounded-2xl border border-line bg-ink/80 p-5">
+              <li key={format.id} className="flex flex-col rounded-2xl border border-line bg-ink p-5">
                 <h3 className="font-display text-lg text-cream">{format.title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{format.line}</p>
                 {format.example ? (
@@ -135,7 +135,7 @@ export default function ServicesPage() {
           <h2 className="mt-2 font-display text-3xl">Questions buyers ask</h2>
           <dl className="mt-8 grid gap-4 md:grid-cols-2">
             {buyerFaqs.map((faq) => (
-              <div key={faq.question} className="rounded-2xl border border-line bg-panel/70 p-5">
+              <div key={faq.question} className="rounded-2xl border border-line bg-panel p-5">
                 <dt className="font-medium text-cream">{faq.question}</dt>
                 <dd className="mt-2 text-sm leading-relaxed text-muted">{faq.answer}</dd>
               </div>

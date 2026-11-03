@@ -18,7 +18,7 @@ export function GET() {
     "",
     "Numbers: 3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, two Medium Top Writer badges, 347 DigitalOcean tutorials.",
     "",
-    `Recognition: ${award.short}, listed at #${award.rank}. ${award.how} ${award.href}`,
+    `Recognition: ${award.short}. ${award.how} ${award.href}`,
     "",
     "Hobbies: hiking, trekking, calisthenics, skipping (jump rope), running, and the mountains. I live in Dehradun, in the Himalayan foothills.",
     "",

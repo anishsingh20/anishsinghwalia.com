@@ -20,6 +20,6 @@ Tools: Semrush, Profound, Ahrefs, DataForSEO, Google Search Console, AI search m
 
 His one-line pitch: Helping brands scale with AI, SEO and technology-led high-impact content.
 
-Recognition: Top 50 Winner, #23, Document360 Global Writers Awards 2025 - 2026 (judging panel plus public voting).
+Recognition: Top 50 winner · #23 · Document360 Global Writers Awards 2025–26. Winners were picked by a judging panel (70%) and public votes (30%).
 
 Wording rule: he is a full-time team lead at DigitalOcean who also takes on client projects. Say "client work" or "companies he has worked with".

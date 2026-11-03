@@ -175,7 +175,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
 
   if (has(q, /\b(awards?|finalist|document360|global writers|top 50|top 20|recognition|prize|honou?rs?|has he won|did he win)\b/)) {
     return {
-      text: `Yes. In the ${award.name} ${award.edition}, Anish is a ${award.placement.replace(", ", " at ")}, listed as ${award.listedAs}. The page says winners were ${award.how.charAt(0).toLowerCase()}${award.how.slice(1).replace(/\.$/, "")}. He is also a two-time Medium Top Writer. Winners list: ${link("Document360 Global Writers Awards", award.href)}; his ${link("nominee profile", award.profileHref)}.`,
+      text: `Yes. ${award.short}. Listed as ${award.listedAs}. ${award.how} He is also a two-time Medium Top Writer. Winners list: ${link("Document360 Global Writers Awards", award.href)}; his ${link("nominee profile", award.profileHref)}.`,
       sources: [{ title: "Document360 Global Writers Awards winners", url: award.href }, { title: "Nominee profile", url: award.profileHref }],
     };
   }

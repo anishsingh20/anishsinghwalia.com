@@ -47,7 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Ambient />
         <TrailProgress />
         <SiteHeader />
-        <div id="content">{children}</div>
+        <div id="content" className="relative z-10">{children}</div>
         <SiteFooter />
         <Surprises />
         <JsonLd data={personJsonLd()} />

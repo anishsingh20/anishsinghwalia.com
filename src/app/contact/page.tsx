@@ -24,7 +24,7 @@ export default function ContactPage() {
       <p className="text-sm text-muted">
         Email me at <a className="text-ember hover:underline" href={`mailto:${site.email}`}>{site.email}</a>
       </p>
-      <aside className="grid gap-4 rounded-3xl border border-line bg-panel/60 p-5">
+      <aside className="grid gap-4 rounded-3xl border border-line bg-panel p-5">
         <AwardBadge />
         <QuoteLine id="klaus-m-schremser" />
         <LogoStrip names={["Semrush", "DigitalOcean", "OtterlyAI", "DataImpulse", "Tanot Solutions", "Pollo AI"]} />

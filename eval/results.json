@@ -1,5 +1,5 @@
 {
-  "run": "2026-11-02T16:42:41.583Z",
+  "run": "2026-11-03T03:14:19.783Z",
   "mode": "keyless",
   "passed": 32,
   "total": 32,
@@ -24,7 +24,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 204
+      "ms": 203
     },
     {
       "id": "who-is",
@@ -46,7 +46,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 201
+      "ms": 200
     },
     {
       "id": "nutanix",
@@ -69,7 +69,7 @@
           "url": "https://www.linkedin.com/in/anish-singh-walia/"
         }
       ],
-      "ms": 201
+      "ms": 200
     },
     {
       "id": "amex",
@@ -92,7 +92,7 @@
           "url": "https://www.linkedin.com/in/anish-singh-walia/"
         }
       ],
-      "ms": 201
+      "ms": 200
     },
     {
       "id": "clients",
@@ -117,7 +117,7 @@
           "url": "https://anishsinghwalia.com/testimonials"
         }
       ],
-      "ms": 323
+      "ms": 322
     },
     {
       "id": "clients-framing",
@@ -139,7 +139,7 @@
           "url": "https://anishsinghwalia.com/testimonials"
         }
       ],
-      "ms": 322
+      "ms": 321
     },
     {
       "id": "tutorial-count",
@@ -158,7 +158,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 390
+      "ms": 525
     },
     {
       "id": "medium-stats",
@@ -229,7 +229,7 @@
           "url": "https://medium.com/@anishsingh20"
         }
       ],
-      "ms": 1198
+      "ms": 381
     },
     {
       "id": "hobbies",
@@ -251,7 +251,7 @@
           "url": "https://anishsinghwalia.com/about#off-hours"
         }
       ],
-      "ms": 321
+      "ms": 322
     },
     {
       "id": "hire",
@@ -360,7 +360,7 @@
           "url": "https://github.com/anishsingh20"
         }
       ],
-      "ms": 2672
+      "ms": 2136
     },
     {
       "id": "technical",
@@ -383,7 +383,7 @@
           "url": "https://anishsinghwalia.com/work"
         }
       ],
-      "ms": 201
+      "ms": 202
     },
     {
       "id": "formats",
@@ -403,7 +403,7 @@
           "url": "https://anishsinghwalia.com/services#what-i-make"
         }
       ],
-      "ms": 121
+      "ms": 120
     },
     {
       "id": "video",
@@ -421,7 +421,7 @@
           "url": "https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94"
         }
       ],
-      "ms": 200
+      "ms": 201
     },
     {
       "id": "ghostwriting",
@@ -461,7 +461,7 @@
           "url": "https://www.linkedin.com/in/anish-singh-walia/details/recommendations/"
         }
       ],
-      "ms": 322
+      "ms": 320
     },
     {
       "id": "location",
@@ -478,11 +478,37 @@
           "url": "https://anishsinghwalia.com/contact"
         }
       ],
-      "ms": 120
+      "ms": 121
     },
     {
       "id": "awards",
       "question": "Has Anish won any awards?",
+      "expect": [
+        {},
+        {},
+        {}
+      ],
+      "reject": [
+        {}
+      ],
+      "pass": true,
+      "failures": [],
+      "answer": "Yes. Top 50 winner · #23 · Document360 Global Writers Awards 2025–26. Listed as Senior Technical Writer II at DigitalOcean. Winners were picked by a judging panel (70%) and public votes (30%). He is also a two-time Medium Top Writer. Winners list: [Document360 Global Writers Awards](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners); his [nominee profile](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia).",
+      "sources": [
+        {
+          "title": "Document360 Global Writers Awards winners",
+          "url": "https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners"
+        },
+        {
+          "title": "Nominee profile",
+          "url": "https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia"
+        }
+      ],
+      "ms": 241
+    },
+    {
+      "id": "awards-finalist",
+      "question": "Was he a finalist in the Global Writers Awards?",
       "expect": [
         {},
         {},
@@ -494,7 +520,7 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Yes. In the Document360 Global Writers Awards 2025 - 2026, Anish is a Top 50 Winner at #23, listed as Senior Technical Writer II at DigitalOcean. The page says winners were scored 70% by a judging panel on submitted portfolios and 30% by public voting. He is also a two-time Medium Top Writer. Winners list: [Document360 Global Writers Awards](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners); his [nominee profile](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia).",
+      "answer": "Yes. Top 50 winner · #23 · Document360 Global Writers Awards 2025–26. Listed as Senior Technical Writer II at DigitalOcean. Winners were picked by a judging panel (70%) and public votes (30%). He is also a two-time Medium Top Writer. Winners list: [Document360 Global Writers Awards](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners); his [nominee profile](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia).",
       "sources": [
         {
           "title": "Document360 Global Writers Awards winners",
@@ -505,31 +531,7 @@
           "url": "https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia"
         }
       ],
-      "ms": 201
-    },
-    {
-      "id": "awards-finalist",
-      "question": "Was he a finalist in the Global Writers Awards?",
-      "expect": [
-        {},
-        {},
-        {},
-        {}
-      ],
-      "pass": true,
-      "failures": [],
-      "answer": "Yes. In the Document360 Global Writers Awards 2025 - 2026, Anish is a Top 50 Winner at #23, listed as Senior Technical Writer II at DigitalOcean. The page says winners were scored 70% by a judging panel on submitted portfolios and 30% by public voting. He is also a two-time Medium Top Writer. Winners list: [Document360 Global Writers Awards](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners); his [nominee profile](https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia).",
-      "sources": [
-        {
-          "title": "Document360 Global Writers Awards winners",
-          "url": "https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners"
-        },
-        {
-          "title": "Nominee profile",
-          "url": "https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia"
-        }
-      ],
-      "ms": 201
+      "ms": 241
     },
     {
       "id": "email",
@@ -546,7 +548,7 @@
           "url": "https://anishsinghwalia.com/contact"
         }
       ],
-      "ms": 79
+      "ms": 80
     },
     {
       "id": "career",
@@ -591,7 +593,7 @@
           "url": "https://www.allaboutai.com/interviews/how-anish-used-chatgpt-semrush-to-hit-3m-views/"
         }
       ],
-      "ms": 161
+      "ms": 162
     },
     {
       "id": "off-topic-geo",
@@ -641,7 +643,7 @@
           "url": "https://anishsinghwalia.com/contact"
         }
       ],
-      "ms": 121
+      "ms": 120
     },
     {
       "id": "private-address",
@@ -661,7 +663,7 @@
           "url": "https://anishsinghwalia.com/contact"
         }
       ],
-      "ms": 120
+      "ms": 121
     },
     {
       "id": "private-salary",

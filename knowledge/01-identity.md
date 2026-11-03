@@ -2,7 +2,7 @@
 
 Anish Singh Walia is a technical content creator and Senior Technical Content Strategist II and Team Lead at DigitalOcean. He has an engineering background: SRE and DevOps at Nutanix, then cloud consultant for American Express, then technical writing and content leadership at DigitalOcean.
 
-He is a Top 50 Winner (#23) in the Document360 Global Writers Awards 2025 - 2026.
+He is a Top 50 winner · #23 · Document360 Global Writers Awards 2025–26.
 
 He makes technical content in most formats: long-form articles and deep dives, tutorials and developer docs, videos, infographics and LinkedIn carousels, short-form LinkedIn posts, ghostwriting, and newsletters. He also does content strategy and search visibility (Google and AI answers).
 

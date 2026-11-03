@@ -29,7 +29,7 @@ export function AwardBadge({ variant = "pill", className = "" }: { variant?: "pi
             <p className="font-mono text-xs uppercase tracking-[0.16em] text-ember">{award.edition}</p>
             <p className="mt-1 font-display text-2xl text-cream">{award.name}</p>
             <p className="mt-1 text-sm text-cream/90">
-              {award.placement}. Listed as {award.listedAs}.
+              {award.short}. Listed as {award.listedAs}.
             </p>
             <p className="mt-2 text-sm text-muted">{award.how}</p>
             <span className="mt-3 inline-block text-sm text-ember group-hover:underline">See the winners list</span>
@@ -45,7 +45,7 @@ export function AwardBadge({ variant = "pill", className = "" }: { variant?: "pi
     >
       <Laurel />
       <span>
-        Top 50 Winner, #{award.rank} · {award.name} {award.edition}
+        {award.short}
       </span>
     </a>
   );

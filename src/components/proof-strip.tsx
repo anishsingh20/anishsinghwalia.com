@@ -10,7 +10,7 @@ export function LogoStrip({ names = logoStrip, size = "sm" as const }: { names?:
   return (
     <ul className="flex flex-wrap items-center gap-2" aria-label="Companies I've worked with">
       {names.map((name) => (
-        <li key={name} className="flex items-center gap-2 rounded-full border border-line bg-panel/70 py-1 pl-1 pr-3 text-xs text-muted">
+        <li key={name} className="flex items-center gap-2 rounded-full border border-line bg-panel py-1 pl-1 pr-3 text-xs text-muted">
           <BrandLogo name={name} size={size} />
           <span>{name}</span>
         </li>
@@ -23,7 +23,7 @@ export function MetricsRow({ compact = false }: { compact?: boolean }) {
   return (
     <ul className={`grid grid-cols-2 gap-3 ${compact ? "sm:grid-cols-4" : "md:grid-cols-4"}`}>
       {metrics.map((metric) => (
-        <li key={metric.id} className="rounded-2xl border border-line bg-panel/80 p-4">
+        <li key={metric.id} className="rounded-2xl border border-line bg-panel p-4">
           <p className={`break-words font-display leading-tight text-cream ${compact ? "text-lg lg:text-xl" : "text-2xl md:text-3xl"}`}>{metric.value}</p>
           <p className="mt-1 text-xs text-muted sm:text-sm">{metric.label}</p>
         </li>
@@ -38,7 +38,7 @@ export function QuoteLine({ id }: { id: string }) {
   if (!item?.quote) return null;
   const firstSentence = item.quote.split(/(?<=[.!?])\s/)[0];
   return (
-    <figure className="rounded-2xl border border-line bg-panel/60 p-4">
+    <figure className="rounded-2xl border border-line bg-panel p-4">
       <blockquote className="text-sm leading-relaxed text-cream/95">“{firstSentence}”</blockquote>
       <figcaption className="mt-2 text-xs text-muted">
         <Link href={`/testimonials#${item.id}`} className="hover:text-cream">

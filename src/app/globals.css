@@ -83,6 +83,56 @@ body {
   to { transform: translate(-6vw, -5vh) scale(0.95); }
 }
 
+/*
+ * Stars and voxels only in the side gutters. Soft glows and ridges stay
+ * unmasked, so the hero still has warmth; particles never sit on body copy.
+ */
+.ambient-stars,
+.ambient-voxels {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    #000 0,
+    #000 max(0px, calc(50% - 38rem)),
+    transparent max(0px, calc(50% - 36rem)),
+    transparent min(100%, calc(50% + 36rem)),
+    #000 min(100%, calc(50% + 38rem)),
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    #000 0,
+    #000 max(0px, calc(50% - 38rem)),
+    transparent max(0px, calc(50% - 36rem)),
+    transparent min(100%, calc(50% + 36rem)),
+    #000 min(100%, calc(50% + 38rem)),
+    #000 100%
+  );
+}
+
+@media (max-width: 79.99rem) {
+  .ambient-stars,
+  .ambient-voxels {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      #000 0,
+      #000 8%,
+      transparent 14%,
+      transparent 86%,
+      #000 92%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      #000 0,
+      #000 8%,
+      transparent 14%,
+      transparent 86%,
+      #000 92%,
+      #000 100%
+    );
+  }
+}
+
 .ambient-stars {
   position: absolute;
   inset: 0;
@@ -139,12 +189,12 @@ body {
   will-change: transform, opacity;
   animation: voxel-float 26s linear infinite;
 }
-.voxel-0 { left: 8%; animation-delay: 0s; }
-.voxel-1 { left: 23%; width: 16px; animation-delay: -6s; animation-duration: 32s; }
-.voxel-2 { left: 47%; animation-delay: -13s; animation-duration: 29s; }
-.voxel-3 { left: 64%; width: 14px; animation-delay: -19s; animation-duration: 36s; }
-.voxel-4 { left: 81%; animation-delay: -9s; animation-duration: 30s; }
-.voxel-5 { left: 93%; width: 18px; animation-delay: -23s; animation-duration: 34s; }
+.voxel-0 { left: 4%; animation-delay: 0s; }
+.voxel-1 { left: 10%; width: 16px; animation-delay: -6s; animation-duration: 32s; }
+.voxel-2 { left: 16%; animation-delay: -13s; animation-duration: 29s; }
+.voxel-3 { left: 84%; width: 14px; animation-delay: -19s; animation-duration: 36s; }
+.voxel-4 { left: 90%; animation-delay: -9s; animation-duration: 30s; }
+.voxel-5 { left: 95%; width: 18px; animation-delay: -23s; animation-duration: 34s; }
 
 @media (max-width: 767px) {
   .voxel-1, .voxel-3, .voxel-5 { display: none; }
@@ -165,9 +215,14 @@ body {
   opacity: 0.7;
   animation: voxel-bob 9s ease-in-out infinite;
 }
-.voxel-section-0 { right: 6%; top: 18%; }
-.voxel-section-1 { right: 14%; top: 62%; width: 18px; animation-delay: -3s; animation-duration: 11s; }
-.voxel-section-2 { right: 3%; top: 78%; width: 14px; animation-delay: -6s; animation-duration: 13s; }
+/* Kept inside the right gutter (outside the 72rem column), and only where a gutter exists. */
+.voxel-section { display: none; }
+.voxel-section-0 { right: calc(50% - 36rem - 3.5rem); top: 18%; }
+.voxel-section-1 { right: calc(50% - 36rem - 1.5rem); top: 60%; width: 18px; animation-delay: -3s; animation-duration: 11s; }
+.voxel-section-2 { left: calc(50% - 36rem - 3rem); top: 72%; width: 14px; animation-delay: -6s; animation-duration: 13s; }
+@media (min-width: 80rem) {
+  .voxel-section { display: block; }
+}
 
 @keyframes voxel-bob {
   0%, 100% { transform: translateY(0) rotate(-4deg); }

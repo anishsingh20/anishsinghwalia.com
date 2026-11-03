@@ -17,7 +17,7 @@ export function TestimonialGrid({
           const tile = tileLabel(item);
           const designation = [item.role, item.company].filter(Boolean).join(", ");
           return (
-            <li key={item.id} id={item.id} className="flex h-full scroll-mt-24 flex-col rounded-2xl border border-line bg-panel/85 p-6 target:border-orange/60">
+            <li key={item.id} id={item.id} className="flex h-full scroll-mt-24 flex-col rounded-2xl border border-line bg-panel p-6 target:border-orange/60">
               <div className="flex items-center gap-3">
                 {item.company ? <BrandLogo name={item.company} size="md" /> : null}
                 <div>

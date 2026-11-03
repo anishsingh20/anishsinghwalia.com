@@ -27,7 +27,7 @@ export function personJsonLd() {
       "@type": "CollegeOrUniversity",
       name: site.education.school,
     },
-    award: [`${award.name} ${award.edition}: ${award.placement}`, "Medium Top Writer (twice)"],
+    award: [award.short, "Medium Top Writer (twice)"],
     subjectOf: {
       "@type": "WebPage",
       name: `${award.name} ${award.edition} winners`,

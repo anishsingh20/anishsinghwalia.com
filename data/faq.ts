@@ -4,7 +4,7 @@ export const faqs: Faq[] = [
   {
     question: "What do you actually make?",
     answer:
-      "Technical content in most formats: long-form articles and deep dives, tutorials and developer docs, videos, infographics and LinkedIn carousels, short-form LinkedIn posts, ghostwriting, and newsletters. I also do content strategy and search visibility. My day job is Senior Technical Content Strategist II and Team Lead at DigitalOcean. In the Document360 Global Writers Awards 2025 - 2026 I placed #23 in the Top 50 Winners.",
+      "Technical content in most formats: long-form articles and deep dives, tutorials and developer docs, videos, infographics and LinkedIn carousels, short-form LinkedIn posts, ghostwriting, and newsletters. I also do content strategy and search visibility. My day job is Senior Technical Content Strategist II and Team Lead at DigitalOcean. Top 50 winner · #23 · Document360 Global Writers Awards 2025–26.",
   },
   {
     question: "Who do you work with?",

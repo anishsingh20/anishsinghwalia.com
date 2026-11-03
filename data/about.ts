@@ -17,7 +17,7 @@ export const aboutDo = [
 export const aboutTrack = [
   "3+ years at DigitalOcean. I own the core infrastructure content program and now the AI inference one.",
   "A Medium publication with 3,000,000+ average monthly readers, 35,000+ subscribers, and two Top Writer badges.",
-  "Top 50 Winner, #23, in the Document360 Global Writers Awards 2025 - 2026, scored by a judging panel and public voting.",
+  "Top 50 winner · #23 · Document360 Global Writers Awards 2025–26. Winners were picked by a judging panel (70%) and public votes (30%).",
   "Daily tools: Semrush, Profound, Ahrefs, DataForSEO, Google Search Console, and AI search monitoring.",
 ];
 

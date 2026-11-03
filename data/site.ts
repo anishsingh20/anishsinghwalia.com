@@ -39,16 +39,18 @@ export const site = {
  * Document360 Global Writers Awards. Checked against the winners page on 2 Nov 2026:
  * the page heading reads "2025 - 2026" and "Meet the Top 50 Winners"; the entry is
  * "#23 Anish Singh Walia, Senior Technical Writer II at DigitalOcean". The page says
- * winners were scored 70% by a judging panel on submitted portfolios and 30% by public voting.
+ * winners were picked by a judging panel (70%) and public votes (30%). The page writes the
+ * edition as "2025 - 2026"; the site writes it 2025–26.
  */
 export const award = {
   name: "Document360 Global Writers Awards",
-  edition: "2025 - 2026",
-  placement: "Top 50 Winner, #23",
+  edition: "2025–26",
+  placement: "Top 50 winner · #23",
   rank: 23,
   listedAs: "Senior Technical Writer II at DigitalOcean",
-  short: "Top 50 Winner, Document360 Global Writers Awards 2025 - 2026",
-  how: "Scored 70% by a judging panel on submitted portfolios and 30% by public voting.",
+  /** Canonical short line used on the pill and anywhere the award is named in one phrase. */
+  short: "Top 50 winner · #23 · Document360 Global Writers Awards 2025–26",
+  how: "Winners were picked by a judging panel (70%) and public votes (30%).",
   href: "https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/winners",
   profileHref: "https://globalwritersawards.document360.com/c/document360-global-writers-awards-2025/nominees/anish-singh-walia",
 } as const;

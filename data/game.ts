@@ -71,7 +71,7 @@ export const stations: Station[] = [
     facts: [
       "Client work for Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI",
       "Tutorials for Hostinger, DataScience+, and GeeksforGeeks",
-      "Top 50 Winner, Document360 Global Writers Awards 2025 - 2026",
+      "Top 50 winner · #23 · Document360 Global Writers Awards 2025–26",
     ],
     href: "/clients",
     cta: "See the companies",

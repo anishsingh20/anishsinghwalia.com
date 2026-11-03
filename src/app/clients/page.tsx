@@ -34,7 +34,7 @@ export default function ClientsPage() {
               <p className="mt-2 text-sm text-muted">{group.lede}</p>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {clients.filter((client) => client.group === group.id).map((client) => (
-                  <li key={client.name} className="flex flex-col rounded-2xl border border-line bg-panel/80 p-5 transition hover:border-orange/40">
+                  <li key={client.name} className="flex flex-col rounded-2xl border border-line bg-panel p-5 transition hover:border-orange/40">
                     <div className="flex items-center gap-3">
                       <BrandLogo name={client.name} size="md" />
                       <div>

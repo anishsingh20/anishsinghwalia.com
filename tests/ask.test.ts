@@ -39,10 +39,11 @@ describe("keyless bot", () => {
     for (const name of ["Semrush", "OtterlyAI", "DataImpulse", "Tanot Solutions", "Pollo AI"]) expect(clients.text).toContain(name);
 
     const awards = await ask("Has he won any awards?");
-    expect(awards.text).toContain("Document360 Global Writers Awards 2025 - 2026");
-    expect(awards.text).toContain("#23");
+    expect(awards.text).toContain("Top 50 winner · #23 · Document360 Global Writers Awards 2025–26");
+    expect(awards.text).toContain("Winners were picked by a judging panel (70%) and public votes (30%)");
     expect(awards.text).toContain("globalwritersawards.document360.com");
     expect(awards.text).not.toMatch(/overall winner|first place/i);
+    expect(awards.text).not.toMatch(/scored 70%/i);
 
     const hire = await ask("How do I hire him?");
     expect(hire.text).toContain("waliaanish1997@gmail.com");

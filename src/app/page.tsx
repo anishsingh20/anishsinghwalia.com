@@ -85,7 +85,7 @@ export default function HomePage() {
             {services.map((service) => {
               const internal = service.example.href.startsWith("/");
               return (
-                <li key={service.id} className="flex flex-col rounded-2xl border border-line bg-ink/80 p-5">
+                <li key={service.id} className="flex flex-col rounded-2xl border border-line bg-ink p-5">
                   <h3 className="font-display text-lg text-cream">{service.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-cream/90">{service.outcome}</p>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{service.detail}</p>
@@ -111,7 +111,7 @@ export default function HomePage() {
           <p className="mt-3 text-muted">Developers can tell when the writer has never run the thing. I have.</p>
           <ul className="mt-6 grid gap-3">
             {trustPoints.map((point) => (
-              <li key={point.title} className="rounded-xl border border-line bg-panel/70 px-4 py-3">
+              <li key={point.title} className="rounded-xl border border-line bg-panel px-4 py-3">
                 <p className="text-sm font-medium text-cream">{point.title}</p>
                 <p className="mt-1 text-sm leading-relaxed text-muted">{point.text}</p>
               </li>
@@ -129,7 +129,7 @@ export default function HomePage() {
           <h3 className="mt-8 font-display text-2xl">When to call me</h3>
           <ul className="mt-4 grid gap-3">
             {aboutFit.map((item) => (
-              <li key={item} className="rounded-xl border border-line bg-panel/70 px-4 py-3 text-sm leading-relaxed text-muted">{item}</li>
+              <li key={item} className="rounded-xl border border-line bg-panel px-4 py-3 text-sm leading-relaxed text-muted">{item}</li>
             ))}
           </ul>
           <Link href="/about" className="mt-4 inline-block text-sm text-ember hover:underline">More about me</Link>
@@ -162,7 +162,7 @@ export default function HomePage() {
           </div>
           <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {wall.map((client) => (
-              <li key={client.name} className="flex h-24 items-center justify-center gap-3 rounded-xl border border-line bg-panel/80 px-3">
+              <li key={client.name} className="flex h-24 items-center justify-center gap-3 rounded-xl border border-line bg-panel px-3">
                 <BrandLogo name={client.name} size="sm" />
                 <span className="font-display text-base leading-tight tracking-tight">{client.name}</span>
               </li>
@@ -187,7 +187,7 @@ export default function HomePage() {
           <h2 className="mt-2 font-display text-3xl">Four steps, no surprises</h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-4">
             {processSteps.map((step, index) => (
-              <li key={step.title} className="rounded-2xl border border-line bg-ink/80 p-5">
+              <li key={step.title} className="rounded-2xl border border-line bg-ink p-5">
                 <p className="font-mono text-xs text-ember">0{index + 1}</p>
                 <h3 className="mt-2 font-display text-xl text-cream">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{step.text}</p>
@@ -225,12 +225,12 @@ export default function HomePage() {
 
       <section className="border-t border-line">
         <div className="mx-auto grid max-w-6xl gap-6 px-4 py-16 md:grid-cols-2">
-          <Link href="/experience" className="rounded-3xl border border-line bg-panel/80 p-6 hover:border-orange/50">
+          <Link href="/experience" className="rounded-3xl border border-line bg-panel p-6 hover:border-orange/50">
             <p className="font-mono text-xs uppercase tracking-[0.16em] text-ember">Experience</p>
             <h2 className="mt-3 font-display text-3xl">From SRE intern to team lead</h2>
             <p className="mt-3 text-sm text-muted">Nutanix, American Express, then DigitalOcean. The whole climb, camp by camp.</p>
           </Link>
-          <Link href="/game" className="rounded-3xl border border-line bg-panel/80 p-6 hover:border-orange/50">
+          <Link href="/game" className="rounded-3xl border border-line bg-panel p-6 hover:border-orange/50">
             <p className="font-mono text-xs uppercase tracking-[0.16em] text-ember">Game Room</p>
             <h2 className="mt-3 font-display text-3xl">Walk around my cabin</h2>
             <p className="mt-3 text-sm text-muted">A voxel cabin in the foothills. Open the desk, the pager, the kettlebell, and the wall. Each one is a page on this site.</p>
