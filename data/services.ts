@@ -48,6 +48,10 @@ export const caseStudies: CaseStudy[] = [
       href: "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306",
     },
     quoteId: "daria-sukhoroslova",
+    image: {
+      src: "/images/work/semrush-essay.webp",
+      alt: "The Medium essay SEO-to-GEO Identity Crisis, sponsored by Semrush",
+    },
   },
   {
     id: "tanot",
@@ -66,6 +70,10 @@ export const caseStudies: CaseStudy[] = [
       "In her words: it “completely transformed both my content and my overall LinkedIn presence,” and the profile “finally matched the quality of the work I do.”",
     link: { label: "Her recommendation", href: "/testimonials#renu-sharma" },
     quoteId: "renu-sharma",
+    image: {
+      src: "/images/work/tanot-linkedin.webp",
+      alt: "A public LinkedIn post by Renu Sharma, co-founder of Tanot Solutions",
+    },
   },
   {
     id: "dataimpulse",
@@ -84,6 +92,10 @@ export const caseStudies: CaseStudy[] = [
       "“Communication was smooth throughout, he was responsive to feedback, and hit the agreed timeline. Would gladly work with Anish again.”",
     link: { label: "His recommendation", href: "/testimonials#andrew-byzov" },
     quoteId: "andrew-byzov",
+    image: {
+      src: "/images/work/dataimpulse-linkedin.webp",
+      alt: "Anish's LinkedIn post for DataImpulse, from a live proxy experiment",
+    },
   },
   {
     id: "digitalocean",
@@ -105,7 +117,7 @@ export const caseStudies: CaseStudy[] = [
       href: "https://www.digitalocean.com/community/tutorials/how-to-benchmark-llm-inference",
     },
     image: {
-      src: "/images/work/do-inference.png",
+      src: "/images/work/do-inference.webp",
       alt: "The DigitalOcean tutorial How to Benchmark LLM Inference Yourself",
     },
   },

@@ -84,52 +84,64 @@ body {
 }
 
 /*
- * Stars and voxels only in the side gutters. Soft glows and ridges stay
- * unmasked, so the hero still has warmth; particles never sit on body copy.
+ * Stars and voxels stay in the side gutters and below the nav. Soft glows
+ * remain unmasked. Ridges are not in this layer.
  */
 .ambient-stars,
 .ambient-voxels {
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    #000 0,
-    #000 max(0px, calc(50% - 38rem)),
-    transparent max(0px, calc(50% - 36rem)),
-    transparent min(100%, calc(50% + 36rem)),
-    #000 min(100%, calc(50% + 38rem)),
-    #000 100%
-  );
-  mask-image: linear-gradient(
-    90deg,
-    #000 0,
-    #000 max(0px, calc(50% - 38rem)),
-    transparent max(0px, calc(50% - 36rem)),
-    transparent min(100%, calc(50% + 36rem)),
-    #000 min(100%, calc(50% + 38rem)),
-    #000 100%
-  );
+  -webkit-mask-image:
+    linear-gradient(
+      90deg,
+      #000 0,
+      #000 max(0px, calc(50% - 38rem)),
+      transparent max(0px, calc(50% - 36rem)),
+      transparent min(100%, calc(50% + 36rem)),
+      #000 min(100%, calc(50% + 38rem)),
+      #000 100%
+    ),
+    linear-gradient(180deg, transparent 0, transparent 6.5rem, #000 9rem);
+  mask-image:
+    linear-gradient(
+      90deg,
+      #000 0,
+      #000 max(0px, calc(50% - 38rem)),
+      transparent max(0px, calc(50% - 36rem)),
+      transparent min(100%, calc(50% + 36rem)),
+      #000 min(100%, calc(50% + 38rem)),
+      #000 100%
+    ),
+    linear-gradient(180deg, transparent 0, transparent 6.5rem, #000 9rem);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 @media (max-width: 79.99rem) {
   .ambient-stars,
   .ambient-voxels {
-    -webkit-mask-image: linear-gradient(
-      90deg,
-      #000 0,
-      #000 8%,
-      transparent 14%,
-      transparent 86%,
-      #000 92%,
-      #000 100%
-    );
-    mask-image: linear-gradient(
-      90deg,
-      #000 0,
-      #000 8%,
-      transparent 14%,
-      transparent 86%,
-      #000 92%,
-      #000 100%
-    );
+    -webkit-mask-image:
+      linear-gradient(
+        90deg,
+        #000 0,
+        #000 8%,
+        transparent 14%,
+        transparent 86%,
+        #000 92%,
+        #000 100%
+      ),
+      linear-gradient(180deg, transparent 0, transparent 6.5rem, #000 9rem);
+    mask-image:
+      linear-gradient(
+        90deg,
+        #000 0,
+        #000 8%,
+        transparent 14%,
+        transparent 86%,
+        #000 92%,
+        #000 100%
+      ),
+      linear-gradient(180deg, transparent 0, transparent 6.5rem, #000 9rem);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
   }
 }
 
@@ -153,21 +165,32 @@ body {
   50% { opacity: 0.6; }
 }
 
-.ambient-ridge {
+.ridge-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: clamp(90px, 14vh, 180px);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.ridge-band-far,
+.ridge-band-near {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 200%;
-  height: clamp(90px, 14vh, 180px);
+  height: 100%;
   will-change: transform;
 }
-.ambient-ridge-far {
-  fill: rgba(232, 97, 31, 0.07);
+.ridge-band-far {
+  fill: rgba(232, 97, 31, 0.1);
   animation: ridge-drift 160s linear infinite;
 }
-.ambient-ridge-near {
-  fill: rgba(244, 239, 230, 0.045);
-  height: clamp(70px, 11vh, 140px);
+.ridge-band-near {
+  fill: rgba(244, 239, 230, 0.06);
+  height: 78%;
   animation: ridge-drift 95s linear infinite reverse;
 }
 
@@ -256,16 +279,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-.section-ridge::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 70px;
-  background:
-    linear-gradient(180deg, transparent, rgba(232, 97, 31, 0.05)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 70' preserveAspectRatio='none'%3E%3Cpath d='M0 70V50L60 38 120 48 190 24 260 44 330 16 400 40 470 28 540 46 610 32 680 50 750 22 820 42 890 14 960 38 1030 30 1100 48 1200 36V70Z' fill='%23f4efe6' fill-opacity='0.05'/%3E%3C/svg%3E") bottom / 100% 70px no-repeat;
-  pointer-events: none;
-}
 
 ::selection {
   background: #e8611f;
@@ -349,7 +362,8 @@ body {
   .cursor-blink { animation: none; }
   .ambient-glow,
   .star,
-  .ambient-ridge,
+  .ridge-band-far,
+  .ridge-band-near,
   .voxel,
   .voxel-section {
     animation: none;

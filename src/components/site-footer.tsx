@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { footerNav, site, socials } from "@data/site";
+import { RidgeBand } from "@/components/ambient";
 import { AwardBadge } from "@/components/award-badge";
 import { SocialIcon } from "@/components/social-icon";
 
 export function SiteFooter() {
   return (
     <footer className="section-ridge relative z-10 border-t border-line">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-[1.3fr_1fr_1fr]">
+      <RidgeBand />
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
           <p className="font-display text-xl">Anish Singh Walia</p>
           <p className="mt-2 max-w-sm text-sm text-muted">

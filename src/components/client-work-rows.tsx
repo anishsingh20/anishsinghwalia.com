@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@data/services";
+import { testimonials } from "@data/testimonials";
 import { ArtifactFallback, BrowserFrame } from "@/components/browser-frame";
 import { BrandLogo } from "@/components/brand-logo";
 
@@ -17,7 +18,12 @@ export function ClientWorkRows({ items }: { items: CaseStudy[] }) {
                 </Link>
               ) : (
                 <Link href={`/work/${study.slug}`} className="block">
-                  <ArtifactFallback company={study.company} title={study.title} meta={`${study.format} · ${study.year}`} />
+                  <ArtifactFallback
+                    company={study.company}
+                    title={study.title}
+                    meta={`${study.format} · ${study.year}`}
+                    quote={study.quoteId ? testimonials.find((item) => item.id === study.quoteId)?.quote ?? undefined : undefined}
+                  />
                 </Link>
               )}
             </div>

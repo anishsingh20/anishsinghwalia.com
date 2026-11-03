@@ -78,7 +78,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
             {study.image ? (
               <BrowserFrame src={study.image.src} alt={study.image.alt} href={study.link.href} />
             ) : (
-              <ArtifactFallback company={study.company} title={study.title} meta={`${study.format} · ${study.year}`} />
+              <ArtifactFallback
+                company={study.company}
+                title={study.title}
+                meta={`${study.format} · ${study.year}`}
+                quote={quote?.quote ?? undefined}
+              />
             )}
             {study.link.href.startsWith("/") ? (
               <Link href={study.link.href} className="mt-4 inline-block text-sm text-ember hover:underline">

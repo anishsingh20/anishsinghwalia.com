@@ -40,16 +40,22 @@ export function ArtifactFallback({
   company,
   title,
   meta,
+  quote,
 }: {
   company: string;
   title: string;
   meta: string;
+  quote?: string;
 }) {
   return (
-    <figure className="flex aspect-[16/10] flex-col justify-end overflow-hidden rounded-2xl border border-line bg-[linear-gradient(160deg,#211c18,rgba(232,97,31,0.18),#0c0b0a)] p-6">
+    <figure className="flex aspect-[16/10] flex-col justify-between overflow-hidden rounded-2xl border border-line bg-panel p-6">
       <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ember">{company}</p>
-      <p className="mt-2 font-display text-2xl leading-tight text-cream">{title}</p>
-      <p className="mt-2 text-sm text-muted">{meta}</p>
+      {quote ? (
+        <blockquote className="font-display text-xl leading-snug text-cream">“{quote}”</blockquote>
+      ) : (
+        <p className="font-display text-2xl leading-tight text-cream">{title}</p>
+      )}
+      <p className="text-sm text-muted">{meta}</p>
     </figure>
   );
 }

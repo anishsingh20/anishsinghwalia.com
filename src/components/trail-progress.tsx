@@ -38,7 +38,9 @@ export function TrailProgress() {
         className="relative h-full bg-orange"
         style={{ width: `${percent}%`, transition: reduce ? "none" : "width 80ms linear" }}
       >
-        <span className="absolute -right-1 -top-1 h-3 w-3 rotate-45 border-r-2 border-t-2 border-ember bg-orange" aria-hidden="true" />
+        {percent > 0 ? (
+          <span className="absolute -right-1 -top-1 h-3 w-3 rotate-45 border-r-2 border-t-2 border-ember bg-orange" aria-hidden="true" />
+        ) : null}
       </div>
     </div>
   );

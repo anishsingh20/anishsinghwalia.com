@@ -5,6 +5,7 @@ import { homeMedia } from "@data/media";
 import { caseStudies } from "@data/services";
 import { icp, site } from "@data/site";
 import { testimonials } from "@data/testimonials";
+import { RidgeBand } from "@/components/ambient";
 import { AwardBadge } from "@/components/award-badge";
 import { ClientWorkRows } from "@/components/client-work-rows";
 import { OffClock } from "@/components/off-clock";
@@ -21,8 +22,9 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="bg-grid border-b border-line">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-16">
+      <section className="relative overflow-hidden bg-grid border-b border-line">
+        <RidgeBand />
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-16">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">
               Anish Singh Walia / Technical content

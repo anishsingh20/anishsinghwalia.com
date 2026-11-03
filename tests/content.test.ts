@@ -1,8 +1,9 @@
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { bookingLabel, site } from "../data/site";
 import { stations } from "../data/game";
+import { caseStudies } from "../data/services";
 import { testimonials } from "../data/testimonials";
 
 function walk(dir: string, acc: string[] = []) {
@@ -46,6 +47,14 @@ describe("public facts", () => {
     const button = readFileSync("src/components/book-intro.tsx", "utf8");
     expect(button).toContain('target="_blank"');
     expect(button).toContain('rel="noopener"');
+  });
+
+  it("gives every case study a real framed screenshot", () => {
+    for (const study of caseStudies) {
+      expect(study.image?.src).toMatch(/^\/images\/work\/.+\.webp$/);
+      expect(study.image?.alt.length).toBeGreaterThan(12);
+      expect(existsSync(path.join(process.cwd(), "public", study.image!.src.replace(/^\//, "")))).toBe(true);
+    }
   });
 
   it("gives every game station a real page", () => {
