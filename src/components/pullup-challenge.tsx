@@ -1,18 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { pullupMilestones } from "@data/pullup";
 
 /**
  * Tap, click, or press Space/Enter on the button to do a pull-up.
- * Every milestone opens a fact about me. Personal best stays in this browser.
+ * Every milestone opens a fact. Personal best stays in this browser.
+ * Restored from 63e62e9 (last home placement) / 558f9d2 (component).
  */
-
-const milestones: { reps: number; label: string; text: string }[] = [
-  { reps: 5, label: "5 reps", text: "347 tutorials on DigitalOcean, authored or refreshed." },
-  { reps: 10, label: "10 reps", text: "3,000,000+ average monthly readers on Medium." },
-  { reps: 15, label: "15 reps", text: "4 years 8 months on call at Nutanix before I wrote full-time." },
-  { reps: 20, label: "20 reps", text: "Two bodyweight sessions a day, at home. This card is the most honest thing on the page." },
-];
 
 const STORAGE_KEY = "asw-pullup-best";
 
@@ -50,20 +45,18 @@ export function PullupChallenge() {
     setUp(false);
   }
 
-  const next = milestones.find((item) => item.reps > reps);
-  const reached = milestones.filter((item) => item.reps <= reps);
+  const next = pullupMilestones.find((item) => item.reps > reps);
+  const reached = pullupMilestones.filter((item) => item.reps <= reps);
   const latest = reached[reached.length - 1];
   const progress = next ? reps / next.reps : 1;
 
   return (
-    <section
-      aria-label="Pull-up challenge"
-      className="rounded-3xl border border-line bg-panel p-5 sm:p-6"
-    >
+    <section aria-label="Pull-up challenge" className="rounded-2xl border border-line bg-panel p-5 sm:p-6">
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Rep challenge</p>
-          <h2 className="mt-1 font-display text-xl text-cream">Do a few pull-ups with me</h2>
+          <h2 className="mt-1 font-display text-2xl text-cream">Do a few pull-ups with me</h2>
+          <p className="mt-1 text-sm text-muted">Tap, click, or press Space. Each set opens a real fact.</p>
         </div>
         <p className="text-right font-mono text-xs text-faint">
           Best <span className="text-cream">{best}</span>
@@ -86,7 +79,14 @@ export function PullupChallenge() {
             <rect x="54" y="60" width="12" height="6" rx="2" fill="#3a2a1e" />
             <rect x="50" y="68" width="20" height="30" rx="4" fill="#1f2430" />
             <circle cx="60" cy="80" r="3.5" fill="#e8611f" />
-            <path d={up ? "M50 70 L40 40 L40 24 M70 70 L80 40 L80 24" : "M50 70 L42 46 L40 24 M70 70 L78 46 L80 24"} fill="none" stroke="#c98a5b" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d={up ? "M50 70 L40 40 L40 24 M70 70 L80 40 L80 24" : "M50 70 L42 46 L40 24 M70 70 L78 46 L80 24"}
+              fill="none"
+              stroke="#c98a5b"
+              strokeWidth="6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
             <path d="M54 98 L52 126 M66 98 L68 126" fill="none" stroke="#2a2f3a" strokeWidth="7" strokeLinecap="round" />
             <rect x="46" y="124" width="12" height="7" rx="2" fill="#111" />
             <rect x="62" y="124" width="12" height="7" rx="2" fill="#111" />
@@ -97,11 +97,18 @@ export function PullupChallenge() {
             {reps}
             <span className="ml-2 font-sans text-sm text-faint">{reps === 1 ? "rep" : "reps"}</span>
           </p>
-          <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin={0} aria-valuemax={next?.reps ?? reps} aria-valuenow={reps} aria-label={next ? `Progress to ${next.label}` : "All milestones reached"}>
+          <div
+            className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-line"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={next?.reps ?? reps}
+            aria-valuenow={reps}
+            aria-label={next ? `Progress to ${next.label}` : "All milestones reached"}
+          >
             <div className="h-full bg-orange transition-[width] duration-200" style={{ width: `${Math.min(100, progress * 100)}%` }} />
           </div>
           <p className="mt-2 text-xs text-faint">
-            {next ? `${next.reps - reps} more to ${next.label}` : "That's all four. Go outside."}
+            {next ? `${next.reps - reps} more to ${next.label}` : "That's the set. Go outside."}
           </p>
         </div>
       </div>
@@ -124,14 +131,27 @@ export function PullupChallenge() {
         </button>
       </div>
 
-      <div className="mt-4 min-h-[3.25rem] rounded-2xl border border-dashed border-line px-4 py-3 text-sm" aria-live="polite">
+      <ul className="mt-4 flex flex-wrap gap-1.5">
+        {pullupMilestones.map((item) => {
+          const open = reps >= item.reps;
+          return (
+            <li
+              key={item.reps}
+              className={`rounded-full border px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] ${open ? "border-orange/50 text-ember" : "border-line text-faint"}`}
+            >
+              {item.label}
+            </li>
+          );
+        })}
+      </ul>
+      <div className="mt-3 min-h-[3.4rem] rounded-2xl border border-dashed border-line px-4 py-3 text-sm" aria-live="polite">
         {latest ? (
           <p className="text-cream">
             <span className="font-mono text-xs text-ember">{latest.label} · </span>
             {latest.text}
           </p>
         ) : (
-          <p className="text-muted">Every five reps opens a fact. Space or Enter works when the button is focused.</p>
+          <p className="text-muted">Every four reps opens a fact. Space or Enter works when the button is focused.</p>
         )}
       </div>
     </section>

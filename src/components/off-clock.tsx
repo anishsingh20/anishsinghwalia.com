@@ -62,23 +62,18 @@ export function OffClock({ compact = false }: { compact?: boolean }) {
   if (compact) {
     return (
       <section id="off-hours" className="scroll-mt-24">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Off the clock</p>
-            <h2 className="mt-2 font-display text-3xl tracking-tight">The rest of me is outdoors.</h2>
-            <p className="mt-3 max-w-xl text-muted">
-              Hiking, trekking, calisthenics, skipping, running, and the mountains around Dehradun.
-            </p>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {hobbies.map((hobby) => (
-                <li key={hobby.id} className="rounded-full border border-line px-3 py-1 text-sm text-muted">
-                  {hobby.title}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <PullupChallenge />
-        </div>
+        <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Off the clock</p>
+        <h2 className="mt-2 font-display text-3xl tracking-tight">The rest of me is outdoors.</h2>
+        <p className="mt-3 max-w-xl text-muted">
+          Hiking, trekking, calisthenics, skipping, running, and the mountains around Dehradun.
+        </p>
+        <ul className="mt-5 flex flex-wrap gap-2">
+          {hobbies.map((hobby) => (
+            <li key={hobby.id} className="rounded-full border border-line px-3 py-1 text-sm text-muted">
+              {hobby.title}
+            </li>
+          ))}
+        </ul>
       </section>
     );
   }

@@ -3,8 +3,9 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { bookingLabel, nav, site } from "../data/site";
 import { stations } from "../data/game";
+import { pullupMilestones } from "../data/pullup";
 import { showcase } from "../data/showcase";
-import { testimonials } from "../data/testimonials";
+import { excerptQuote, landingTestimonials, testimonials } from "../data/testimonials";
 
 function walk(dir: string, acc: string[] = []) {
   for (const entry of readdirSync(dir)) {
@@ -50,6 +51,36 @@ describe("public facts", () => {
       expect(testimonials.some((item) => item.quote === quote)).toBe(true);
     }
     expect(testimonials.find((item) => item.name.startsWith("Evgeniia"))?.quote).toBeNull();
+  });
+
+  it("excerpts home quotes as prefixes of the real recommendations", () => {
+    const quoted = landingTestimonials();
+    expect(quoted.map((item) => item.company).filter(Boolean)).toEqual(
+      expect.arrayContaining(["Semrush", "DataImpulse", "Tanot Solutions", "OtterlyAI", "Pollo AI", "La Isla Designs", "DataForSEO"]),
+    );
+    expect(quoted).toHaveLength(8);
+    for (const item of quoted) {
+      const excerpt = excerptQuote(item.quote);
+      expect(item.quote.startsWith(excerpt)).toBe(true);
+      expect(excerpt.length).toBeGreaterThan(40);
+    }
+    const home = readFileSync("src/app/page.tsx", "utf8");
+    expect(home).toContain("QuoteMarquee");
+    expect(home).toContain("PullupChallenge");
+    expect(existsSync("src/components/pull-quotes.tsx")).toBe(false);
+  });
+
+  it("opens sourced facts in the pull-up challenge", () => {
+    const text = pullupMilestones.map((item) => item.text).join(" ");
+    expect(text).toContain("Top 50 winner · #23");
+    expect(text).toContain("Document360");
+    expect(text).toContain("347");
+    expect(text).toContain("Senior Technical Content Strategist II and Team Lead");
+    expect(text).toContain("DigitalOcean");
+    expect(text).toContain("3,000,000+");
+    for (const name of ["Semrush", "DataImpulse", "Tanot Solutions", "OtterlyAI", "Pollo AI", "La Isla Designs"]) {
+      expect(text).toContain(name);
+    }
   });
 
   it("defaults the booking URL to the Calendly intro call", () => {

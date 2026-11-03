@@ -149,6 +149,27 @@ export function landingTestimonials(): Testimonial[] {
   });
 }
 
+/**
+ * First sentence, or the first two when the first is short.
+ * Always a prefix of the original quote. No invented words.
+ */
+export function excerptQuote(quote: string): string {
+  const sentences = quote.split(/(?<=[.!?])(?:\s+|$)/).filter(Boolean);
+  if (sentences.length === 0) return quote;
+  let excerpt = sentences[0];
+  if (excerpt.length < 80 && sentences[1]) {
+    excerpt = `${excerpt} ${sentences[1]}`;
+  }
+  excerpt = excerpt.trim();
+  const max = 170;
+  if (excerpt.length <= max) return excerpt;
+  const slice = excerpt.slice(0, max);
+  const atComma = slice.lastIndexOf(", ");
+  const atWord = slice.lastIndexOf(" ");
+  const cut = atComma > 90 ? atComma : atWord;
+  return (cut > 80 ? slice.slice(0, cut) : slice).trim();
+}
+
 export function tileLabel(item: Testimonial): string {
   return item.company ?? item.role ?? item.name;
 }

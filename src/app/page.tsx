@@ -4,19 +4,18 @@ import { engagements } from "@data/engagements";
 import { featuredShowcase } from "@data/showcase";
 import { buyerFaqs } from "@data/services";
 import { icp, site } from "@data/site";
-import { testimonials } from "@data/testimonials";
+import { landingTestimonials } from "@data/testimonials";
 import { RidgeBand } from "@/components/ambient";
 import { AwardBadge } from "@/components/award-badge";
 import { HowWeWork } from "@/components/how-we-work";
 import { OffClock } from "@/components/off-clock";
 import { LogoStrip, MetricsRow } from "@/components/proof-strip";
-import { PullQuotes } from "@/components/pull-quotes";
+import { PullupChallenge } from "@/components/pullup-challenge";
+import { QuoteMarquee } from "@/components/quote-marquee";
 import { SelectedClients } from "@/components/selected-clients";
 import { ShowcaseGallery } from "@/components/showcase-gallery";
-import { TestimonialGrid } from "@/components/testimonial-grid";
 import { WorkCtas } from "@/components/work-ctas";
 
-const homeQuotes = ["renu-sharma", "klaus-m-schremser"] as const;
 const homeFaqQuestions = [
   "What formats do you take on?",
   "Do you ghostwrite, and whose name goes on it?",
@@ -25,7 +24,7 @@ const homeFaqQuestions = [
 ];
 
 export default function HomePage() {
-  const quotes = homeQuotes.map((id) => testimonials.find((item) => item.id === id)!);
+  const quotes = landingTestimonials();
   const faqs = homeFaqQuestions.map((question) => buyerFaqs.find((faq) => faq.question === question)!);
 
   return (
@@ -69,7 +68,14 @@ export default function HomePage() {
 
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-4 py-8">
-          <PullQuotes />
+          <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Clients</p>
+              <h2 className="mt-1 font-display text-3xl">What they wrote.</h2>
+            </div>
+            <Link href="/testimonials" className="text-sm text-ember hover:underline">Read all</Link>
+          </div>
+          <QuoteMarquee items={quotes} />
         </div>
       </section>
 
@@ -95,6 +101,12 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-4 py-10">
+          <PullupChallenge />
+        </div>
+      </section>
+
+      <section className="border-t border-line">
         <HowWeWork />
       </section>
 
@@ -115,18 +127,6 @@ export default function HomePage() {
               </div>
             ))}
           </dl>
-        </div>
-      </section>
-
-      <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-4 py-10">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="font-display text-4xl">What clients say.</h2>
-            <Link href="/testimonials" className="text-sm text-ember hover:underline">Read all</Link>
-          </div>
-          <div className="mt-8">
-            <TestimonialGrid items={quotes} />
-          </div>
         </div>
       </section>
 
