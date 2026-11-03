@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { engagements } from "@data/engagements";
+import { featuredShowcase } from "@data/showcase";
 import { buyerFaqs } from "@data/services";
 import { icp, site } from "@data/site";
 import { testimonials } from "@data/testimonials";
@@ -15,7 +16,7 @@ import { ShowcaseGallery } from "@/components/showcase-gallery";
 import { TestimonialGrid } from "@/components/testimonial-grid";
 import { WorkCtas } from "@/components/work-ctas";
 
-const homeQuotes = ["daria-sukhoroslova", "andrew-byzov", "renu-sharma"] as const;
+const homeQuotes = ["renu-sharma", "klaus-m-schremser"] as const;
 const homeFaqQuestions = [
   "What formats do you take on?",
   "Do you ghostwrite, and whose name goes on it?",
@@ -31,7 +32,7 @@ export default function HomePage() {
     <main>
       <section className="relative overflow-hidden bg-grid border-b border-line">
         <RidgeBand />
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-16">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 py-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-12">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">
               Anish Singh Walia / Content
@@ -61,13 +62,13 @@ export default function HomePage() {
       </section>
 
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-6">
+        <div className="mx-auto max-w-6xl px-4 py-5">
           <LogoStrip names={["Semrush", "DigitalOcean", "Tanot Solutions", "DataImpulse", "OtterlyAI", "Pollo AI"]} />
         </div>
       </section>
 
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-10">
+        <div className="mx-auto max-w-6xl px-4 py-8">
           <PullQuotes />
         </div>
       </section>
@@ -75,19 +76,19 @@ export default function HomePage() {
       <SelectedClients />
 
       <section id="work" className="scroll-mt-24">
-        <div className="mx-auto max-w-6xl px-4 py-14">
+        <div className="mx-auto max-w-6xl px-4 py-10">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Work</p>
               <h2 className="mt-2 font-display text-4xl">What I make.</h2>
-              <p className="mt-3 max-w-2xl text-muted">Live pieces, grouped by format. Each one opens the published work.</p>
+              <p className="mt-3 max-w-2xl text-muted">Six live pieces. Each one opens the published work.</p>
             </div>
             <Link href="/work" className="text-sm text-ember hover:underline">All work</Link>
           </div>
-          <div className="mt-10">
-            <ShowcaseGallery limitPerGroup={2} />
+          <div className="mt-6">
+            <ShowcaseGallery items={featuredShowcase()} grouped={false} />
           </div>
-          <div className="mt-10">
+          <div className="mt-8">
             <WorkCtas />
           </div>
         </div>
@@ -98,13 +99,13 @@ export default function HomePage() {
       </section>
 
       <section className="border-y border-line">
-        <div className="mx-auto max-w-6xl px-4 py-10">
+        <div className="mx-auto max-w-6xl px-4 py-8">
           <MetricsRow compact />
         </div>
       </section>
 
       <section id="faq" className="scroll-mt-24">
-        <div className="mx-auto max-w-6xl px-4 py-14">
+        <div className="mx-auto max-w-6xl px-4 py-10">
           <h2 className="font-display text-4xl">Questions clients ask</h2>
           <dl className="mt-8 grid gap-4 md:grid-cols-2">
             {faqs.map((faq) => (
@@ -118,7 +119,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-4 py-14">
+        <div className="mx-auto max-w-6xl px-4 py-10">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-display text-4xl">What clients say.</h2>
             <Link href="/testimonials" className="text-sm text-ember hover:underline">Read all</Link>
@@ -130,7 +131,7 @@ export default function HomePage() {
       </section>
 
       <section className="section-ember border-t border-line">
-        <div className="mx-auto max-w-6xl px-4 py-14">
+        <div className="mx-auto max-w-6xl px-4 py-10">
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Work together</p>
           <h2 className="mt-2 font-display text-4xl">Three ways in.</h2>
           <ul className="mt-8 grid gap-4 md:grid-cols-3">
@@ -148,7 +149,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-4 py-14">
+        <div className="mx-auto max-w-6xl px-4 py-8">
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Game room</p>
           <h2 className="mt-2 font-display text-4xl">Walk the cabin.</h2>
           <p className="mt-3 max-w-xl text-muted">
@@ -161,7 +162,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-4 py-12">
+        <div className="mx-auto max-w-6xl px-4 py-8">
           <OffClock compact />
         </div>
       </section>

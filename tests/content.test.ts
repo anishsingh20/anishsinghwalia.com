@@ -62,14 +62,21 @@ describe("public facts", () => {
     expect(button).not.toContain("↗");
   });
 
-  it("gives every showcase image a real file", () => {
+  it("gives every showcase piece a real image file", () => {
     for (const item of showcase) {
       expect(item.href.startsWith("http")).toBe(true);
-      if (!item.image) continue;
-      expect(item.image.src).toMatch(/^\/images\/.+\.(webp|jpg|png)$/);
+      expect(item.image?.src).toMatch(/^\/images\/.+\.(webp|jpg|png)$/);
       expect(item.image.alt.length).toBeGreaterThan(12);
       expect(existsSync(path.join(process.cwd(), "public", item.image.src.replace(/^\//, "")))).toBe(true);
     }
+    expect(showcase.some((item) => item.id === "video-library" && item.group.startsWith("Long-form"))).toBe(true);
+    expect(showcase.filter((item) => item.group === "Videos").every((item) => item.play)).toBe(true);
+  });
+
+  it("does not embed YouTube iframes in the work gallery", () => {
+    const gallery = readFileSync("src/components/showcase-gallery.tsx", "utf8");
+    expect(gallery).not.toMatch(/iframe/i);
+    expect(gallery).not.toMatch(/youtube-nocookie|youtube\.com\/embed/);
   });
 
   it("does not ship dedicated case-study routes", () => {

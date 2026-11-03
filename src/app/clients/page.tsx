@@ -26,39 +26,47 @@ export default function ClientsPage() {
           <Button asChild variant="outline"><Link href="/work">See the work</Link></Button>
         </div>
         <div className="mt-12 grid gap-12">
-          {clientGroups.map((group) => (
-            <section key={group.id}>
-              <h2 className="font-display text-2xl">{group.title}</h2>
-              <p className="mt-2 text-sm text-muted">{group.lede}</p>
-              <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {clients.filter((client) => client.group === group.id).map((client) => {
-                  const body = (
-                    <>
-                      <div className="flex items-center gap-3">
-                        <BrandLogo name={client.name} size="md" />
-                        <div>
-                          <p className="font-display text-xl tracking-tight">{client.name}</p>
-                          <p className="mt-0.5 text-xs uppercase tracking-[0.14em] text-ember">{client.tag}</p>
+          {clientGroups.map((group) => {
+            const list = clients.filter((client) => client.group === group.id);
+            const cols = list.length === 3 || list.length >= 5 ? 3 : 2;
+            return (
+              <section key={group.id}>
+                <h2 className="font-display text-2xl">{group.title}</h2>
+                <p className="mt-2 text-sm text-muted">{group.lede}</p>
+                <ul className={`mt-5 grid gap-3 sm:grid-cols-2 ${cols === 3 ? "lg:grid-cols-3" : ""}`}>
+                  {list.map((client, index) => {
+                    const lastSpans = index === list.length - 1 && list.length > 1 && list.length % cols === 1;
+                    const body = (
+                      <>
+                        <div className="flex items-center gap-3">
+                          <BrandLogo name={client.name} size="md" />
+                          <div>
+                            <p className="font-display text-xl tracking-tight">{client.name}</p>
+                            <p className="mt-0.5 text-xs uppercase tracking-[0.14em] text-ember">{client.tag}</p>
+                          </div>
                         </div>
-                      </div>
-                      {client.note ? <p className="mt-3 text-sm text-muted">{client.note}</p> : null}
-                    </>
-                  );
-                  return (
-                    <li key={client.name} className="flex flex-col rounded-2xl border border-line bg-panel p-5 transition hover:border-orange/40">
-                      {client.link ? (
-                        <a href={client.link.href} className="flex h-full flex-col">
-                          {body}
-                        </a>
-                      ) : (
-                        body
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-          ))}
+                        {client.note ? <p className="mt-3 text-sm text-muted">{client.note}</p> : null}
+                      </>
+                    );
+                    return (
+                      <li
+                        key={client.name}
+                        className={`flex flex-col rounded-2xl border border-line bg-panel p-5 transition hover:border-orange/40 ${lastSpans ? (cols === 3 ? "sm:col-span-2 lg:col-span-3" : "sm:col-span-2") : ""}`}
+                      >
+                        {client.link ? (
+                          <a href={client.link.href} className="flex h-full flex-col">
+                            {body}
+                          </a>
+                        ) : (
+                          body
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            );
+          })}
         </div>
       </div>
       <ScopeCta title="Want your company on this page?" />

@@ -3,7 +3,7 @@ import { clientGets, processSteps } from "@data/services";
 export function HowWeWork() {
   return (
     <section>
-      <div className="mx-auto max-w-6xl px-4 py-14">
+        <div className="mx-auto max-w-6xl px-4 py-10">
         <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">How we work together</p>
         <h2 className="mt-2 font-display text-4xl">Brief, plan, draft, publish.</h2>
         <ol className="mt-8 grid gap-4 md:grid-cols-4">
@@ -15,7 +15,7 @@ export function HowWeWork() {
             </li>
           ))}
         </ol>
-        <h3 className="mt-12 font-display text-2xl">What you get</h3>
+        <h3 className="mt-8 font-display text-2xl">What you get</h3>
         <ul className="mt-5 grid gap-4 sm:grid-cols-2">
           {clientGets.map((item) => (
             <li key={item.title} className="rounded-2xl border border-line bg-ink p-5">

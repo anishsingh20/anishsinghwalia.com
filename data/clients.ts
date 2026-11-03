@@ -85,14 +85,15 @@ export const clients: ClientEntry[] = [
   },
   {
     name: "Nutanix",
-    tag: "SRE intern to Sr. SRE",
-    brief: "Four years and eight months on the infrastructure that other people's products ran on.",
+    tag: "Site Reliability Engineer - Intern to Sr. SRE",
+    brief: "Four years and eight months. Titles: Site Reliability Engineer - Intern, SRE, Sr. SRE, then Cloud Consultant for American Express Cloud and Infrastructure Operations team India.",
     group: "employers",
   },
   {
     name: "American Express",
-    tag: "Cloud consultant",
-    brief: "Cloud Consultant for the American Express Cloud and Infrastructure Operations team in India, January 2022 to August 2023, through Nutanix.",
+    tag: "Cloud Consultant",
+    note: "Cloud and Infrastructure Operations team India, through Nutanix",
+    brief: "Cloud Consultant for American Express Cloud and Infrastructure Operations team India, January 2022 to August 2023, through Nutanix.",
     group: "employers",
   },
   {

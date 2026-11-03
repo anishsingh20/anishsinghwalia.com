@@ -16,7 +16,7 @@ export function PullQuotes() {
   return (
     <ul className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <li key={item.id} className="rounded-2xl border border-line bg-panel p-6">
+        <li key={item.id} className="rounded-2xl border border-line bg-panel p-5">
           <blockquote className="text-[15px] leading-relaxed text-cream/95">“{pulls[item.id as (typeof ids)[number]]}”</blockquote>
           <footer className="mt-5 flex items-center gap-3">
             {item.company ? <BrandLogo name={item.company} size="sm" /> : null}

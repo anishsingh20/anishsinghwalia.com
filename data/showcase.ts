@@ -1,6 +1,6 @@
 /**
  * Public pieces a buyer can open. Every href is a live URL from the dossier.
- * No reconstructed pages. No case-study routes.
+ * No reconstructed pages. No case-study routes. Every card has a real image.
  */
 
 export const showcaseGroups = [
@@ -19,8 +19,9 @@ export type ShowcaseItem = {
   title: string;
   outlet: string;
   href: string;
-  image?: { src: string; alt: string };
-  embed?: "youtube";
+  image: { src: string; alt: string };
+  /** Static thumb with a play mark. Links out. Never an iframe. */
+  play?: boolean;
 };
 
 export const showcase: ShowcaseItem[] = [
@@ -30,15 +31,11 @@ export const showcase: ShowcaseItem[] = [
     title: "AI For Thought, with Muhammad Hassan Khan",
     outlet: "AllAboutAI podcast",
     href: "https://www.youtube.com/watch?v=R_XSFA9q7Dg",
-    image: { src: "/images/media/ai-for-thought.jpg", alt: "Anish on the AI For Thought podcast" },
-    embed: "youtube",
-  },
-  {
-    id: "video-library",
-    group: "Videos",
-    title: "How I helped a five-person team rebuild its video library",
-    outlet: "Medium",
-    href: "https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94",
+    image: {
+      src: "/images/work/youtube-ai-for-thought.webp",
+      alt: "YouTube thumbnail for AI For Thought episode 16 with Anish Singh Walia",
+    },
+    play: true,
   },
   {
     id: "dataimpulse-post",
@@ -57,6 +54,10 @@ export const showcase: ShowcaseItem[] = [
     title: "How to use Semrush with ChatGPT",
     outlet: "LinkedIn",
     href: "https://www.linkedin.com/posts/anish-singh-walia_how-to-use-semrush-with-chatgpt-for-viral-activity-7297901444194611200-pCWD",
+    image: {
+      src: "/images/work/semrush-chatgpt-linkedin.webp",
+      alt: "Anish's public LinkedIn post on using Semrush with ChatGPT",
+    },
   },
   {
     id: "dataforseo-digest",
@@ -64,6 +65,10 @@ export const showcase: ShowcaseItem[] = [
     title: "n8n content-brief automation in the Monthly Community Digest",
     outlet: "DataForSEO",
     href: "https://www.linkedin.com/posts/dataforseo_dfs-activity-7444737781844701184-L8sB",
+    image: {
+      src: "/images/work/dataforseo-digest.webp",
+      alt: "DataForSEO Monthly Community Digest featuring Anish's n8n content-brief workflow",
+    },
   },
   {
     id: "semrush-essay",
@@ -77,11 +82,26 @@ export const showcase: ShowcaseItem[] = [
     },
   },
   {
+    id: "video-library",
+    group: "Long-form & thought leadership",
+    title: "This is How I Helped a Five-Person Team Rebuild Its Video Library",
+    outlet: "Medium",
+    href: "https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94",
+    image: {
+      src: "/images/work/video-library.webp",
+      alt: "Hero image from Anish's Medium essay on rebuilding a video library",
+    },
+  },
+  {
     id: "zero-click",
     group: "Long-form & thought leadership",
     title: "How I Turn Zero-Click SERPs Into Measurable Brand Visibility",
     outlet: "Medium",
     href: "https://medium.com/readers-club/how-i-turn-zero-click-serps-into-measurable-brand-visibility-91c53bbbb535",
+    image: {
+      src: "/images/work/zero-click.webp",
+      alt: "Hero illustration from the Zero-Click SERPs essay on Medium",
+    },
   },
   {
     id: "allaboutai-feature",
@@ -119,15 +139,37 @@ export const showcase: ShowcaseItem[] = [
     title: "Zero-Infrastructure RAG Agent with Knowledge Bases + MCP",
     outlet: "DigitalOcean · sole author",
     href: "https://www.digitalocean.com/community/tutorials/build-rag-agent-digitalocean-knowledge-bases-mcp",
+    image: {
+      src: "/images/work/do-rag.webp",
+      alt: "Cover for the DigitalOcean tutorial on a zero-infrastructure RAG agent",
+    },
   },
   {
     id: "hostinger-linux",
     group: "Technical tutorials",
-    title: "Linux tutorials for Hostinger",
+    title: "How to use the Linux cat command",
     outlet: "Hostinger",
-    href: "https://www.hostinger.com/tutorials/author/anishsingh/",
+    href: "https://www.hostinger.com/tutorials/linux-cat-command/",
+    image: {
+      src: "/images/work/hostinger-cat.webp",
+      alt: "Terminal figure from Anish's Hostinger tutorial on the Linux cat command",
+    },
   },
 ];
+
+/** Six strongest live pieces for the home preview. Covers every format. */
+export const featuredShowcaseIds = [
+  "ai-for-thought",
+  "dataimpulse-post",
+  "semrush-essay",
+  "renu-linkedin",
+  "do-inference",
+  "video-library",
+] as const;
+
+export function featuredShowcase() {
+  return featuredShowcaseIds.map((id) => showcase.find((item) => item.id === id)!);
+}
 
 export function showcaseByGroup() {
   return showcaseGroups
