@@ -11,6 +11,19 @@ import { pullupMilestones } from "@data/pullup";
 
 const STORAGE_KEY = "asw-pullup-best";
 
+function nowrapFigures(text: string) {
+  const parts = text.split(/(\d[\d,]*(?:\+|×)?)/);
+  return parts.map((part, index) =>
+    /^\d/.test(part) ? (
+      <span key={index} className="whitespace-nowrap tabular-nums">
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  );
+}
+
 export function PullupChallenge() {
   const [reps, setReps] = useState(0);
   const [best, setBest] = useState(0);
@@ -148,7 +161,7 @@ export function PullupChallenge() {
         {latest ? (
           <p className="text-cream">
             <span className="font-mono text-xs text-ember">{latest.label} · </span>
-            {latest.text}
+            {nowrapFigures(latest.text)}
           </p>
         ) : (
           <p className="text-muted">Every four reps opens a fact. Space or Enter works when the button is focused.</p>

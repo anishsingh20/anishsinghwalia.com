@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { engagements } from "@data/engagements";
 import { formats } from "@data/formats";
 import { buyerFaqs, processSteps, trustPoints } from "@data/services";
@@ -8,6 +7,7 @@ import { AwardBadge } from "@/components/award-badge";
 import { JsonLd } from "@/components/json-ld";
 import { PageHeader } from "@/components/page-header";
 import { MetricsRow } from "@/components/proof-strip";
+import { SmartLink } from "@/components/smart-link";
 import { WorkCtas, ScopeCta } from "@/components/work-ctas";
 import { breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 
@@ -57,11 +57,7 @@ export default function ServicesPage() {
                 <h3 className="font-display text-lg text-cream">{format.title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{format.line}</p>
                 {format.example ? (
-                  format.example.href.startsWith("/") ? (
-                    <Link href={format.example.href} className="mt-4 text-sm text-ember hover:underline">{format.example.label}</Link>
-                  ) : (
-                    <a href={format.example.href} className="mt-4 text-sm text-ember hover:underline">{format.example.label}</a>
-                  )
+                  <SmartLink href={format.example.href} className="mt-4 text-sm text-ember hover:underline">{format.example.label}</SmartLink>
                 ) : null}
               </li>
             ))}

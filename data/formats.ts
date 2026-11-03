@@ -15,7 +15,7 @@ export const formats: Format[] = [
     title: "Brand stories and thought leadership",
     line: "Essays and long-form that set the story. Sponsored or owned.",
     example: {
-      label: "SEO-to-GEO Identity Crisis, sponsored by Semrush",
+      label: "SEO-to-GEO Identity Crisis",
       href: "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306",
     },
   },

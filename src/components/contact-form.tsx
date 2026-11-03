@@ -6,6 +6,7 @@ import { site } from "@data/site";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { SmartLink } from "@/components/smart-link";
 import { Textarea } from "@/components/ui/textarea";
 
 type Errors = Record<string, string>;
@@ -55,9 +56,9 @@ export function ContactForm({ mailto }: { mailto: string }) {
       <div className="rounded-2xl border border-orange/40 bg-panel p-6" role="status">
         <h2 className="font-display text-2xl">Thanks. I&apos;ll get back to you.</h2>
         <p className="mt-3 text-muted">Your note is in. I&apos;ll reply to the email you entered.</p>
-        <a className="mt-4 inline-block text-ember hover:underline" href={`mailto:${site.email}`}>
+        <SmartLink className="mt-4 inline-block text-ember hover:underline" href={`mailto:${site.email}`}>
           {site.email}
-        </a>
+        </SmartLink>
       </div>
     );
   }
@@ -86,7 +87,7 @@ export function ContactForm({ mailto }: { mailto: string }) {
       {formError ? <p className="text-sm text-ember" role="alert">{formError}</p> : null}
       <div className="flex flex-wrap items-center gap-4">
         <Button type="submit" disabled={pending}>{pending ? "Sending…" : "Send"}</Button>
-        <a href={mailto} className="text-sm text-ember hover:underline">Or email me directly</a>
+        <SmartLink href={mailto} className="text-sm text-ember hover:underline">Or email me directly</SmartLink>
       </div>
     </form>
   );

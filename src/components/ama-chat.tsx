@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { SmartLink } from "@/components/smart-link";
 
 const starters = [
   "What does Anish do?",
@@ -26,6 +26,7 @@ type Message = {
   sources?: Source[];
   mode?: "agent" | "keyless";
   failed?: boolean;
+  live?: boolean;
 };
 
 type BotEvent =
@@ -43,8 +44,18 @@ export function AmaChat() {
   const [pending, setPending] = useState(false);
   const [mode, setMode] = useState<"agent" | "keyless" | null>(null);
   const [blocked, setBlocked] = useState("");
+  const [reduce, setReduce] = useState(false);
   const logRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const pendingRef = useRef("");
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => setReduce(media.matches);
+    apply();
+    media.addEventListener("change", apply);
+    return () => media.removeEventListener("change", apply);
+  }, []);
 
   useEffect(() => {
     fetch("/api/chat")
@@ -71,10 +82,11 @@ export function AmaChat() {
       .map((item) => ({ role: item.role, content: item.content }));
     const userId = nextId++;
     const botId = nextId++;
+    pendingRef.current = "";
     setMessages((current) => [
       ...current,
       { id: userId, role: "user", content: message },
-      { id: botId, role: "assistant", content: "", status: "Thinking" },
+      { id: botId, role: "assistant", content: "", status: "Warming up", live: true },
     ]);
     setDraft("");
     setBlocked("");
@@ -103,13 +115,28 @@ export function AmaChat() {
           return;
         }
         if (event.type === "status") patch(botId, (item) => ({ ...item, status: event.text }));
-        if (event.type === "delta") patch(botId, (item) => ({ ...item, status: undefined, content: item.content + event.text }));
+        if (event.type === "delta") {
+          if (reduce) {
+            pendingRef.current += event.text;
+            patch(botId, (item) => ({ ...item, status: undefined }));
+          } else {
+            patch(botId, (item) => ({ ...item, status: undefined, content: item.content + event.text }));
+          }
+        }
         if (event.type === "sources") patch(botId, (item) => ({ ...item, sources: event.items }));
         if (event.type === "done") {
           setMode(event.mode);
-          patch(botId, (item) => ({ ...item, mode: event.mode, status: undefined }));
+          const buffered = pendingRef.current;
+          pendingRef.current = "";
+          patch(botId, (item) => ({
+            ...item,
+            mode: event.mode,
+            status: undefined,
+            live: false,
+            content: item.content || buffered,
+          }));
         }
-        if (event.type === "error") patch(botId, (item) => ({ ...item, status: undefined, failed: true, content: item.content || event.text }));
+        if (event.type === "error") patch(botId, (item) => ({ ...item, status: undefined, live: false, failed: true, content: item.content || event.text }));
       };
       while (true) {
         const { done, value } = await reader.read();
@@ -120,10 +147,16 @@ export function AmaChat() {
         lines.forEach(handle);
       }
       if (buffer) handle(buffer);
-      patch(botId, (item) => (item.content ? item : { ...item, failed: true, status: undefined, content: "I didn't get an answer back. Try once more, or use the contact form." }));
+      const leftover = pendingRef.current;
+      pendingRef.current = "";
+      patch(botId, (item) => {
+        const content = item.content || leftover;
+        if (content) return { ...item, content, live: false, status: undefined };
+        return { ...item, failed: true, live: false, status: undefined, content: "I didn't get an answer back. Try once more, or use the contact form." };
+      });
     } catch (error) {
       const text = error instanceof Error && error.message && !error.message.startsWith("HTTP") ? error.message : "The connection dropped. Try again, or use the contact form.";
-      patch(botId, (item) => ({ ...item, status: undefined, failed: true, content: text }));
+      patch(botId, (item) => ({ ...item, status: undefined, live: false, failed: true, content: text }));
     } finally {
       setPending(false);
       inputRef.current?.focus();
@@ -134,7 +167,7 @@ export function AmaChat() {
   const lastFailed = messages[messages.length - 1]?.failed;
 
   return (
-    <div className="rounded-3xl border border-line bg-panel">
+    <div className="ama-shell rounded-3xl border border-line bg-panel">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line px-4 py-3">
         <p className="font-mono text-xs text-ember">ask.anish</p>
         <p className="font-mono text-[11px] text-faint" aria-live="polite">
@@ -149,11 +182,11 @@ export function AmaChat() {
               Ask about my work, clients, the years before DigitalOcean, the numbers, hobbies, or how a project starts. I read live from Medium, GitHub, and DigitalOcean, and I link what I cite. If I can&apos;t find it, I say so.
             </p>
             <div className="flex flex-wrap gap-2" aria-label="Starter questions">
-              {starters.map((starter) => (
+              {starters.map((starter, index) => (
                 <button
                   key={starter}
                   type="button"
-                  className="rounded-full border border-line px-3 py-1.5 text-left text-xs text-muted transition hover:border-ember hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
+                  className={`starter-chip starter-chip-${index % 4} rounded-full border border-line bg-panel-2 px-3 py-1.5 text-left text-xs text-muted hover:border-ember hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange`}
                   onClick={() => void send(starter)}
                 >
                   {starter}
@@ -164,33 +197,30 @@ export function AmaChat() {
         ) : null}
 
         {messages.map((message) => (
-          <article key={message.id} className={message.role === "user" ? "ml-6 sm:ml-16" : "mr-2 sm:mr-10"}>
+          <article
+            key={message.id}
+            className={`${message.role === "user" ? "ml-6 sm:ml-16" : "ama-answer mr-2 sm:mr-10"} ${message.live ? "ama-answer-live" : ""}`}
+          >
             <p className="font-mono text-[10px] uppercase tracking-widest text-faint">
               {message.role === "user" ? "You" : message.failed ? "Didn't work" : message.mode === "agent" ? "Anish's bot" : message.mode === "keyless" ? "Anish's bot · from live sources and notes" : "Anish's bot"}
             </p>
-            {message.status ? (
-              <p className="mt-1 flex items-center gap-2 text-sm text-ember">
-                <span className="inline-block size-2 animate-pulse rounded-full bg-orange" aria-hidden />
-                {message.status}
-              </p>
-            ) : null}
+            {message.status ? <Thinker label={message.status} reduce={reduce} /> : null}
             {message.content ? (
               <div className={`mt-1 text-sm leading-relaxed ${message.failed ? "text-ember" : "text-cream"}`}>
                 <RichText text={message.content} />
+                {message.live && !reduce ? <span className="ama-caret" aria-hidden="true" /> : null}
               </div>
             ) : null}
             {message.sources?.length ? (
-              <ul className="mt-2 flex flex-wrap gap-2" aria-label="Sources">
-                {message.sources.map((source) => (
-                  <li key={source.url}>
-                    <a
+              <ul className="mt-3 flex flex-wrap gap-2" aria-label="Sources">
+                {message.sources.map((source, index) => (
+                  <li key={source.url} className="source-chip" style={{ animationDelay: `${index * 70}ms` }}>
+                    <SmartLink
                       href={source.url}
-                      target="_blank"
-                      rel="noreferrer"
                       className="inline-block rounded-full border border-line bg-panel-2 px-2.5 py-1 text-[11px] text-muted hover:border-ember hover:text-cream"
                     >
                       {source.title}
-                    </a>
+                    </SmartLink>
                   </li>
                 ))}
               </ul>
@@ -204,7 +234,7 @@ export function AmaChat() {
               Try again
             </Button>
             <Button asChild variant="ghost" size="sm">
-              <Link href="/contact">Use the contact form</Link>
+              <SmartLink href="/contact">Use the contact form</SmartLink>
             </Button>
           </div>
         ) : null}
@@ -247,7 +277,28 @@ export function AmaChat() {
   );
 }
 
-/** Paragraphs, simple lists, and markdown links. Nothing else. */
+function Thinker({ label, reduce }: { label: string; reduce: boolean }) {
+  return (
+    <div className="mt-2 flex items-center gap-3 text-sm text-ember">
+      <svg viewBox="0 0 72 90" className="h-12 w-10 shrink-0" aria-hidden="true">
+        <rect x="8" y="10" width="56" height="4" rx="2" fill="#e8611f" />
+        <rect x="10" y="0" width="4" height="14" fill="#4a3b31" />
+        <rect x="58" y="0" width="4" height="14" fill="#4a3b31" />
+        <g className={reduce ? undefined : "thinker-puller"}>
+          <rect x="30" y="28" width="12" height="12" rx="2" fill="#c98a5b" />
+          <rect x="30" y="26" width="12" height="5" rx="2" fill="#e9c25a" />
+          <rect x="28" y="42" width="16" height="22" rx="3" fill="#1f2430" />
+          <circle cx="36" cy="52" r="2.4" fill="#e8611f" />
+          <path d="M28 44 L18 22 L18 14 M44 44 L54 22 L54 14" fill="none" stroke="#c98a5b" strokeWidth="4" strokeLinecap="round" />
+          <path d="M32 64 L30 82 M40 64 L42 82" fill="none" stroke="#2a2f3a" strokeWidth="5" strokeLinecap="round" />
+        </g>
+      </svg>
+      <p>{label}</p>
+    </div>
+  );
+}
+
+/** Paragraphs, lists, markdown links, and quoted recommendations as blocks. */
 function RichText({ text }: { text: string }) {
   const blocks = text.split(/\n{2,}/);
   return (
@@ -264,6 +315,27 @@ function RichText({ text }: { text: string }) {
                 </li>
               ))}
             </ul>
+          );
+        }
+        const quoted = /^\s*["“]/.test(block);
+        if (quoted) {
+          const [first, ...rest] = lines;
+          return (
+            <blockquote key={index} className="ama-quote border-l-2 border-orange/70 pl-3">
+              <p className="text-cream/95">
+                <Inline text={first.replace(/^\s*/, "")} />
+              </p>
+              {rest.length ? (
+                <footer className="mt-2 text-xs text-muted">
+                  {rest.map((line, lineIndex) => (
+                    <span key={lineIndex}>
+                      {lineIndex > 0 ? <br /> : null}
+                      <Inline text={line} />
+                    </span>
+                  ))}
+                </footer>
+              ) : null}
+            </blockquote>
           );
         }
         return (
@@ -292,23 +364,30 @@ function Inline({ text }: { text: string }) {
         const markdown = part.match(/^\[([^\]]+)\]\(([^\s)]+)\)$/);
         if (markdown) {
           const [, label, href] = markdown;
-          if (href.startsWith("/")) {
-            return <Link key={index} href={href} className="text-ember underline underline-offset-2">{label}</Link>;
-          }
-          return <a key={index} href={href} target="_blank" rel="noreferrer" className="text-ember underline underline-offset-2">{label}</a>;
+          return (
+            <SmartLink key={index} href={href} className="text-ember underline underline-offset-2">
+              {label}
+            </SmartLink>
+          );
         }
         if (/^\*\*.+\*\*$/.test(part)) return <strong key={index}>{part.slice(2, -2)}</strong>;
         if (/^https?:\/\//i.test(part)) {
           const clean = part.replace(/[.,;:]+$/, "");
           return (
             <span key={index}>
-              <a href={clean} target="_blank" rel="noreferrer" className="text-ember underline underline-offset-2">{clean.replace(/^https?:\/\//, "")}</a>
+              <SmartLink href={clean} className="text-ember underline underline-offset-2">
+                {clean.replace(/^https?:\/\//, "")}
+              </SmartLink>
               {part.slice(clean.length)}
             </span>
           );
         }
         if (part.includes("@") && /\.[a-z]{2,}$/i.test(part)) {
-          return <a key={index} href={`mailto:${part}`} className="text-ember underline underline-offset-2">{part}</a>;
+          return (
+            <SmartLink key={index} href={`mailto:${part}`} className="text-ember underline underline-offset-2">
+              {part}
+            </SmartLink>
+          );
         }
         return <span key={index}>{part}</span>;
       })}

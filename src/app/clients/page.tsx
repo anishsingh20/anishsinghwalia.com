@@ -4,6 +4,7 @@ import { clientGroups, clients } from "@data/clients";
 import { BrandLogo } from "@/components/brand-logo";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
+import { SmartLink } from "@/components/smart-link";
 import { ScopeCta } from "@/components/work-ctas";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function ClientsPage() {
         <PageHeader
           kicker="Clients"
           title="Companies I've worked with."
-          lede="AI-native companies and brands. Logo, name, and how we worked."
+          lede="Any form of content for AI-native companies and brands."
         />
         <div className="mt-6 flex flex-wrap gap-3">
           <Button asChild><Link href="/contact">Tell me about your project</Link></Button>
@@ -54,9 +55,9 @@ export default function ClientsPage() {
                         className={`flex flex-col rounded-2xl border border-line bg-panel p-5 transition hover:border-orange/40 ${lastSpans ? (cols === 3 ? "sm:col-span-2 lg:col-span-3" : "sm:col-span-2") : ""}`}
                       >
                         {client.link ? (
-                          <a href={client.link.href} className="flex h-full flex-col">
+                          <SmartLink href={client.link.href} className="flex h-full flex-col">
                             {body}
-                          </a>
+                          </SmartLink>
                         ) : (
                           body
                         )}

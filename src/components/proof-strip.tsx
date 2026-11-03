@@ -23,9 +23,17 @@ export function MetricsRow({ compact = false }: { compact?: boolean }) {
   return (
     <ul className={`grid grid-cols-2 gap-3 ${compact ? "sm:grid-cols-4" : "md:grid-cols-4"}`}>
       {metrics.map((metric) => (
-        <li key={metric.id} className={compact ? "px-1 py-2" : "rounded-2xl border border-line bg-panel p-4"}>
-          <p className={`break-words font-display leading-tight text-cream ${compact ? "text-lg lg:text-xl" : "text-2xl md:text-3xl"}`}>{metric.value}</p>
-          <p className="mt-1 text-xs text-muted sm:text-sm">{metric.label}</p>
+        <li key={metric.id} className={compact ? "min-w-0 px-1 py-2" : "min-w-0 rounded-2xl border border-line bg-panel p-4"}>
+          <p
+            className={`metric-figure font-display leading-none text-cream ${compact ? "" : "metric-figure-lg"}`}
+            title={metric.value}
+          >
+            {metric.compact}
+          </p>
+          <p className="mt-1 text-xs text-muted sm:text-sm">
+            <span className="sr-only">{metric.value} </span>
+            {metric.label}
+          </p>
         </li>
       ))}
     </ul>

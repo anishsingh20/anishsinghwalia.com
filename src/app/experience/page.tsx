@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { earlyDays, experience } from "@data/experience";
 import { PageHeader } from "@/components/page-header";
+import { SmartLink } from "@/components/smart-link";
 import { ScopeCta } from "@/components/work-ctas";
 
 export const metadata: Metadata = {
@@ -49,7 +50,7 @@ export default function ExperiencePage() {
           <h2 className="mt-2 font-display text-2xl">{writing.roles[0].title}, {writing.org}</h2>
           <p className="mt-1 text-sm text-muted">{writing.roles[0].start} to {writing.roles[0].end} · {writing.roles[0].location}</p>
           <p className="mt-3 text-sm leading-relaxed text-muted">{writing.roles[0].summary}</p>
-          {writing.href ? <a href={writing.href} className="mt-3 inline-block text-sm text-ember hover:underline">Author page</a> : null}
+          {writing.href ? <SmartLink href={writing.href} className="mt-3 inline-block text-sm text-ember hover:underline">Author page</SmartLink> : null}
         </section>
         <section className="mt-12">
           <h2 className="font-display text-2xl">Before that</h2>

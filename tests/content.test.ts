@@ -88,8 +88,7 @@ describe("public facts", () => {
     expect(bookingLabel).toBe("Book an intro call");
     expect(bookingLabel).not.toMatch(/minute|\bmin\b/i);
     const button = readFileSync("src/components/book-intro.tsx", "utf8");
-    expect(button).toContain('target="_blank"');
-    expect(button).toContain('rel="noopener"');
+    expect(button).toContain("SmartLink");
     expect(button).not.toContain("↗");
   });
 

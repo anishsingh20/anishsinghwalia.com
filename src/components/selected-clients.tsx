@@ -1,11 +1,13 @@
 import { featuredClients } from "@data/clients";
 import { BrandLogo } from "@/components/brand-logo";
+import { SmartLink } from "@/components/smart-link";
 
 export function SelectedClients() {
   return (
     <section className="border-y border-line">
       <div className="mx-auto max-w-6xl px-4">
         <p className="pt-6 font-mono text-xs uppercase tracking-[0.18em] text-ember">Selected clients</p>
+        <p className="mt-2 max-w-2xl text-sm text-muted">Any form of content for AI-native companies and brands.</p>
         <ul className="mt-3 grid divide-y divide-line sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
           {featuredClients.map((client) => {
             const inner = (
@@ -21,9 +23,9 @@ export function SelectedClients() {
             return (
               <li key={client.name}>
                 {client.link ? (
-                  <a href={client.link.href} className="group block h-full">
+                  <SmartLink href={client.link.href} className="group block h-full">
                     {inner}
-                  </a>
+                  </SmartLink>
                 ) : (
                   inner
                 )}

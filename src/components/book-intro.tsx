@@ -1,5 +1,6 @@
 import { bookingLabel, site } from "@data/site";
 import { Button } from "@/components/ui/button";
+import { SmartLink } from "@/components/smart-link";
 
 type Size = "default" | "sm" | "lg";
 
@@ -13,9 +14,9 @@ export function BookIntroButton({
   if (!site.bookingUrl) return null;
   return (
     <Button asChild size={size} variant={variant}>
-      <a href={site.bookingUrl} target="_blank" rel="noopener">
+      <SmartLink href={site.bookingUrl}>
         {bookingLabel}
-      </a>
+      </SmartLink>
     </Button>
   );
 }
@@ -23,8 +24,8 @@ export function BookIntroButton({
 export function BookIntroText({ className = "text-sm text-ember hover:underline" }: { className?: string }) {
   if (!site.bookingUrl) return null;
   return (
-    <a href={site.bookingUrl} target="_blank" rel="noopener" className={className}>
+    <SmartLink href={site.bookingUrl} className={className}>
       {bookingLabel}
-    </a>
+    </SmartLink>
   );
 }

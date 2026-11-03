@@ -3,6 +3,9 @@
 ## What does Anish do?
 He writes content of every kind for AI-native companies and brands: brand stories, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters, docs, tutorials, and deep dives. An engineer who writes, so the work stays accurate. He is Senior Technical Content Strategist II and Team Lead at DigitalOcean.
 
+## Who has he worked with?
+Any form of content for AI-native companies and brands. Semrush is a contractual content partner: he publishes monthly articles and LinkedIn posts for Semrush on his socials. DataImpulse: social media content project, LinkedIn posts built on real experiments. Tanot Solutions: ghostwriting partner, positioning, voice and LinkedIn content for the co-founder. OtterlyAI: content project on AI search visibility. Pollo AI: content project, sponsored Medium pieces. La Isla Designs: LinkedIn carousel content project. Hostinger: tutorials content project for the Hostinger tutorials library. Do not mention counts of articles or posts for client work.
+
 ## How do I start a project?
 Book an intro call, use the contact form at /contact, or email waliaanish1997@gmail.com. Describe the company, the format, and what it is for. He will reply. Do not quote a price.
 

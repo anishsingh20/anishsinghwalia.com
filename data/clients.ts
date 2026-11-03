@@ -6,7 +6,7 @@ export type ClientEntry = {
   tag: string;
   /** Optional one-line support. Only when the tag needs it. */
   note?: string;
-  /** Facts for the bot and llms.txt. Not shown on the client cards. */
+  /** Facts for the bot and llms.txt. Same wording as the public card. */
   brief: string;
   /** Company site or a public post. Never a case-study route. */
   link?: { label: string; href: string };
@@ -18,25 +18,24 @@ export const clients: ClientEntry[] = [
   {
     name: "Semrush",
     tag: "Contractual content partner",
-    brief: "Sponsored my Medium essay “SEO-to-GEO Identity Crisis” and the affiliate content I write around SEO, digital marketing, and AI.",
-    link: {
-      label: "SEO-to-GEO Identity Crisis",
-      href: "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306",
-    },
+    note: "I publish monthly articles and LinkedIn posts for Semrush on my socials.",
+    brief: "Contractual content partner. I publish monthly articles and LinkedIn posts for Semrush on my socials.",
     group: "brands",
     featured: true,
   },
   {
     name: "Hostinger",
-    tag: "Content project",
-    brief: "Linux tutorials for the Hostinger tutorials library, including “How to use the Linux cat command.”",
+    tag: "Tutorials content project",
+    note: "For the Hostinger tutorials library",
+    brief: "Tutorials content project for the Hostinger tutorials library.",
     link: { label: "Author page", href: "https://www.hostinger.com/tutorials/author/anishsingh/" },
     group: "brands",
   },
   {
     name: "Tanot Solutions",
     tag: "Ghostwriting partner",
-    brief: "Ghostwriting and content strategy for co-founder Renu Sharma: positioning, voice, About section, headline, and the posts.",
+    note: "Positioning, voice and LinkedIn content for the co-founder",
+    brief: "Ghostwriting partner: positioning, voice and LinkedIn content for the co-founder.",
     link: {
       label: "Renu Sharma on LinkedIn",
       href: "https://www.linkedin.com/posts/renusharma074_seo-backlinks-linkbuilding-activity-7475171298516729856-h8V0",
@@ -48,7 +47,7 @@ export const clients: ClientEntry[] = [
     name: "DataImpulse",
     tag: "Social media content project",
     note: "LinkedIn posts built on real experiments",
-    brief: "A LinkedIn post for CMO Andrew Byzov. I ran the experiment on their proxies, then turned the data into the post.",
+    brief: "Social media content project: LinkedIn posts built on real experiments.",
     link: {
       label: "The LinkedIn post",
       href: "https://www.linkedin.com/posts/anish-singh-walia_i-checked-how-google-ai-overviews-answer-activity-7444751278435631104--6QW",
@@ -59,19 +58,21 @@ export const clients: ClientEntry[] = [
   {
     name: "OtterlyAI",
     tag: "Content project",
-    brief: "A content project with co-founder Klaus-M. Schremser on AI search visibility.",
+    note: "On AI search visibility",
+    brief: "Content project on AI search visibility.",
     group: "brands",
   },
   {
     name: "Pollo AI",
-    tag: "Content partner",
-    brief: "Two Medium pieces with Abby Wang. The first became one of their most successful social campaigns; the second introduced a new feature.",
+    tag: "Content project",
+    note: "Sponsored Medium pieces",
+    brief: "Content project: sponsored Medium pieces.",
     group: "brands",
   },
   {
     name: "La Isla Designs",
-    tag: "Content project",
-    brief: "A LinkedIn carousel with founder Nadia Fernández: brand prompts and complex ideas turned into something people can follow.",
+    tag: "LinkedIn carousel content project",
+    brief: "LinkedIn carousel content project.",
     group: "brands",
   },
   {
@@ -129,7 +130,7 @@ export const clients: ClientEntry[] = [
 export const featuredClients = clients.filter((client) => client.featured);
 
 export const clientGroups: { id: ClientGroupId; title: string; lede: string }[] = [
-  { id: "brands", title: "Companies I've made content for", lede: "Essays, ghostwriting, LinkedIn, tutorials." },
+  { id: "brands", title: "Companies I've made content for", lede: "Any form of content for AI-native companies and brands." },
   { id: "employers", title: "Where I've worked", lede: "The engineering years, then the content team I lead now." },
   { id: "writing", title: "Also written for", lede: "Publications I've contributed to over the years." },
   { id: "press", title: "Press", lede: "Stories about the work." },

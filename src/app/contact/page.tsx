@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/contact-form";
 import { PageHeader } from "@/components/page-header";
 import { LogoStrip, QuoteLine } from "@/components/proof-strip";
 import { AwardBadge } from "@/components/award-badge";
+import { SmartLink } from "@/components/smart-link";
 import { mailtoHref } from "@/lib/contact";
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export default function ContactPage() {
       ) : null}
       <ContactForm mailto={mailtoHref()} />
       <p className="text-sm text-muted">
-        Email me at <a className="text-ember hover:underline" href={`mailto:${site.email}`}>{site.email}</a>
+        Email me at <SmartLink className="text-ember hover:underline" href={`mailto:${site.email}`}>{site.email}</SmartLink>
       </p>
       <aside className="grid gap-4 rounded-3xl border border-line bg-panel p-5">
         <AwardBadge />

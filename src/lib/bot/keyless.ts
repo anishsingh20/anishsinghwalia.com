@@ -16,6 +16,9 @@ import { searchNotes } from "./knowledge";
  * Keyless mode. No model, so the router picks an intent from the question and
  * answers from structured facts plus the live fetchers. Every answer is a real
  * sentence with a link, not a dump of notes.
+ *
+ * Internal citations are root-relative so they resolve on whatever host is
+ * serving the site. Off-site sources stay absolute.
  */
 
 type Source = { title: string; url: string };
@@ -26,8 +29,18 @@ const LINKS = {
   medium: "https://medium.com/@anishsingh20",
   github: "https://github.com/anishsingh20",
   digitalocean: "https://www.digitalocean.com/community/users/asinghwalia",
-  contact: `${site.url}/contact`,
+  contact: "/contact",
+  experience: "/experience",
+  testimonials: "/testimonials",
+  about: "/about",
+  aboutOffHours: "/about#off-hours",
+  clients: "/clients",
+  media: "/media",
+  services: "/services#what-i-make",
+  work: "/work",
 };
+
+const WARMUPS = ["One more pull-up", "Skipping rope", "Checking the notes"];
 
 const link = (label: string, url: string) => `[${label}](${url})`;
 
@@ -37,7 +50,12 @@ export async function keylessAnswer(message: string, history: ChatTurn[], emit: 
   const previous = normalize(history.filter((turn) => turn.role === "user").slice(-1)[0]?.content ?? "");
 
   const reply = await route(q, previous, question);
-  await stream(scrub(reply.text), emit);
+  const fast = Boolean(process.env.VITEST) || process.env.BOT_FAST === "1";
+  if (!fast) {
+    emit({ type: "status", text: WARMUPS[Math.abs(hash(q)) % WARMUPS.length] });
+    await pause(720);
+  }
+  await stream(scrub(reply.text), emit, fast);
   emit({ type: "sources", items: dedupe(reply.sources).slice(0, 4) });
   emit({ type: "done", mode: "keyless", toolCalls: reply.status ? [reply.status] : [] });
 }
@@ -51,12 +69,25 @@ function dedupe(items: Source[]) {
   return items.filter((item) => (seen.has(item.url) ? false : (seen.add(item.url), true)));
 }
 
-async function stream(text: string, emit: (event: BotEvent) => void) {
-  const pieces = text.split(/(?<=[.!?])\s+(?=[A-Z[])/);
-  for (let index = 0; index < pieces.length; index += 1) {
-    emit({ type: "delta", text: (index ? " " : "") + pieces[index] });
-    if (pieces.length > 1) await new Promise((resolve) => setTimeout(resolve, 40));
+async function stream(text: string, emit: (event: BotEvent) => void, fast = false) {
+  if (fast) {
+    emit({ type: "delta", text });
+    return;
   }
+  const pieces = text.split(/(\s+)/);
+  for (const piece of pieces) {
+    if (!piece) continue;
+    emit({ type: "delta", text: piece });
+    if (piece.trim()) await pause(14);
+  }
+}
+
+function pause(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function hash(text: string) {
+  return [...text].reduce((sum, char) => sum + char.charCodeAt(0), 0);
 }
 
 const has = (q: string, ...words: (string | RegExp)[]) =>
@@ -92,7 +123,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
       sources: [
         { title: "Contact", url: LINKS.contact },
         ...(site.bookingUrl ? [{ title: "Book an intro call", url: site.bookingUrl }] : []),
-        { title: "Clients", url: `${site.url}/clients` },
+        { title: "Clients", url: LINKS.clients },
       ],
     };
   }
@@ -163,8 +194,8 @@ async function route(q: string, previous: string, original: string): Promise<Rep
     const nutanix = experience.find((group) => group.id === "nutanix");
     const roles = nutanix?.roles.map((role) => `${role.title.replace(/ for American Express.*$/, " for American Express")} (${role.start} to ${role.end})`).reverse().join("; ");
     return {
-      text: `Before he wrote full-time, Anish spent ${nutanix?.span ?? "4 years 8 months"} at Nutanix: ${roles}. The American Express role was a cloud consulting engagement for their Cloud and Infrastructure Operations team in India, through Nutanix. That is why the code in his tutorials runs. Full timeline on the ${link("experience page", `${site.url}/experience`)} and ${link("LinkedIn", LINKS.linkedin)}.`,
-      sources: [{ title: "Experience", url: `${site.url}/experience` }, { title: "LinkedIn", url: LINKS.linkedin }],
+      text: `Before he wrote full-time, Anish spent ${nutanix?.span ?? "4 years 8 months"} at Nutanix: ${roles}. The American Express role was a cloud consulting engagement for their Cloud and Infrastructure Operations team in India, through Nutanix. That is why the code in his tutorials runs. Full timeline on the ${link("experience page", LINKS.experience)} and ${link("LinkedIn", LINKS.linkedin)}.`,
+      sources: [{ title: "Experience", url: LINKS.experience }, { title: "LinkedIn", url: LINKS.linkedin }],
     };
   }
 
@@ -172,8 +203,8 @@ async function route(q: string, previous: string, original: string): Promise<Rep
     const digitalocean = experience.find((group) => group.id === "digitalocean");
     const lead = digitalocean?.roles[0];
     return {
-      text: `Anish is ${site.jobTitle} at DigitalOcean, since ${lead?.start ?? "September 2025"}. He joined as Senior Technical Writer in September 2023 and now leads a content team and owns the core infrastructure and AI inference tutorial programs. Outside the day job he writes content of every kind for AI-native companies and brands: brand stories, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters, docs, and deep dives. An engineer who writes, so the work stays accurate. He lives in Dehradun, India. More on the ${link("about page", `${site.url}/about`)} and his ${link("DigitalOcean author page", LINKS.digitalocean)}.`,
-      sources: [{ title: "About", url: `${site.url}/about` }, { title: "DigitalOcean author page", url: LINKS.digitalocean }],
+      text: `Anish is ${site.jobTitle} at DigitalOcean, since ${lead?.start ?? "September 2025"}. He joined as Senior Technical Writer in September 2023 and now leads a content team and owns the core infrastructure and AI inference tutorial programs. Outside the day job he writes content of every kind for AI-native companies and brands: brand stories, thought leadership, LinkedIn, ghostwriting, video, infographics, blogs, newsletters, docs, and deep dives. An engineer who writes, so the work stays accurate. He lives in Dehradun, India. More on the ${link("about page", LINKS.about)} and his ${link("DigitalOcean author page", LINKS.digitalocean)}.`,
+      sources: [{ title: "About", url: LINKS.about }, { title: "DigitalOcean author page", url: LINKS.digitalocean }],
     };
   }
 
@@ -186,25 +217,29 @@ async function route(q: string, previous: string, original: string): Promise<Rep
 
   if (has(q, /\b(testimonials?|recommend\w*|reviews?|what do (people|clients) say|feedback)\b/)) {
     const quoted = testimonials.filter((item) => item.quote && item.company).slice(0, 2);
-    const lines = quoted.map((item) => `${item.name}, ${item.role} at ${item.company}: "${item.quote}"`).join(" ");
+    const blocks = quoted
+      .map((item) => `"${item.quote}"\n${item.name}, ${item.role} at ${item.company}.`)
+      .join("\n\n");
     return {
-      text: `${testimonials.filter((item) => item.quote).length} people have written recommendations for him. Two of them: ${lines} All of them are on the ${link("testimonials page", `${site.url}/testimonials`)} and on ${link("LinkedIn", site.recommendationsUrl)}.`,
-      sources: [{ title: "Testimonials", url: `${site.url}/testimonials` }, { title: "LinkedIn recommendations", url: site.recommendationsUrl }],
+      text: `${testimonials.filter((item) => item.quote).length} people have written recommendations for him. Two of them:\n\n${blocks}\n\nAll of them are on the ${link("testimonials page", LINKS.testimonials)} and on ${link("LinkedIn", site.recommendationsUrl)}.`,
+      sources: [{ title: "Testimonials", url: LINKS.testimonials }, { title: "LinkedIn recommendations", url: site.recommendationsUrl }],
     };
   }
 
   if (has(q, /\b(client|clients|companies|brands|worked with|work with|customers|who has he (worked|written) for|portfolio)\b/)) {
-    const named = clients.filter((client) => client.group === "brands" && client.name !== "Semrush" && client.name !== "Hostinger").map((client) => `${client.name} (${thirdPerson(client.brief.replace(/\.$/, ""))})`);
+    const named = clients
+      .filter((client) => client.group === "brands")
+      .map((client) => `${client.name} (${thirdPerson(client.brief.replace(/\.$/, ""))})`);
     return {
-      text: `Anish has worked with AI-native companies and brands such as ${listify(headlineClients)}. The specifics: ${named.join("; ")}. Semrush sponsored his Medium essay ${link("SEO-to-GEO Identity Crisis", "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306")}, and he has written Linux tutorials for Hostinger. Before that he worked at Nutanix, consulted for American Express, and now leads a content team at DigitalOcean. What the clients said is on the ${link("testimonials page", `${site.url}/testimonials`)}.`,
-      sources: [{ title: "Clients", url: `${site.url}/clients` }, { title: "Testimonials", url: `${site.url}/testimonials` }],
+      text: `Anish has worked with AI-native companies and brands such as ${listify(headlineClients)}. The specifics: ${named.join("; ")}. Before that he worked at Nutanix, consulted for American Express, and now leads a content team at DigitalOcean. What the clients said is on the ${link("testimonials page", LINKS.testimonials)}.`,
+      sources: [{ title: "Clients", url: LINKS.clients }, { title: "Testimonials", url: LINKS.testimonials }],
     };
   }
 
   if (has(q, /\b(podcast|press|interview|featured|media|case study|activecampaign|allaboutai)\b/)) {
     const items = press.map((item) => `${link(item.title, item.href)} (${item.meta.split(" · ").slice(0, 2).join(", ")})${item.note ? `. ${item.note}` : ""}`).join(" ");
     return {
-      text: `Start with the ${link("media page", `${site.url}/media`)}. ${items}`,
+      text: `Start with the ${link("media page", LINKS.media)}. ${items}`,
       sources: press.map((item) => ({ title: item.title, url: item.href })),
     };
   }
@@ -212,15 +247,15 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(hobby|hobbies|free time|spare time|off the clock|off-hours|weekends?|fun|outside (of )?work|hik(e|es|ing)|trek\w*|mountains?|calisthenics?|pull-?ups?|skipping|jump rope|runs?|running|cooks?|cooking|invest\w*|fitness|workouts?)\b/)) {
     const named = hobbies.map((hobby) => hobby.title.toLowerCase());
     return {
-      text: `${capitalize(listify(named))}. He lives in Dehradun, in the Himalayan foothills, so the trail starts close to home. Calisthenics is bodyweight work at home, twice a day, with sessions he designs using AI. His GitHub README still says "fitness freak". On weekends he cooks; he's asked ChatGPT for biryani and beetroot patty recipes. He follows investing: PE ratios, earnings reports, valuation models. He doesn't publish summit names, distances, or rep counts. His line on it: "${mountainQuote}" More on the ${link("about page", `${site.url}/about#off-hours`)}.`,
-      sources: [{ title: "About", url: `${site.url}/about#off-hours` }],
+      text: `${capitalize(listify(named))}. He lives in Dehradun, in the Himalayan foothills, so the trail starts close to home. Calisthenics is bodyweight work at home, twice a day, with sessions he designs using AI. His GitHub README still says "fitness freak". On weekends he cooks; he's asked ChatGPT for biryani and beetroot patty recipes. He follows investing: PE ratios, earnings reports, valuation models. He doesn't publish summit names, distances, or rep counts. His line on it: "${mountainQuote}" More on the ${link("about page", LINKS.aboutOffHours)}.`,
+      sources: [{ title: "About", url: LINKS.aboutOffHours }],
     };
   }
 
   if (has(q, /\b(vit|vellore|college|university|degree|study|studied|education|graduate|school|b\.?tech|bachelor)\b/)) {
     return {
-      text: `Anish has a Bachelor's degree in Information Technology from Vellore Institute of Technology, ${site.education.years}. He wrote about data science on DataScience+ while he was still studying, then joined Nutanix as an SRE intern in January 2019. Timeline on the ${link("experience page", `${site.url}/experience`)}.`,
-      sources: [{ title: "Experience", url: `${site.url}/experience` }],
+      text: `Anish has a Bachelor's degree in Information Technology from Vellore Institute of Technology, ${site.education.years}. He wrote about data science on DataScience+ while he was still studying, then joined Nutanix as an SRE intern in January 2019. Timeline on the ${link("experience page", LINKS.experience)}.`,
+      sources: [{ title: "Experience", url: LINKS.experience }],
     };
   }
 
@@ -241,14 +276,14 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(video|videos|youtube|film)\b/)) {
     const videoUrl = "https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94";
     return {
-      text: `Yes. Short videos and infographics for product walkthroughs and explainers. One write-up is ${link("how he helped a five-person team rebuild its video library", videoUrl)}. He also appeared on the ${link("AI For Thought podcast", press[2].href)}. All formats are on the ${link("services page", `${site.url}/services#what-i-make`)}.`,
+      text: `Yes. Short videos and infographics for product walkthroughs and explainers. One write-up is ${link("how he helped a five-person team rebuild its video library", videoUrl)}. He also appeared on the ${link("AI For Thought podcast", press[2].href)}. All formats are on the ${link("services page", LINKS.services)}.`,
       sources: [{ title: "Video library write-up", url: videoUrl }],
     };
   }
 
   if (has(q, /\b(newsletter|subscribe|substack)\b/)) {
     return {
-      text: `His newsletter runs through Medium, with 35,000+ subscribers. You can subscribe from ${link("medium.com/@anishsingh20", LINKS.medium)}. For clients he writes newsletters too; that is one of the formats on the ${link("what-I-make section", `${site.url}/services#what-i-make`)}.`,
+      text: `His newsletter runs through Medium, with 35,000+ subscribers. You can subscribe from ${link("medium.com/@anishsingh20", LINKS.medium)}. For clients he writes newsletters too; that is one of the formats on the ${link("what-I-make section", LINKS.services)}.`,
       sources: [{ title: "Medium", url: LINKS.medium }],
     };
   }
@@ -256,22 +291,22 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(ghostwrit\w*|ghost writ\w*|linkedin posts?|short-form|short form|carousels?|infographics?|thought leadership|personal brand\w*|rebrand\w*)\b/)) {
     const ghost = formats.find((format) => format.id === "ghostwriting");
     return {
-      text: `Yes. Ghostwriting: ${thirdPerson(ghost?.line ?? "")} The clearest example is Renu Sharma at Tanot Solutions, whose LinkedIn rebrand he wrote; her note is on the ${link("testimonials page", `${site.url}/testimonials#renu-sharma`)}. Infographics and carousels: Nadia Fernández wrote about ${link("the carousel they made", `${site.url}/testimonials#nadia-fernandez`)}. For his own profile, see ${link("how he uses Semrush with ChatGPT", linkedInSemrushPost)}.`,
-      sources: [{ title: "Testimonials", url: `${site.url}/testimonials` }],
+      text: `Yes. Ghostwriting: ${thirdPerson(ghost?.line ?? "")} The clearest example is Renu Sharma at Tanot Solutions, whose LinkedIn rebrand he wrote; her note is on the ${link("testimonials page", `${LINKS.testimonials}#renu-sharma`)}. Infographics and carousels: Nadia Fernández wrote about ${link("the carousel they made", `${LINKS.testimonials}#nadia-fernandez`)}. For his own profile, see ${link("how he uses Semrush with ChatGPT", linkedInSemrushPost)}.`,
+      sources: [{ title: "Testimonials", url: LINKS.testimonials }],
     };
   }
 
   if (has(q, /\b(format|formats|what (does|can) (he|anish) (make|do|produce|create|write)|services|offers?|offerings|what kinds? of content|types? of content|deliverables?)\b/)) {
     const list = formats.map((format) => format.title.toLowerCase());
     return {
-      text: `${capitalize(listify(list))}, plus deep dives and newsletters. Content of every kind for AI-native companies and brands. An engineer who writes, so the work stays accurate. Each format has a real example on the ${link("services page", `${site.url}/services#what-i-make`)}, like ${link(formats[0].example?.label ?? "", formats[0].example?.href ?? site.url)}.`,
-      sources: [{ title: "What I make", url: `${site.url}/services#what-i-make` }],
+      text: `${capitalize(listify(list))}, plus deep dives and newsletters. Content of every kind for AI-native companies and brands. An engineer who writes, so the work stays accurate. Each format has a real example on the ${link("services page", LINKS.services)}, like ${link(formats[0].example?.label ?? "", formats[0].example?.href ?? LINKS.work)}.`,
+      sources: [{ title: "What I make", url: LINKS.services }],
     };
   }
 
   if (has(q, /semrush.*chatgpt|chatgpt.*semrush/)) {
     return {
-      text: `Two things. On LinkedIn he posted ${link("how he uses Semrush with ChatGPT", linkedInSemrushPost)}: the experiment and the result. AllAboutAI then ran a written feature, ${link("How Anish used ChatGPT and Semrush", press[1].href)}, about the Medium growth behind it. Semrush later sponsored his essay ${link("SEO-to-GEO Identity Crisis", essays[0].href)}.`,
+      text: `Two things. On LinkedIn he posted ${link("how he uses Semrush with ChatGPT", linkedInSemrushPost)}: the experiment and the result. AllAboutAI then ran a written feature, ${link("How Anish used ChatGPT and Semrush", press[1].href)}, about the Medium growth behind it.`,
       sources: [{ title: "LinkedIn post", url: linkedInSemrushPost }, { title: press[1].title, url: press[1].href }],
     };
   }
@@ -279,22 +314,22 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(technical|how deep|kubernetes|k8s|linux|docker|inference|llm|gpu|rag|devops|gitops|argo|postgres|skills|stack|tools|semrush|ahrefs|profound|seo|geo|search console)\b/)) {
     return {
       text: `Deep enough to run it. Anish spent 4 years 8 months at Nutanix, first as an SRE and then as a cloud consultant, before writing full-time. His LinkedIn top skills are ${listify(topSkills)}. His sole-author DigitalOcean tutorials cover ${link("LLM inference benchmarking", tutorials[0].href)}, ${link("RAG agents with MCP", tutorials[2].href)}, ${link("Postgres on Kubernetes", tutorials[5].href)}, and ${link("Argo CD and GitOps", tutorials[6].href)}. For search and research he uses ${listify(researchTools.slice(0, 5))}.`,
-      sources: [{ title: "DigitalOcean author page", url: LINKS.digitalocean }, { title: "Work", url: `${site.url}/work` }],
+      sources: [{ title: "DigitalOcean author page", url: LINKS.digitalocean }, { title: "Work", url: LINKS.work }],
     };
   }
 
   if (has(q, /\b(career|history|story|journey|background|how did he (start|get)|timeline|path|experience)\b/)) {
     return {
-      text: `${originNote} Full timeline: Nutanix from January 2019 to August 2023 (SRE intern, SRE, Sr. SRE, then cloud consultant for American Express), DigitalOcean since September 2023 (Senior Technical Writer, then ${site.jobTitle} from September 2025). The ${link("experience page", `${site.url}/experience`)} has every role and date.`,
-      sources: [{ title: "Experience", url: `${site.url}/experience` }, { title: "LinkedIn", url: LINKS.linkedin }],
+      text: `${originNote} Full timeline: Nutanix from January 2019 to August 2023 (SRE intern, SRE, Sr. SRE, then cloud consultant for American Express), DigitalOcean since September 2023 (Senior Technical Writer, then ${site.jobTitle} from September 2025). The ${link("experience page", LINKS.experience)} has every role and date.`,
+      sources: [{ title: "Experience", url: LINKS.experience }, { title: "LinkedIn", url: LINKS.linkedin }],
     };
   }
 
   if (has(q, /\b(tutorial|tutorials|docs|documentation|best (article|piece|post)|favourite|favorite|should i read|writing|wrote|written|publish)\b/)) {
     const picks = tutorials.slice(0, 3).map((item) => link(item.title, item.href)).join("; ");
     return {
-      text: `Start with the DigitalOcean tutorials: ${picks}. On Medium, the sponsored essay ${link(essays[0].title, essays[0].href)} shows the long-form side. The ${link("work page", `${site.url}/work`)} has the rest.`,
-      sources: [{ title: "Work", url: `${site.url}/work` }],
+      text: `Start with the DigitalOcean tutorials: ${picks}. On Medium, ${link(essays[0].title, essays[0].href)} shows the long-form side. The ${link("work page", LINKS.work)} has the rest.`,
+      sources: [{ title: "Work", url: LINKS.work }],
     };
   }
 
@@ -341,6 +376,9 @@ function thirdPerson(text: string) {
     .replace(/\bI've\b/g, "he's")
     .replace(/\bI'll\b/g, "he'll")
     .replace(/\bI'm\b/g, "he's")
+    .replace(/\bI publish\b/g, "he publishes")
+    .replace(/\bI own\b/g, "he owns")
+    .replace(/\bI lead\b/g, "he leads")
     .replace(/\bI\b/g, "he")
     .replace(/\bmy\b/gi, "his")
     .replace(/\bme\b/g, "him")

@@ -112,7 +112,11 @@ export default function HomePage() {
 
       <section className="border-y border-line">
         <div className="mx-auto max-w-6xl px-4 py-8">
-          <MetricsRow compact />
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-ember">Proof</p>
+          <h2 className="mt-2 font-display text-3xl">Where the writing has landed</h2>
+          <div className="mt-6">
+            <MetricsRow compact />
+          </div>
         </div>
       </section>
 

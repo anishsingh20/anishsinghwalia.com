@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SmartLink } from "@/components/smart-link";
 
 export function BrowserFrame({
   src,
@@ -30,9 +31,9 @@ export function BrowserFrame({
     return frame;
   }
   return (
-    <a href={href} className="block transition hover:border-orange/50">
+    <SmartLink href={href} className="block transition hover:border-orange/50">
       {frame}
-    </a>
+    </SmartLink>
   );
 }
 

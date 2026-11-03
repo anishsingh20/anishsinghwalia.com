@@ -2,6 +2,7 @@ import Link from "next/link";
 import { footerNav, site, socials } from "@data/site";
 import { RidgeBand } from "@/components/ambient";
 import { AwardBadge } from "@/components/award-badge";
+import { SmartLink } from "@/components/smart-link";
 import { SocialIcon } from "@/components/social-icon";
 
 export function SiteFooter() {
@@ -14,9 +15,9 @@ export function SiteFooter() {
           <p className="mt-2 max-w-sm text-sm text-muted">
             {site.positioning} Based in {site.location.label}.
           </p>
-          <a className="mt-3 inline-block text-sm text-ember hover:underline" href={`mailto:${site.email}`}>
+          <SmartLink className="mt-3 inline-block text-sm text-ember hover:underline" href={`mailto:${site.email}`}>
             {site.email}
-          </a>
+          </SmartLink>
           <div className="mt-5">
             <AwardBadge />
           </div>
@@ -37,12 +38,12 @@ export function SiteFooter() {
           <ul className="mt-3 grid gap-2 text-sm">
             {socials.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="group inline-flex items-center gap-2.5 text-muted hover:text-cream" aria-label={`${item.label} profile`}>
+                <SmartLink href={item.href} className="group inline-flex items-center gap-2.5 text-muted hover:text-cream" aria-label={`${item.label} profile`}>
                   <span className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-line bg-panel text-cream/80 transition group-hover:border-orange/60 group-hover:text-ember">
                     <SocialIcon id={item.icon} />
                   </span>
                   <span>{item.label}</span>
-                </a>
+                </SmartLink>
               </li>
             ))}
           </ul>

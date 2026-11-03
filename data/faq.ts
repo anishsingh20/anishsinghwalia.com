@@ -9,7 +9,7 @@ export const faqs: Faq[] = [
   {
     question: "Who do you work with?",
     answer:
-      "AI-native companies and fast-moving brands. Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. Also Hostinger, DataScience+, and GeeksforGeeks.",
+      "Any form of content for AI-native companies and brands. Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. Also Hostinger, DataScience+, and GeeksforGeeks.",
   },
   {
     question: "How technical are you?",

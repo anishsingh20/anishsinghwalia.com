@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { excerptQuote, type Testimonial } from "@data/testimonials";
 import { BrandLogo } from "@/components/brand-logo";
+import { SmartLink } from "@/components/smart-link";
 import { SocialIcon } from "@/components/social-icon";
 
 function Card({ item }: { item: Testimonial }) {
@@ -21,13 +22,13 @@ function Card({ item }: { item: Testimonial }) {
           {designation ? <p className="truncate text-sm text-muted">{designation}</p> : null}
         </div>
         {item.linkedin ? (
-          <a
+          <SmartLink
             href={item.linkedin}
             className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-line text-cream/80 transition hover:border-orange/60 hover:text-ember"
             aria-label={`${item.name} on LinkedIn`}
           >
             <SocialIcon id="linkedin" />
-          </a>
+          </SmartLink>
         ) : null}
       </footer>
     </article>

@@ -1,4 +1,5 @@
 import { award } from "@data/site";
+import { SmartLink } from "@/components/smart-link";
 
 function Laurel({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -17,7 +18,7 @@ function Laurel({ className = "h-4 w-4" }: { className?: string }) {
 export function AwardBadge({ variant = "pill", className = "" }: { variant?: "pill" | "card"; className?: string }) {
   if (variant === "card") {
     return (
-      <a
+      <SmartLink
         href={award.href}
         className={`group block rounded-3xl border border-orange/40 bg-[linear-gradient(135deg,rgba(232,97,31,0.16),rgba(232,97,31,0.03))] p-6 transition hover:border-orange/70 ${className}`}
       >
@@ -35,11 +36,11 @@ export function AwardBadge({ variant = "pill", className = "" }: { variant?: "pi
             <span className="mt-3 inline-block text-sm text-ember group-hover:underline">See the winners list</span>
           </div>
         </div>
-      </a>
+      </SmartLink>
     );
   }
   return (
-    <a
+    <SmartLink
       href={award.href}
       className={`inline-flex max-w-full items-center gap-2 rounded-full border border-orange/50 bg-orange/10 px-3 py-1.5 text-xs font-medium leading-snug text-ember transition hover:bg-orange/20 ${className}`}
     >
@@ -47,6 +48,6 @@ export function AwardBadge({ variant = "pill", className = "" }: { variant?: "pi
       <span>
         {award.short}
       </span>
-    </a>
+    </SmartLink>
   );
 }

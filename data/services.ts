@@ -87,7 +87,7 @@ export const buyerFaqs: BuyerFaq[] = [
   {
     question: "Who have you done this for?",
     answer:
-      "Semrush, OtterlyAI, DataImpulse, Tanot Solutions, Pollo AI, and La Isla Designs as clients. DigitalOcean, Nutanix, and American Express as an employee or consultant. Hostinger, DataScience+, and GeeksforGeeks as a contributor.",
+      "Any form of content for AI-native companies and brands. Semrush, OtterlyAI, DataImpulse, Tanot Solutions, Pollo AI, and La Isla Designs as clients. DigitalOcean, Nutanix, and American Express as an employee or consultant. Hostinger, DataScience+, and GeeksforGeeks as a contributor.",
   },
   {
     question: "How do we start?",

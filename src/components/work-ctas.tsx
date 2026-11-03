@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@data/site";
 import { BookIntroButton } from "@/components/book-intro";
+import { SmartLink } from "@/components/smart-link";
 import { Button } from "@/components/ui/button";
 
 export function WorkCtas({
@@ -42,9 +43,9 @@ export function ScopeCta({
           <Button asChild size="lg" variant="outline">
             <Link href="/contact">Tell me about your project</Link>
           </Button>
-          <a href={`mailto:${site.email}`} className="text-sm text-ember hover:underline">
+          <SmartLink href={`mailto:${site.email}`} className="text-sm text-ember hover:underline">
             Email me
-          </a>
+          </SmartLink>
         </div>
       </div>
     </section>

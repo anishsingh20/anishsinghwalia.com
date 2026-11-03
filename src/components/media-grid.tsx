@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { mediaCategories, mediaItems, type MediaCategory, type MediaItem } from "@data/media";
+import { SmartLink } from "@/components/smart-link";
 
 function Card({ item }: { item: MediaItem }) {
   const image = item.embed === "youtube"
@@ -9,7 +10,7 @@ function Card({ item }: { item: MediaItem }) {
     : item.image;
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-ink">
-      <a href={item.href} className="flex h-full flex-col">
+      <SmartLink href={item.href} className="flex h-full flex-col">
         {image ? (
           <div className="relative aspect-video bg-ink">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -38,7 +39,7 @@ function Card({ item }: { item: MediaItem }) {
             {item.category === "Podcast" ? "Watch on YouTube" : "Open"}
           </span>
         </div>
-      </a>
+      </SmartLink>
     </article>
   );
 }

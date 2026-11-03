@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Surprises } from "@/components/surprises";
 import { TrailProgress } from "@/components/trail-progress";
+import { SmartLink } from "@/components/smart-link";
 import { personJsonLd, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
@@ -41,9 +42,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${outfit.variable} ${syne.variable} ${plex.variable} antialiased`}>
-        <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-orange focus:px-3 focus:py-2 focus:text-ink">
+        <SmartLink href="#content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-orange focus:px-3 focus:py-2 focus:text-ink">
           Skip to content
-        </a>
+        </SmartLink>
         <Ambient />
         <TrailProgress />
         <SiteHeader />

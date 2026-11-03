@@ -9,6 +9,8 @@ import { AwardBadge } from "@/components/award-badge";
 import { JsonLd } from "@/components/json-ld";
 import { OffClock } from "@/components/off-clock";
 import { PageHeader } from "@/components/page-header";
+import { MetricsRow } from "@/components/proof-strip";
+import { SmartLink } from "@/components/smart-link";
 import { ScopeCta } from "@/components/work-ctas";
 import { profilePageJsonLd } from "@/lib/seo";
 
@@ -99,6 +101,10 @@ export default function AboutPage() {
           <p className="mt-4 text-sm text-cream">“{site.motto}”</p>
           <p className="text-xs text-faint">{site.mottoAttribution}</p>
         </section>
+        <section>
+          <h2 className="font-display text-2xl">Where the writing has landed</h2>
+          <div className="mt-6"><MetricsRow /></div>
+        </section>
         <AwardBadge variant="card" />
         <OffClock />
         <section id="side-projects">
@@ -106,7 +112,7 @@ export default function AboutPage() {
           <ul className="mt-4 grid gap-2 text-sm">
             {githubProjects.map((project) => (
               <li key={project.href}>
-                <a href={project.href} className="text-ember hover:underline">{project.name}</a>
+                <SmartLink href={project.href} className="text-ember hover:underline">{project.name}</SmartLink>
                 <span className="text-faint"> · {project.note}</span>
               </li>
             ))}

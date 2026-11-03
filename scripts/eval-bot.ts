@@ -15,6 +15,8 @@ import { answer, botConfig, type BotEvent } from "../src/lib/bot/agent";
 import { aiTells, findBanned } from "../src/lib/bot/banned";
 
 /** Read .env.local the way Next does, without overriding real env vars. Config is read lazily, so this can run first in main. */
+process.env.BOT_FAST ??= "1";
+
 function loadEnvLocal() {
   const file = path.join(process.cwd(), ".env.local");
   if (!existsSync(file)) return;
@@ -45,7 +47,7 @@ const cases: Case[] = [
   { id: "who-is", question: "Who is Anish Singh Walia?", expect: [/DigitalOcean/, /content/i] },
   { id: "nutanix", question: "What did he do at Nutanix?", expect: [/SRE/, /Nutanix/, /American Express/] },
   { id: "amex", question: "Did Anish work with American Express?", expect: [/American Express/, /Cloud and Infrastructure Operations/, /Nutanix/] },
-  { id: "clients", question: "Which companies has he worked with?", expect: [/Semrush/, /OtterlyAI/, /DataImpulse/, /Tanot Solutions/, /Pollo AI/] },
+  { id: "clients", question: "Which companies has he worked with?", expect: [/Semrush/, /OtterlyAI/, /DataImpulse/, /Tanot Solutions/, /Pollo AI/, /Contractual content partner/], reject: [/two Medium pieces|three articles|Read the essay|SEO-to-GEO Identity Crisis/i] },
   { id: "clients-framing", question: "Does he do client work?", expect: [/client work|companies he has worked with|worked with/i, /Semrush/] },
   { id: "tutorial-count", question: "How many DigitalOcean tutorials has he written?", expect: [/\b3\d\d\b/, /digitalocean\.com\/community\/users\/asinghwalia/], live: true },
   { id: "medium-stats", question: "What are his Medium stats?", expect: [/3,000,000\+/, /35,000\+/, /Top Writer/] },

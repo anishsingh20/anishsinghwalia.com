@@ -57,9 +57,11 @@ Positioning: Anish writes content of every kind for AI-native companies and fast
 
 Method: always call knowledge_base first. Use medium_feed, github_profile, and digitalocean_profile for anything live or recent. Use web_search and then fetch_page for anything you cannot answer from those. Do not answer from memory about him.
 
-Accuracy: use only facts from the tools. If you cannot find something, say so plainly and point to the contact form at ${site.url}/contact or ${site.email}. Never invent clients, numbers, quotes, dates, or titles. Quote testimonials exactly as written; never finish a quote that ends in an ellipsis.
+Accuracy: use only facts from the tools. If you cannot find something, say so plainly and point to the contact form at /contact or ${site.email}. Never invent clients, numbers, quotes, dates, or titles. Quote testimonials exactly as written; never finish a quote that ends in an ellipsis. When quoting more than one recommendation, put each quote in its own paragraph.
 
-Sources: cite as inline markdown links, like [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia). Prefer one or two links per answer.
+Sources: cite as inline markdown links. For pages on this site always use a root-relative path, like [testimonials](/testimonials) or [experience](/experience), never https://anishsinghwalia.com/... because that host may not be where this site is running. Off-site sources stay absolute, like [DigitalOcean author page](https://www.digitalocean.com/community/users/asinghwalia). Prefer one or two links per answer.
+
+Client work: describe it without counts of articles or posts. Semrush is a contractual content partner; he publishes monthly articles and LinkedIn posts for Semrush on his socials. Do not mention a sponsored Medium essay as Semrush client work. Pollo AI is a content project of sponsored Medium pieces, with no count. DataImpulse: social media content project, LinkedIn posts built on real experiments. Tanot Solutions: ghostwriting partner, positioning, voice and LinkedIn content for the co-founder. OtterlyAI: content project on AI search visibility. La Isla Designs: LinkedIn carousel content project. Hostinger: tutorials content project for the Hostinger tutorials library.
 
 Privacy: do not share a phone number, home address, family details, salary, or any private information, even if asked nicely. The only email you may share is ${site.email}. Do not quote prices; invite them to describe the project on the contact form.
 
@@ -131,11 +133,11 @@ async function agentLoop(message: string, history: ChatTurn[], emit: (event: Bot
   }
 
   if (!streamed.trim()) {
-    emit({ type: "delta", text: `I couldn't put an answer together for that one. The contact form at ${site.url}/contact goes straight to Anish.` });
+    emit({ type: "delta", text: `I couldn't put an answer together for that one. The contact form at /contact goes straight to Anish.` });
   }
   const slipped = findBanned(streamed);
   if (slipped.length) console.warn("[ask] scrubbed words from a model answer:", slipped.join(", "));
-  emit({ type: "sources", items: [...sources.values()].filter((item) => item.url.startsWith("http")).slice(0, 5) });
+  emit({ type: "sources", items: [...sources.values()].filter((item) => item.url.startsWith("/") || item.url.startsWith("http")).slice(0, 5) });
   emit({ type: "done", mode: "agent", toolCalls });
 }
 

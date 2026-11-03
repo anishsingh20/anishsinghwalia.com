@@ -1,4 +1,5 @@
 import { showcaseByGroup, type ShowcaseItem } from "@data/showcase";
+import { SmartLink } from "@/components/smart-link";
 
 function PlayMark() {
   return (
@@ -25,7 +26,7 @@ function Visual({ item }: { item: ShowcaseItem }) {
 function Card({ item, wide }: { item: ShowcaseItem; wide?: boolean }) {
   return (
     <article className="flex h-full overflow-hidden rounded-2xl border border-line bg-ink transition hover:border-orange/40">
-      <a href={item.href} className={`flex h-full ${wide ? "flex-col md:flex-row" : "flex-col"}`}>
+      <SmartLink href={item.href} className={`flex h-full ${wide ? "flex-col md:flex-row" : "flex-col"}`}>
         <div className={wide ? "md:w-1/2" : ""}>
           <Visual item={item} />
         </div>
@@ -36,7 +37,7 @@ function Card({ item, wide }: { item: ShowcaseItem; wide?: boolean }) {
           </h3>
           <span className="mt-4 text-sm text-ember">{item.play ? "Watch on YouTube" : "Open the live piece"}</span>
         </div>
-      </a>
+      </SmartLink>
     </article>
   );
 }

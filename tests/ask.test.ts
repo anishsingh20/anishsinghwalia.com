@@ -37,6 +37,13 @@ describe("keyless bot", () => {
 
     const clients = await ask("Who has he worked with?");
     for (const name of ["Semrush", "OtterlyAI", "DataImpulse", "Tanot Solutions", "Pollo AI"]) expect(clients.text).toContain(name);
+    expect(clients.text).toContain("Contractual content partner");
+    expect(clients.text).toContain("He publishes monthly articles and LinkedIn posts for Semrush on his socials");
+    expect(clients.text).toContain("sponsored Medium pieces");
+    expect(clients.text).not.toMatch(/two Medium pieces|three articles|Read the essay|SEO-to-GEO Identity Crisis/i);
+    expect(clients.text).not.toContain("anishsinghwalia.com");
+    expect(clients.sources.every((source) => !source.url.includes("anishsinghwalia.com"))).toBe(true);
+    expect(clients.sources.some((source) => source.url === "/clients")).toBe(true);
 
     const awards = await ask("Has he won any awards?");
     expect(awards.text).toContain("Top 50 winner · #23 · Document360 Global Writers Awards 2025–26");

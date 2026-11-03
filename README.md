@@ -78,7 +78,7 @@ Never commit `.env.local`. It's in `.gitignore`.
 
 ## Tests
 
-`npm test` checks: the contact address, that the other inbox appears nowhere, recommendation quotes match the transcription exactly, every game station links to a real page, the bot answers and refusals, and a banned-word scan over source, notes, config, docs, and the built HTML in `.next` when a build exists.
+`npm test` checks: the contact address, that the other inbox appears nowhere, recommendation quotes match the transcription exactly, every game station links to a real page, the bot answers and refusals, that every internal path the bot can cite exists and returns 200 on the dev server, that off-site links go through `SmartLink` (`target="_blank" rel="noopener noreferrer"`), and a banned-word scan over source, notes, config, docs, and the built HTML in `.next` when a build exists. The bot cites site pages as root-relative paths (`/testimonials`, `/experience`) so they resolve on whatever host is serving the site.
 
 ## License
 

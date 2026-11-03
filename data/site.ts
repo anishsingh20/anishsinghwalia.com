@@ -103,10 +103,10 @@ export const legacyProfiles = [
 ] as const;
 
 export const metrics = [
-  { id: "readers", value: "3,000,000+", label: "average monthly readers on Medium" },
-  { id: "subscribers", value: "35,000+", label: "newsletter subscribers" },
-  { id: "top-writer", value: "2×", label: "Medium Top Writer" },
-  { id: "tutorials", value: "347", label: "DigitalOcean tutorials" },
+  { id: "readers", value: "3,000,000+", compact: "3M+", label: "average monthly readers on Medium" },
+  { id: "subscribers", value: "35,000+", compact: "35K+", label: "newsletter subscribers" },
+  { id: "top-writer", value: "2×", compact: "2×", label: "Medium Top Writer" },
+  { id: "tutorials", value: "347", compact: "347", label: "DigitalOcean tutorials" },
 ] as const;
 
 /** Primary nav. Work with me is the accent CTA. Game is a labelled item. */

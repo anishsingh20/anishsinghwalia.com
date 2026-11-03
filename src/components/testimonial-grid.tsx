@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { linkedInRecommendationsUrl, tileLabel, type Testimonial } from "@data/testimonials";
 import { BrandLogo } from "@/components/brand-logo";
+import { SmartLink } from "@/components/smart-link";
 import { SocialIcon } from "@/components/social-icon";
 
 export function TestimonialGrid({
@@ -41,13 +41,13 @@ export function TestimonialGrid({
                   {designation ? <p className="mt-1 text-sm text-muted">{designation}</p> : null}
                 </div>
                 {item.linkedin ? (
-                  <a
+                  <SmartLink
                     href={item.linkedin}
                     className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-line text-cream/80 transition hover:border-orange/60 hover:text-ember"
                     aria-label={`${item.name} on LinkedIn`}
                   >
                     <SocialIcon id="linkedin" />
-                  </a>
+                  </SmartLink>
                 ) : null}
               </footer>
             </li>
@@ -55,9 +55,9 @@ export function TestimonialGrid({
         })}
       </ul>
       <p className="mt-6 text-sm">
-        <Link href={linkedInRecommendationsUrl} className="text-ember hover:underline">
+        <SmartLink href={linkedInRecommendationsUrl} className="text-ember hover:underline">
           Read all of them on LinkedIn
-        </Link>
+        </SmartLink>
       </p>
     </div>
   );

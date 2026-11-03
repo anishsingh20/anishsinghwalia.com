@@ -62,7 +62,7 @@ export function fact(topic: Topic): string {
         "Three engagements:",
         ...engagements.map((item) => `- ${item.title}: ${item.deliverable}`),
         "Formats:",
-        ...formats.map((item) => `- ${item.title}: ${item.line}${item.example ? ` Example: ${item.example.label} (${item.example.href.startsWith("/") ? site.url + item.example.href : item.example.href})` : ""}`),
+        ...formats.map((item) => `- ${item.title}: ${item.line}${item.example ? ` Example: ${item.example.label} (${item.example.href})` : ""}`),
         "Newsletters too, through Medium, 35,000+ subscribers.",
       ].join("\n");
     case "writing":
@@ -80,7 +80,7 @@ export function fact(topic: Topic): string {
       return education.map((item) => `${item.school}${item.credential ? `, ${item.credential}` : ""}, ${item.years}`).join("\n") +
         `\nLanguages: ${languages.join(", ")}. Certifications: ${certifications.join(", ")}.`;
     case "hire":
-      return `Book an intro call${site.bookingUrl ? ` at ${site.bookingUrl}` : ""}, use the contact form at ${site.url}/contact, or email ${site.email}. The form asks for name, email, company, project type, and a message; budget and timeline are optional. He does not publish prices; describe the project and he replies with how he would do it.`;
+      return `Book an intro call${site.bookingUrl ? ` at ${site.bookingUrl}` : ""}, use the contact form at /contact, or email ${site.email}. The form asks for name, email, company, project type, and a message; budget and timeline are optional. He does not publish prices; describe the project and he replies with how he would do it.`;
     case "press":
       return [
         ...mediaItems.map((item) => `- ${item.outlet}: ${item.title} (${item.category}, ${item.meta}) ${item.href}${item.note ? ` ${item.note}` : ""}`),
@@ -91,7 +91,7 @@ export function fact(topic: Topic): string {
     case "technical":
       return `Before writing full-time he was an SRE at Nutanix (intern, SRE, Sr. SRE) and a cloud consultant for the American Express Cloud and Infrastructure Operations team in India. LinkedIn top skills: ${topSkills.join(", ")}. Search and research tools: ${tools.join(", ")}. Stack: ${stack.join(", ")}. Sole-author DigitalOcean tutorials cover LLM inference benchmarking, BYOM dedicated inference, RAG agents with MCP, GPT-4o on GPU Droplets, Postgres on Kubernetes, Argo CD and GitOps, bastion hosts, Linux permissions, and Let's Encrypt on Apache.`;
     case "contact":
-      return `Email: ${site.email}. Contact form: ${site.url}/contact. Profiles: ${socials.map((item) => `${item.label} ${item.href}`).join("; ")}.`;
+      return `Email: ${site.email}. Contact form: /contact. Profiles: ${socials.map((item) => `${item.label} ${item.href}`).join("; ")}.`;
   }
 }
 
