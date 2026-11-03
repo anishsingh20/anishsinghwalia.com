@@ -18,7 +18,7 @@ export default function AskPage() {
       <PageHeader
         kicker="Ask"
         title="Ask the bot what you'd ask me."
-        lede="It knows my work, clients, career, numbers, and hobbies. It reads live from Medium, GitHub, and my DigitalOcean author page, searches the web when it needs to, and links its sources. It won't share private details, and it says so when it can't find something."
+        lede="Work, clients, career, numbers, hobbies. It reads Medium, GitHub and DigitalOcean live, and links what it cites."
       />
       <AmaChat />
       <section>

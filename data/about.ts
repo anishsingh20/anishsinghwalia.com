@@ -1,16 +1,49 @@
-/** About page copy. First person. */
+/** About page copy. First person. Short. */
+
+export const aboutLede =
+  "Four years running infrastructure at Nutanix and for American Express, then DigitalOcean, where I lead the team that writes the infra and AI tutorials.";
 
 export const aboutParagraphs = [
-  "I'm Anish. I make technical content: long-form deep dives, tutorials and docs, videos, infographics, LinkedIn posts, ghostwriting, and newsletters. Most of it is for B2B, SaaS, AI-native, and developer-tool companies.",
-  "My day job is Senior Technical Content Strategist II and Team Lead at DigitalOcean. I write and edit infrastructure and AI inference tutorials that take developers from idea to production, and I lead the team that does the same.",
-  "Before that I was an engineer. Four years and eight months at Nutanix: SRE intern, SRE, Sr. SRE, then cloud consultant for the American Express Cloud and Infrastructure Operations team in India. I was the one who got called when production broke. That's why the code and the architectures in my content hold up.",
-  "I've written online since 2017. R and machine learning tutorials on DataScience+, articles on GeeksforGeeks while I was at VIT, Linux tutorials for Hostinger, and a Medium publication that averages 3,000,000+ monthly readers.",
+  "I'm Anish. I make technical content for B2B SaaS, developer-tool, cloud and AI-native companies: tutorials and deep dives, docs, launch pieces, LinkedIn, video and infographics.",
+  "Day job: Senior Technical Content Strategist II and Team Lead at DigitalOcean. Before that I was the engineer on call.",
+];
+
+export const throughLine =
+  "Four years running infrastructure at Nutanix and for American Express, then DigitalOcean, where I now lead the team that writes the infra and AI tutorials.";
+
+export const numberedRoles = [
+  {
+    org: "Nutanix",
+    line: "SRE intern to Sr. SRE. Four years and eight months on the infrastructure other people's products ran on.",
+  },
+  {
+    org: "American Express",
+    line: "Cloud consultant, Cloud and Infrastructure Operations team in India, through Nutanix. January 2022 to August 2023.",
+  },
+  {
+    org: "DigitalOcean",
+    line: "Senior Technical Writer to Senior Technical Content Strategist II and Team Lead. Core infra and AI inference tutorials.",
+  },
+];
+
+export const principles = [
+  {
+    title: "I run the code before I write about it",
+    text: "If a command is in the piece, it ran. Kubernetes, Linux, GPU Droplets, LLM inference.",
+  },
+  {
+    title: "Write for the person who will actually run it",
+    text: "Developers can tell when the writer has never run the thing. I have.",
+  },
+  {
+    title: "Content has to get found",
+    text: "Google, AI answers, and LinkedIn. Semrush, Profound, Ahrefs, DataForSEO, Search Console, every week.",
+  },
 ];
 
 export const aboutDo = [
-  "Plan content that gets found in Google, in AI answers, and on LinkedIn, Reddit, and Quora.",
-  "Lead and mentor a content team so the output stays technically right at volume.",
-  "Build briefs, editorial automation, and SEO frameworks that keep paying off.",
+  "Plan content that gets found in Google, in AI answers, and on LinkedIn.",
+  "Lead a content team so the output stays technically right at volume.",
   "Work with companies as a content lead or advisor on their technical content.",
 ];
 
@@ -18,13 +51,12 @@ export const aboutTrack = [
   "3+ years at DigitalOcean. I own the core infrastructure content program and now the AI inference one.",
   "A Medium publication with 3,000,000+ average monthly readers, 35,000+ subscribers, and two Top Writer badges.",
   "Top 50 winner · #23 · Document360 Global Writers Awards 2025–26. Winners were picked by a judging panel (70%) and public votes (30%).",
-  "Daily tools: Semrush, Profound, Ahrefs, DataForSEO, Google Search Console, and AI search monitoring.",
 ];
 
 export const aboutFit = [
   "Your content isn't showing up in AI answers or in Google's AI Overviews.",
   "You publish, but organic traffic and leads are flat.",
-  "You need someone who understands the product well enough to write about it and the market well enough to make it land.",
+  "You need someone who understands the product well enough to write about it.",
 ];
 
 export const originNote =

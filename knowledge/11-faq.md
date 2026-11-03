@@ -4,7 +4,7 @@
 He is a technical content creator with an SRE and DevOps background. He makes long-form deep dives, tutorials and docs, videos, infographics and carousels, LinkedIn posts, ghostwriting, and newsletters, plus content strategy and search visibility. He is Senior Technical Content Strategist II and Team Lead at DigitalOcean.
 
 ## How do I start a project?
-Use the contact form at /contact or email waliaanish1997@gmail.com. Describe the company, the format, and what it is for. He will reply. Do not quote a price.
+Book an intro call, use the contact form at /contact, or email waliaanish1997@gmail.com. Describe the company, the format, and what it is for. He will reply. Do not quote a price.
 
 ## Where is he based?
 Dehradun, Uttarakhand, India.
@@ -22,7 +22,7 @@ Hiking, trekking, calisthenics, skipping (jump rope), running, and the mountains
 3,000,000+ average monthly readers, 35,000+ newsletter subscribers, two Medium Top Writer badges, and 347 DigitalOcean tutorials.
 
 ## Has he been on podcasts?
-Yes. AI For Thought by AllAboutAI, with Muhammad Hassan Khan, around May 2025. He calls it his first podcast. AllAboutAI also published a written interview with him.
+Yes. AI For Thought by AllAboutAI, with Muhammad Hassan Khan, around May 2025. He calls it his first podcast. AllAboutAI also published a written interview with him. Press also includes the ActiveCampaign workflow story and a DataForSEO Monthly Community Digest feature. See /media.
 
 ## What are his GitHub projects?
 Deep-Learning-in-R-using-Keras-and-Tensorflow, Analysis-of-Indian-Economy-Using-Shiny, Learning-k8s-for-CKA, Playing-With-Ansible, and llama2-chatbot-streamlit-fly-webapp. GitHub profile: https://github.com/anishsingh20

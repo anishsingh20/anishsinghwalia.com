@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { site } from "../data/site";
+import { bookingLabel, site } from "../data/site";
 import { stations } from "../data/game";
 import { testimonials } from "../data/testimonials";
 
@@ -37,6 +37,15 @@ describe("public facts", () => {
       expect(testimonials.some((item) => item.quote === quote)).toBe(true);
     }
     expect(testimonials.find((item) => item.name.startsWith("Evgeniia"))?.quote).toBeNull();
+  });
+
+  it("defaults the booking URL to the Calendly intro call", () => {
+    expect(site.bookingUrl).toBe("https://calendly.com/client-strategy-session/15min");
+    expect(bookingLabel).toBe("Book an intro call");
+    expect(bookingLabel).not.toMatch(/minute|\bmin\b/i);
+    const button = readFileSync("src/components/book-intro.tsx", "utf8");
+    expect(button).toContain('target="_blank"');
+    expect(button).toContain('rel="noopener"');
   });
 
   it("gives every game station a real page", () => {

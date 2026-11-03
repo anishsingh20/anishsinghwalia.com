@@ -3,7 +3,7 @@ import { clients, headlineClients } from "@data/clients";
 import { experience, topSkills, tools as researchTools } from "@data/experience";
 import { formats } from "@data/formats";
 import { hobbies, mountainQuote } from "@data/hobbies";
-import { award, metrics, site, socials } from "@data/site";
+import { award, linkedInSemrushPost, metrics, site, socials } from "@data/site";
 import { testimonials } from "@data/testimonials";
 import { essays, githubProjects, press, tutorials } from "@data/writing";
 import type { BotEvent, ChatTurn } from "./agent";
@@ -88,8 +88,12 @@ async function route(q: string, previous: string, original: string): Promise<Rep
 
   if (has(q, /\b(hire|hiring|work with (him|you|anish)|start a project|commission|book (him|you)|engage|collaborat\w*|available|availability|get in touch|reach (him|you|out)|contact)\b/)) {
     return {
-      text: `Use the ${link("contact form", LINKS.contact)} or email ${site.email}. Tell him the company, the format you need, and what it's for, and he replies with how he would approach it. He works with B2B, SaaS, AI-native, and developer-tool companies alongside his full-time role at DigitalOcean. Companies he has worked with include ${listify(headlineClients)}.`,
-      sources: [{ title: "Contact", url: LINKS.contact }, { title: "Clients", url: `${site.url}/clients` }],
+      text: `${site.bookingUrl ? `${link("Book an intro call", site.bookingUrl)}, ` : ""}use the ${link("contact form", LINKS.contact)}, or email ${site.email}. Tell him the company, the format you need, and what it's for, and he replies with how he would approach it. He works with B2B, SaaS, AI-native, and developer-tool companies alongside his full-time role at DigitalOcean. Companies he has worked with include ${listify(headlineClients)}.`,
+      sources: [
+        { title: "Contact", url: LINKS.contact },
+        ...(site.bookingUrl ? [{ title: "Book an intro call", url: site.bookingUrl }] : []),
+        { title: "Clients", url: `${site.url}/clients` },
+      ],
     };
   }
 
@@ -200,7 +204,7 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(podcast|press|interview|featured|media|case study|activecampaign|allaboutai)\b/)) {
     const items = press.map((item) => `${link(item.title, item.href)} (${item.meta.split(" · ").slice(0, 2).join(", ")})${item.note ? `. ${item.note}` : ""}`).join(" ");
     return {
-      text: `Three places to look. ${items} Full list on the ${link("work page", `${site.url}/work`)}.`,
+      text: `Start with the ${link("media page", `${site.url}/media`)}. ${items}`,
       sources: press.map((item) => ({ title: item.title, url: item.href })),
     };
   }
@@ -235,10 +239,10 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   }
 
   if (has(q, /\b(video|videos|youtube|film)\b/)) {
-    const video = formats.find((format) => format.id === "video");
+    const videoUrl = "https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94";
     return {
-      text: `Yes. ${thirdPerson(video?.line ?? "")} The example on the site is ${link("how he helped a five-person team rebuild its video library", video?.example?.href ?? LINKS.medium)}. He also appeared on the ${link("AI For Thought podcast", press[2].href)}. All formats are on the ${link("what-I-make section", `${site.url}/services#what-i-make`)}.`,
-      sources: [{ title: video?.example?.label ?? "Medium", url: video?.example?.href ?? LINKS.medium }],
+      text: `Yes. Short videos and infographics for product walkthroughs and explainers. One write-up is ${link("how he helped a five-person team rebuild its video library", videoUrl)}. He also appeared on the ${link("AI For Thought podcast", press[2].href)}. All formats are on the ${link("services page", `${site.url}/services#what-i-make`)}.`,
+      sources: [{ title: "Video library write-up", url: videoUrl }],
     };
   }
 
@@ -251,9 +255,8 @@ async function route(q: string, previous: string, original: string): Promise<Rep
 
   if (has(q, /\b(ghostwrit\w*|ghost writ\w*|linkedin posts?|short-form|short form|carousels?|infographics?|thought leadership|personal brand\w*|rebrand\w*)\b/)) {
     const ghost = formats.find((format) => format.id === "ghostwriting");
-    const carousel = formats.find((format) => format.id === "carousels");
     return {
-      text: `Yes. Ghostwriting: ${thirdPerson(ghost?.line ?? "")} The clearest example is Renu Sharma at Tanot Solutions, whose LinkedIn rebrand he wrote; her note is on the ${link("testimonials page", `${site.url}/testimonials#renu-sharma`)}. Infographics and carousels: ${thirdPerson(carousel?.line ?? "")} Nadia Fernández wrote about ${link("the carousel they made", `${site.url}/testimonials#nadia-fernandez`)}. For his own profile, see ${link("how he uses Semrush with ChatGPT", formats.find((format) => format.id === "linkedin")?.example?.href ?? LINKS.linkedin)}.`,
+      text: `Yes. Ghostwriting: ${thirdPerson(ghost?.line ?? "")} The clearest example is Renu Sharma at Tanot Solutions, whose LinkedIn rebrand he wrote; her note is on the ${link("testimonials page", `${site.url}/testimonials#renu-sharma`)}. Infographics and carousels: Nadia Fernández wrote about ${link("the carousel they made", `${site.url}/testimonials#nadia-fernandez`)}. For his own profile, see ${link("how he uses Semrush with ChatGPT", linkedInSemrushPost)}.`,
       sources: [{ title: "Testimonials", url: `${site.url}/testimonials` }],
     };
   }
@@ -261,16 +264,15 @@ async function route(q: string, previous: string, original: string): Promise<Rep
   if (has(q, /\b(format|formats|what (does|can) (he|anish) (make|do|produce|create|write)|services|offers?|offerings|what kinds? of content|types? of content|deliverables?)\b/)) {
     const list = formats.map((format) => format.title.toLowerCase());
     return {
-      text: `${capitalize(listify(list))}. All of it for B2B, SaaS, AI-native, and developer-tool companies, backed by an engineering background. Each format has a real example on the ${link("services page", `${site.url}/services#what-i-make`)}, like ${link(formats[0].example?.label ?? "", formats[0].example?.href ?? site.url)}.`,
+      text: `${capitalize(listify(list))}, plus newsletters. All of it for B2B, SaaS, AI-native, and developer-tool companies, backed by an engineering background. Each format has a real example on the ${link("services page", `${site.url}/services#what-i-make`)}, like ${link(formats[0].example?.label ?? "", formats[0].example?.href ?? site.url)}.`,
       sources: [{ title: "What I make", url: `${site.url}/services#what-i-make` }],
     };
   }
 
   if (has(q, /semrush.*chatgpt|chatgpt.*semrush/)) {
-    const post = formats.find((format) => format.id === "linkedin");
     return {
-      text: `Two things. On LinkedIn he posted ${link("how he uses Semrush with ChatGPT", post?.example?.href ?? LINKS.linkedin)}: the experiment and the result. AllAboutAI then ran a written feature, ${link("How Anish used ChatGPT and Semrush", press[1].href)}, about the Medium growth behind it. Semrush later sponsored his essay ${link("SEO-to-GEO Identity Crisis", essays[0].href)}.`,
-      sources: [{ title: "LinkedIn post", url: post?.example?.href ?? LINKS.linkedin }, { title: press[1].title, url: press[1].href }],
+      text: `Two things. On LinkedIn he posted ${link("how he uses Semrush with ChatGPT", linkedInSemrushPost)}: the experiment and the result. AllAboutAI then ran a written feature, ${link("How Anish used ChatGPT and Semrush", press[1].href)}, about the Medium growth behind it. Semrush later sponsored his essay ${link("SEO-to-GEO Identity Crisis", essays[0].href)}.`,
+      sources: [{ title: "LinkedIn post", url: linkedInSemrushPost }, { title: press[1].title, url: press[1].href }],
     };
   }
 

@@ -1,4 +1,5 @@
-import { award, site, socials, legacyProfiles } from "@data/site";
+import { award, lastUpdated, site, socials, legacyProfiles } from "@data/site";
+import { mediaItems } from "@data/media";
 
 export function personJsonLd() {
   return {
@@ -12,6 +13,13 @@ export function personJsonLd() {
     url: site.url,
     image: `${site.url}/images/anish.webp`,
     email: site.email,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: site.email,
+      ...(site.bookingUrl ? { url: site.bookingUrl } : {}),
+      availableLanguage: ["English", "Hindi"],
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: site.location.locality,
@@ -28,11 +36,18 @@ export function personJsonLd() {
       name: site.education.school,
     },
     award: [award.short, "Medium Top Writer (twice)"],
-    subjectOf: {
-      "@type": "WebPage",
-      name: `${award.name} ${award.edition} winners`,
-      url: award.href,
-    },
+    subjectOf: [
+      {
+        "@type": "WebPage",
+        name: `${award.name} ${award.edition} winners`,
+        url: award.href,
+      },
+      ...mediaItems.map((item) => ({
+        "@type": item.category === "Podcast" ? "PodcastEpisode" : "Article",
+        name: item.title,
+        url: item.href,
+      })),
+    ],
     knowsAbout: [
       "Technical content creation",
       "Technical writing",
@@ -42,6 +57,7 @@ export function personJsonLd() {
       "Newsletters",
       "Content strategy",
       "SEO",
+      "Generative engine optimization",
       "AI search visibility",
       "AI inference",
       "Site reliability engineering",
@@ -59,6 +75,7 @@ export function websiteJsonLd() {
     name: site.name,
     url: site.url,
     description: site.description,
+    dateModified: lastUpdated,
   };
 }
 
@@ -66,7 +83,7 @@ export function profilePageJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    dateModified: "2026-11-02",
+    dateModified: lastUpdated,
     mainEntity: { "@id": `${site.url}/#anish` },
   };
 }

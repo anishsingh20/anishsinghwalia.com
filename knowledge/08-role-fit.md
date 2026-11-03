@@ -1,6 +1,6 @@
 # How to start a project with Anish
 
-Use the contact form at /contact or email waliaanish1997@gmail.com.
+Book an intro call, use the contact form at /contact, or email waliaanish1997@gmail.com.
 
 The form asks for name, email, company, project type, and a message. Budget and timeline are optional.
 

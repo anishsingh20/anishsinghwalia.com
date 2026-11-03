@@ -15,7 +15,7 @@ export const clients: ClientEntry[] = [
     name: "Semrush",
     relationship: "Sponsored essay and affiliate content",
     detail: "Sponsored my Medium essay “SEO-to-GEO Identity Crisis” and the affiliate content I write around SEO, digital marketing, and AI.",
-    link: { label: "Read the essay", href: "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306" },
+    link: { label: "Case study", href: "/work/semrush" },
     group: "brands",
   },
   {
@@ -29,12 +29,14 @@ export const clients: ClientEntry[] = [
     name: "Tanot Solutions",
     relationship: "Ghostwriting and LinkedIn rebrand",
     detail: "Ghostwriting and content strategy for co-founder Renu Sharma: positioning, voice, About section, headline, banner, and the posts.",
+    link: { label: "Case study", href: "/work/tanot-solutions" },
     group: "brands",
   },
   {
     name: "DataImpulse",
     relationship: "LinkedIn post from a live experiment",
     detail: "A LinkedIn post for CMO Andrew Byzov. I ran the experiment on their proxies, then turned the data into the post.",
+    link: { label: "Case study", href: "/work/dataimpulse" },
     group: "brands",
   },
   {
@@ -59,7 +61,7 @@ export const clients: ClientEntry[] = [
     name: "DigitalOcean",
     relationship: "Senior Technical Content Strategist II and Team Lead",
     detail: "Since 2023. I own the core infrastructure and AI inference tutorial programs and lead the team. 347 tutorials authored or refreshed.",
-    link: { label: "My tutorials", href: "https://www.digitalocean.com/community/users/asinghwalia" },
+    link: { label: "Case study", href: "/work/digitalocean-inference-benchmarks" },
     group: "employers",
   },
   {

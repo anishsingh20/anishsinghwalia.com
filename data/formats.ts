@@ -1,6 +1,5 @@
 /**
- * What I make. Each tile links to a real example from my work.
- * Where the example is a client recommendation, the link goes to that card.
+ * Six formats listed on /services. Each links to a real example.
  */
 
 export type Format = {
@@ -13,73 +12,55 @@ export type Format = {
 export const formats: Format[] = [
   {
     id: "deep-dives",
-    title: "Long-form articles and deep dives",
-    line: "Essays on SEO, AI search, and the tools I test. My Medium publication averages 3,000,000+ readers a month.",
+    title: "Tutorials and deep dives",
+    line: "A guide a developer can follow, or an essay on the SEO-to-GEO shift. 347 tutorials on DigitalOcean.",
     example: {
       label: "SEO-to-GEO Identity Crisis, sponsored by Semrush",
       href: "https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306",
     },
   },
   {
-    id: "tutorials",
-    title: "Tutorials and developer docs",
-    line: "Step-by-step guides that people run in production. 347 of them on DigitalOcean, on Linux, Kubernetes, and AI inference.",
+    id: "docs",
+    title: "Developer docs",
+    line: "Reference and how-to pages that answer the question a developer has right now.",
     example: {
       label: "How to Benchmark LLM Inference Yourself",
       href: "https://www.digitalocean.com/community/tutorials/how-to-benchmark-llm-inference",
     },
   },
   {
-    id: "video",
-    title: "Video",
-    line: "Product walkthroughs and explainers, scripted and produced with AI tools where that saves a crew.",
+    id: "launch",
+    title: "Launch content",
+    line: "A feature explained to the people who will use it, in the channel where they read.",
     example: {
-      label: "How I helped a five-person team rebuild its video library",
-      href: "https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94",
-    },
-  },
-  {
-    id: "carousels",
-    title: "Infographics and carousels",
-    line: "Visual explainers for LinkedIn. One idea per slide, numbers people can check.",
-    example: {
-      label: "The carousel Nadia Fernández wrote about",
-      href: "/testimonials#nadia-fernandez",
-    },
-  },
-  {
-    id: "linkedin",
-    title: "Short-form LinkedIn posts",
-    line: "Posts that run an experiment and show the result. For my own profile and for clients.",
-    example: {
-      label: "How I use Semrush with ChatGPT",
-      href: "https://www.linkedin.com/posts/anish-singh-walia_how-to-use-semrush-with-chatgpt-for-viral-activity-7297901444194611200-pCWD",
+      label: "The Pollo AI feature launch, in Abby Wang's words",
+      href: "/testimonials#abby-wang",
     },
   },
   {
     id: "ghostwriting",
-    title: "Ghostwriting",
-    line: "Founders' voices on LinkedIn. Positioning, headline, banner, and the posts themselves.",
+    title: "LinkedIn ghostwriting for founders",
+    line: "Positioning, profile and posts in your voice. You approve, it goes out under your name.",
     example: {
       label: "Renu Sharma, Tanot Solutions",
       href: "/testimonials#renu-sharma",
     },
   },
   {
-    id: "newsletters",
-    title: "Newsletters",
-    line: "A Medium newsletter with 35,000+ subscribers. I know what gets opened.",
+    id: "video",
+    title: "Short video and infographics",
+    line: "Walkthroughs, explainers and LinkedIn carousels. One idea, then the viewer can act.",
     example: {
-      label: "Subscribe on Medium",
-      href: "https://medium.com/@anishsingh20",
+      label: "The carousel Nadia Fernández wrote about",
+      href: "/testimonials#nadia-fernandez",
     },
   },
   {
     id: "strategy",
-    title: "Content strategy and search visibility",
-    line: "What to publish, for whom, and how it gets found in Google and in AI answers. Semrush, Profound, Ahrefs, DataForSEO.",
+    title: "Content and AI-search strategy",
+    line: "What to publish and refresh so pages show up in Google and in AI answers. Newsletters too.",
     example: {
-      label: "ActiveCampaign on my content-refresh workflow",
+      label: "ActiveCampaign on the content-refresh workflow",
       href: "https://autonomous.activecampaign.com/stories/scalable-content-refresh-workflow",
     },
   },

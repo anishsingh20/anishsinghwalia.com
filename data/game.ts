@@ -35,7 +35,7 @@ export const stations: Station[] = [
     kind: "desk",
     name: "My desk",
     blurb:
-      "This is where the content gets made. Deep dives, tutorials, video scripts, LinkedIn posts, newsletters. 347 DigitalOcean tutorials came off this desk too.",
+      "This is where the content gets made. Deep dives, tutorials, video, LinkedIn, ghostwriting. 347 DigitalOcean tutorials came off this desk too.",
     facts: [
       "Senior Technical Content Strategist II and Team Lead at DigitalOcean",
       "Tutorials on LLM inference, Postgres on Kubernetes, Argo CD, Linux permissions",

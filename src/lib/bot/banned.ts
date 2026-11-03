@@ -11,6 +11,7 @@ const parts: [string, string][] = [
   ["\\bside ", "hustle"],
   ["contract", "or\\b"],
   ["moon", "lighting"],
+  ["independent cons", "ultant"],
 ];
 
 /** Case-insensitive pattern for every banned word. */
@@ -28,7 +29,8 @@ export function scrub(text: string): string {
     .replace(new RegExp(`${parts[2][0]}${parts[2][1]}`, "gi"), "client work")
     .replace(new RegExp(`${parts[3][0]}${parts[3][1]}`, "gi"), "client work")
     .replace(new RegExp(`${parts[4][0]}${parts[4][1]}`, "gi"), "consultant")
-    .replace(new RegExp(`${parts[5][0]}${parts[5][1]}`, "gi"), "client work");
+    .replace(new RegExp(`${parts[5][0]}${parts[5][1]}`, "gi"), "client work")
+    .replace(new RegExp(`${parts[6][0]}${parts[6][1]}s?`, "gi"), "content partner");
 }
 
 /**

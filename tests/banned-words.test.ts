@@ -114,4 +114,15 @@ describe("banned words", () => {
     const hits = siteSources().filter((file) => readFileSync(file, "utf8").toLowerCase().includes(needle));
     expect(hits).toEqual([]);
   });
+
+  it("treats independent consultant as banned", () => {
+    const phrase = ["independent", " ", "consultant"].join("");
+    expect(findBanned(`He is an ${phrase}.`)).toEqual([phrase]);
+  });
+
+  it("does not ship the wrong YouTube channel", () => {
+    const needle = "UClrAR1q9DKBmIuEg4w6mJlw";
+    const hits = copySources().filter((file) => readFileSync(file, "utf8").includes(needle));
+    expect(hits).toEqual([]);
+  });
 });

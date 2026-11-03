@@ -1,14 +1,28 @@
 import type { MetadataRoute } from "next";
-import { site } from "@data/site";
+import { caseStudies } from "@data/services";
+import { lastUpdated, site } from "@data/site";
 
-const paths = ["", "/services", "/about", "/experience", "/clients", "/testimonials", "/work", "/game", "/ask", "/contact"];
+const paths = [
+  "",
+  "/work",
+  "/services",
+  "/about",
+  "/media",
+  "/experience",
+  "/clients",
+  "/testimonials",
+  "/game",
+  "/ask",
+  "/contact",
+  ...caseStudies.map((study) => `/work/${study.slug}`),
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date("2026-11-02");
+  const now = new Date(lastUpdated);
   return paths.map((path) => ({
     url: `${site.url}${path || "/"}`,
     lastModified: now,
     changeFrequency: "monthly",
-    priority: path === "" ? 1 : 0.7,
+    priority: path === "" ? 1 : path.startsWith("/work/") ? 0.8 : 0.7,
   }));
 }

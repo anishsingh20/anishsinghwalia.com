@@ -4,14 +4,12 @@ Anish Singh Walia is a technical content creator and Senior Technical Content St
 
 He is a Top 50 winner · #23 · Document360 Global Writers Awards 2025–26.
 
-He makes technical content in most formats: long-form articles and deep dives, tutorials and developer docs, videos, infographics and LinkedIn carousels, short-form LinkedIn posts, ghostwriting, and newsletters. He also does content strategy and search visibility (Google and AI answers).
+He makes technical content developers trust, that ranks in Google and shows up in AI answers: tutorials and deep dives, docs, launch content, LinkedIn ghostwriting, short video and infographics, newsletters, and content and AI-search strategy.
 
-The work is for B2B, SaaS, AI-native, and developer-tool companies. Companies he has worked with include Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. Describe this as client work or "companies he has worked with".
+The work is for B2B SaaS, developer-tool, cloud and AI-native companies. Companies he has worked with include Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. Describe this as client work or "companies he has worked with".
 
 He lives in Dehradun, Uttarakhand, India. He has a Bachelor's degree in Information Technology from Vellore Institute of Technology, 2015 to 2019.
 
 Contact email: waliaanish1997@gmail.com. There is a contact form at /contact.
 
 The motto on his GitHub README and Medium bio, quoting the Dalai Lama: "Share your knowledge. It is a way to achieve immortality."
-
-His LinkedIn headline says he helps AI-native companies get found in Google, AI search, and social. That is one part of a wider content practice.

@@ -125,6 +125,12 @@ export const press: Piece[] = [
     href: "https://www.youtube.com/watch?v=R_XSFA9q7Dg",
     meta: "AllAboutAI podcast · my first podcast · about May 2025",
   },
+  {
+    title: "DataForSEO Monthly Community Digest",
+    href: "https://www.linkedin.com/posts/dataforseo_dfs-activity-7444737781844701184-L8sB",
+    meta: "DataForSEO · March 2026",
+    note: "Featured an n8n content-brief automation built with DataForSEO APIs.",
+  },
 ];
 
 /** Publication titles listed on my LinkedIn. No URLs there, so they are not linked. */

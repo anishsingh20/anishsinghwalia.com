@@ -15,7 +15,7 @@ export default function GamePage() {
       <PageHeader
         kicker="Game Room"
         title="My cabin, block by block."
-        lede="A small voxel cabin in the foothills. Walk around as me, open the things on the desk and the walls, and each one takes you to a real page. It runs in the browser, no download."
+        lede="A voxel cabin in the foothills. Open the desk, the pager, the kettlebell. Each one is a page."
       />
       <CabinLoader />
       <PaperMap />

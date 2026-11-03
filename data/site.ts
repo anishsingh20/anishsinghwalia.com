@@ -16,14 +16,12 @@ export const site = {
     country: "IN",
     label: "Dehradun, Uttarakhand, India",
   },
-  /** One line under the name. */
-  headline: "Technical content creator. Engineer first.",
-  /** The hero paragraph. */
+  headline: "Technical content developers trust.",
   positioning:
-    "I make technical content for B2B, SaaS, AI-native, and developer-tool companies. Videos, infographics, long-form deep dives, LinkedIn posts, ghostwriting, docs and tutorials, newsletters. I was an SRE before I was a writer, so the code in my content runs.",
+    "I make technical content for B2B SaaS, developer-tool, cloud and AI-native companies: deep dives, docs, videos, infographics, LinkedIn posts and ghostwriting.",
   description:
-    "Anish Singh Walia is a technical content creator and Senior Technical Content Strategist II and Team Lead at DigitalOcean. Videos, deep dives, LinkedIn posts, ghostwriting, docs, tutorials, and newsletters for B2B, SaaS, AI-native, and developer-tool companies. Former SRE at Nutanix and cloud consultant for American Express.",
-  title: "Anish Singh Walia · Technical content creator, team lead at DigitalOcean",
+    "Technical content for B2B SaaS, developer-tool, cloud and AI-native companies. Tutorials, docs, launch pieces, LinkedIn ghostwriting, video and infographics that rank in Google and show up in AI answers. Anish Singh Walia, team lead at DigitalOcean.",
+  title: "Anish Singh Walia · Technical content for B2B SaaS and AI-native companies",
   motto: "Share your knowledge. It is a way to achieve immortality.",
   mottoAttribution: "Dalai Lama. It's on my GitHub README and my Medium bio.",
   recommendationsUrl:
@@ -33,7 +31,18 @@ export const site = {
     credential: "Bachelor's degree, Information Technology",
     years: "2015 to 2019",
   },
+  /**
+   * Intro-call booking page. Default is Anish's Calendly.
+   * Override with NEXT_PUBLIC_BOOKING_URL or BOOKING_URL. Empty hides every booking CTA.
+   */
+  bookingUrl: (
+    process.env.NEXT_PUBLIC_BOOKING_URL ??
+    process.env.BOOKING_URL ??
+    "https://calendly.com/client-strategy-session/15min"
+  ).trim(),
 } as const;
+
+export const bookingLabel = "Book an intro call";
 
 /**
  * Document360 Global Writers Awards. Checked against the winners page on 2 Nov 2026:
@@ -100,16 +109,32 @@ export const metrics = [
   { id: "tutorials", value: "347", label: "DigitalOcean tutorials" },
 ] as const;
 
+/** Primary nav. Work with me is the accent CTA. Game room and Ask are icon links. */
 export const nav = [
+  { href: "/work", label: "Work" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
+  { href: "/media", label: "Media" },
+] as const;
+
+export const footerNav = [
+  { href: "/work", label: "Work" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/media", label: "Media" },
   { href: "/experience", label: "Experience" },
   { href: "/clients", label: "Clients" },
   { href: "/testimonials", label: "Testimonials" },
-  { href: "/work", label: "Work" },
-  { href: "/game", label: "Game Room" },
-  { href: "/ask", label: "Ask" },
+  { href: "/contact", label: "Work with me" },
 ] as const;
 
 /** Who the work is for. */
 export const audiences = ["B2B companies", "SaaS companies", "AI-native companies", "Developer-tool companies"] as const;
+
+export const icp =
+  "Heads of marketing, content leads, DevRel and developer-marketing managers, and founders at B2B SaaS, developer-tool, cloud and AI-native companies.";
+
+export const lastUpdated = "2026-11-03";
+
+export const linkedInSemrushPost =
+  "https://www.linkedin.com/posts/anish-singh-walia_how-to-use-semrush-with-chatgpt-for-viral-activity-7297901444194611200-pCWD";

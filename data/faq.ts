@@ -4,22 +4,22 @@ export const faqs: Faq[] = [
   {
     question: "What do you actually make?",
     answer:
-      "Technical content in most formats: long-form articles and deep dives, tutorials and developer docs, videos, infographics and LinkedIn carousels, short-form LinkedIn posts, ghostwriting, and newsletters. I also do content strategy and search visibility. My day job is Senior Technical Content Strategist II and Team Lead at DigitalOcean. Top 50 winner · #23 · Document360 Global Writers Awards 2025–26.",
+      "Technical content: tutorials and deep dives, developer docs, launch content, LinkedIn ghostwriting, short video and infographics, newsletters, and content and AI-search strategy. Senior Technical Content Strategist II and Team Lead at DigitalOcean. Top 50 winner · #23 · Document360 Global Writers Awards 2025–26.",
   },
   {
     question: "Who do you work with?",
     answer:
-      "B2B, SaaS, AI-native, and developer-tool companies. Companies I've worked with include Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. I've also written for Hostinger, DataScience+, and GeeksforGeeks.",
+      "B2B, SaaS, AI-native, and developer-tool companies. Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI. Also Hostinger, DataScience+, and GeeksforGeeks.",
   },
   {
     question: "How technical are you?",
     answer:
-      "I was an SRE at Nutanix (intern, SRE, Sr. SRE) and a cloud consultant for the American Express Cloud and Infrastructure Operations team in India before I wrote full-time. My top skills are AI Inference, Linux Server, and Cloud Consulting. I write production tutorials on LLM inference, Kubernetes, GitOps, and Linux, and I use Semrush, Profound, Ahrefs, DataForSEO, and Google Search Console every week.",
+      "SRE at Nutanix (intern, SRE, Sr. SRE) and a cloud consultant for the American Express Cloud and Infrastructure Operations team in India before I wrote full-time. Top skills: AI Inference, Linux Server, and Cloud Consulting.",
   },
   {
     question: "How do I start a project?",
     answer:
-      "Use the contact form or email waliaanish1997@gmail.com. Tell me the company, the format you need, and what it's for. I'll write back.",
+      "Book an intro call, use the contact form, or email waliaanish1997@gmail.com. Company, format, what it's for. I'll write back.",
   },
   {
     question: "Where are you based, and what did you study?",
@@ -29,6 +29,6 @@ export const faqs: Faq[] = [
   {
     question: "What are the numbers?",
     answer:
-      "3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, two Medium Top Writer badges, and 347 DigitalOcean tutorials authored or refreshed.",
+      "3,000,000+ average monthly readers on Medium, 35,000+ newsletter subscribers, two Medium Top Writer badges, and 347 DigitalOcean tutorials.",
   },
 ];

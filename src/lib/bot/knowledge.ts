@@ -6,6 +6,8 @@ import { formats } from "@data/formats";
 import { alsoOffClock, hobbies } from "@data/hobbies";
 import { metrics, site, socials, audiences } from "@data/site";
 import { testimonials } from "@data/testimonials";
+import { engagements } from "@data/engagements";
+import { mediaItems } from "@data/media";
 import { essays, githubProjects, press, tutorials } from "@data/writing";
 import { loadKnowledge, scoreChunks, type Chunk } from "@/lib/ask";
 
@@ -56,7 +58,13 @@ export function fact(topic: Topic): string {
         .map((item) => `${item.name}${item.role ? `, ${item.role}` : ""}${item.company ? ` at ${item.company}` : ""} (${item.dateLabel}, ${item.relationship}): "${item.quote}"`)
         .join("\n\n") + `\nAll recommendations: ${site.recommendationsUrl}`;
     case "formats":
-      return formats.map((item) => `- ${item.title}: ${item.line}${item.example ? ` Example: ${item.example.label} (${item.example.href.startsWith("/") ? site.url + item.example.href : item.example.href})` : ""}`).join("\n");
+      return [
+        "Three engagements:",
+        ...engagements.map((item) => `- ${item.title}: ${item.deliverable}`),
+        "Formats:",
+        ...formats.map((item) => `- ${item.title}: ${item.line}${item.example ? ` Example: ${item.example.label} (${item.example.href.startsWith("/") ? site.url + item.example.href : item.example.href})` : ""}`),
+        "Newsletters too, through Medium, 35,000+ subscribers.",
+      ].join("\n");
     case "writing":
       return [
         "DigitalOcean tutorials (sample):",
@@ -72,9 +80,12 @@ export function fact(topic: Topic): string {
       return education.map((item) => `${item.school}${item.credential ? `, ${item.credential}` : ""}, ${item.years}`).join("\n") +
         `\nLanguages: ${languages.join(", ")}. Certifications: ${certifications.join(", ")}.`;
     case "hire":
-      return `Use the contact form at ${site.url}/contact or email ${site.email}. The form asks for name, email, company, project type, and a message; budget and timeline are optional. He does not publish prices; describe the project and he replies with how he would do it.`;
+      return `Book an intro call${site.bookingUrl ? ` at ${site.bookingUrl}` : ""}, use the contact form at ${site.url}/contact, or email ${site.email}. The form asks for name, email, company, project type, and a message; budget and timeline are optional. He does not publish prices; describe the project and he replies with how he would do it.`;
     case "press":
-      return press.map((item) => `- ${item.title} (${item.meta}) ${item.href}${item.note ? ` ${item.note}` : ""}`).join("\n");
+      return [
+        ...mediaItems.map((item) => `- ${item.outlet}: ${item.title} (${item.category}, ${item.meta}) ${item.href}${item.note ? ` ${item.note}` : ""}`),
+        ...press.map((item) => `- ${item.title} (${item.meta}) ${item.href}${item.note ? ` ${item.note}` : ""}`),
+      ].join("\n");
     case "github":
       return githubProjects.map((item) => `- ${item.name}: ${item.note} ${item.href}`).join("\n") + "\nProfile: https://github.com/anishsingh20";
     case "technical":

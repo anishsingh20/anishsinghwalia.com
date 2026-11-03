@@ -1,6 +1,6 @@
 # anishsinghwalia.com
 
-My personal site. I'm Anish Singh Walia: technical content creator, Senior Technical Content Strategist II and Team Lead at DigitalOcean, former SRE. The site shows what I make (deep dives, tutorials, video, infographics, LinkedIn posts, ghostwriting, newsletters), the companies I've worked with, what they said, and how to start a project.
+Technical content for B2B SaaS, developer-tool, cloud and AI-native companies. I'm Anish Singh Walia, Senior Technical Content Strategist II and Team Lead at DigitalOcean. The site shows the work, the companies, what they said, and how to start a project.
 
 Next.js 15, React 19, TypeScript, Tailwind v4, three.js for the game room. Runs on DigitalOcean App Platform or Vercel.
 
@@ -14,7 +14,7 @@ npm run setup
 npm run dev
 ```
 
-Open [http://localhost:3847](http://localhost:3847). That's it. No keys needed: the contact form uses a mock transport and the Ask bot runs in keyless mode (live Medium, GitHub, and DigitalOcean data plus the notes in `knowledge/`). The terminal prints `[ask] mode=keyless` or `[ask] mode=agent` on the first question so you know which one is running.
+Open [http://localhost:3847](http://localhost:3847). No keys needed: the contact form uses a mock transport and the Ask bot runs in keyless mode (live Medium, GitHub, and DigitalOcean data plus the notes in `knowledge/`). The terminal prints `[ask] mode=keyless` or `[ask] mode=agent` on the first question so you know which one is running.
 
 Other commands:
 
@@ -28,9 +28,11 @@ npm run build && npm start
 
 ## Pages
 
-`/`, `/services`, `/about`, `/experience`, `/clients`, `/testimonials`, `/work`, `/game`, `/ask`, `/contact`. Also `sitemap.xml`, `robots.txt`, `llms.txt`, and an Open Graph image.
+`/`, `/work`, `/work/<slug>`, `/services`, `/about`, `/media`, `/experience`, `/clients`, `/testimonials`, `/game`, `/ask`, `/contact`. Also `sitemap.xml`, `robots.txt`, `llms.txt`, and an Open Graph image.
 
-Company marks live in `public/logos` and are listed in `data/logos.ts`; `BrandLogo` renders them on a light chip and falls back to a monogram. The animated background (aurora glows, stars, drifting ridges, floating voxel blocks) is `src/components/ambient.tsx` plus the `.ambient-*` and `.section-*` rules in `globals.css`. It is CSS and inline SVG only and switches off under `prefers-reduced-motion`.
+Case studies live at `/work/semrush`, `/work/tanot-solutions`, `/work/dataimpulse`, and `/work/digitalocean-inference-benchmarks`. Talks and press live on `/media`.
+
+Company marks live in `public/logos` and are listed in `data/logos.ts`. The animated background is `src/components/ambient.tsx` plus the `.ambient-*` rules in `globals.css`. It is CSS and inline SVG only and switches off under `prefers-reduced-motion`.
 
 Everything people read lives in `data/`. The bot's notes live in `knowledge/`. `CONFIRM.md` lists the facts I should double-check before treating the site as final.
 
@@ -58,6 +60,7 @@ All optional. See `.env.example`.
 | `CONTACT_FROM` | From address on the message. For Gmail, the same account as `SMTP_USER` |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | Mail server. Gmail: `smtp.gmail.com`, `587`, an app password |
 | `CONTACT_TRANSPORT` | `mock` accepts the form without sending. Automatic when SMTP is not set |
+| `BOOKING_URL` or `NEXT_PUBLIC_BOOKING_URL` | Intro-call page. Default is Anish's Calendly. Empty hides every booking CTA |
 | `LLM_BASE_URL` | OpenAI-compatible base. Default `https://inference.do-ai.run/v1` |
 | `LLM_API_KEY` | Model key. Empty means keyless mode |
 | `LLM_MODEL` | Model slug. Default `llama3.3-70b-instruct` |

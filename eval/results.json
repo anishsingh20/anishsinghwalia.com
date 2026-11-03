@@ -1,5 +1,5 @@
 {
-  "run": "2026-11-03T03:14:19.783Z",
+  "run": "2026-11-03T04:09:59.754Z",
   "mode": "keyless",
   "passed": 32,
   "total": 32,
@@ -24,7 +24,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 203
+      "ms": 204
     },
     {
       "id": "who-is",
@@ -46,7 +46,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 200
+      "ms": 202
     },
     {
       "id": "nutanix",
@@ -69,7 +69,7 @@
           "url": "https://www.linkedin.com/in/anish-singh-walia/"
         }
       ],
-      "ms": 200
+      "ms": 201
     },
     {
       "id": "amex",
@@ -92,7 +92,7 @@
           "url": "https://www.linkedin.com/in/anish-singh-walia/"
         }
       ],
-      "ms": 200
+      "ms": 201
     },
     {
       "id": "clients",
@@ -139,7 +139,7 @@
           "url": "https://anishsinghwalia.com/testimonials"
         }
       ],
-      "ms": 321
+      "ms": 322
     },
     {
       "id": "tutorial-count",
@@ -158,7 +158,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 525
+      "ms": 356
     },
     {
       "id": "medium-stats",
@@ -181,7 +181,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 80
+      "ms": 81
     },
     {
       "id": "numbers",
@@ -207,7 +207,7 @@
           "url": "https://www.digitalocean.com/community/users/asinghwalia"
         }
       ],
-      "ms": 81
+      "ms": 80
     },
     {
       "id": "latest-medium",
@@ -229,7 +229,7 @@
           "url": "https://medium.com/@anishsingh20"
         }
       ],
-      "ms": 381
+      "ms": 365
     },
     {
       "id": "hobbies",
@@ -251,7 +251,7 @@
           "url": "https://anishsinghwalia.com/about#off-hours"
         }
       ],
-      "ms": 322
+      "ms": 321
     },
     {
       "id": "hire",
@@ -262,11 +262,15 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Use the [contact form](https://anishsinghwalia.com/contact) or email waliaanish1997@gmail.com. Tell him the company, the format you need, and what it's for, and he replies with how he would approach it. He works with B2B, SaaS, AI-native, and developer-tool companies alongside his full-time role at DigitalOcean. Companies he has worked with include Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI.",
+      "answer": "[Book an intro call](https://calendly.com/client-strategy-session/15min), use the [contact form](https://anishsinghwalia.com/contact), or email waliaanish1997@gmail.com. Tell him the company, the format you need, and what it's for, and he replies with how he would approach it. He works with B2B, SaaS, AI-native, and developer-tool companies alongside his full-time role at DigitalOcean. Companies he has worked with include Semrush, OtterlyAI, DataImpulse, Tanot Solutions, and Pollo AI.",
       "sources": [
         {
           "title": "Contact",
           "url": "https://anishsinghwalia.com/contact"
+        },
+        {
+          "title": "Book an intro call",
+          "url": "https://calendly.com/client-strategy-session/15min"
         },
         {
           "title": "Clients",
@@ -314,7 +318,7 @@
           "url": "https://anishsinghwalia.com/experience"
         }
       ],
-      "ms": 121
+      "ms": 120
     },
     {
       "id": "podcasts",
@@ -326,7 +330,7 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Three places to look. [Scalable content refresh workflow](https://autonomous.activecampaign.com/stories/scalable-content-refresh-workflow) (ActiveCampaign Autonomous, Maddy Osman). Turnaround fell from about a day to a few hours, 60 to 70 percent less production time. Output went from 1 or 2 to 4 or 5 updated pieces a day. [How Anish used ChatGPT and Semrush](https://www.allaboutai.com/interviews/how-anish-used-chatgpt-semrush-to-hit-3m-views/) (AllAboutAI, written feature) [AI For Thought, with Muhammad Hassan Khan](https://www.youtube.com/watch?v=R_XSFA9q7Dg) (AllAboutAI podcast, my first podcast) Full list on the [work page](https://anishsinghwalia.com/work).",
+      "answer": "Start with the [media page](https://anishsinghwalia.com/media). [Scalable content refresh workflow](https://autonomous.activecampaign.com/stories/scalable-content-refresh-workflow) (ActiveCampaign Autonomous, Maddy Osman). Turnaround fell from about a day to a few hours, 60 to 70 percent less production time. Output went from 1 or 2 to 4 or 5 updated pieces a day. [How Anish used ChatGPT and Semrush](https://www.allaboutai.com/interviews/how-anish-used-chatgpt-semrush-to-hit-3m-views/) (AllAboutAI, written feature) [AI For Thought, with Muhammad Hassan Khan](https://www.youtube.com/watch?v=R_XSFA9q7Dg) (AllAboutAI podcast, my first podcast) [DataForSEO Monthly Community Digest](https://www.linkedin.com/posts/dataforseo_dfs-activity-7444737781844701184-L8sB) (DataForSEO, March 2026). Featured an n8n content-brief automation built with DataForSEO APIs.",
       "sources": [
         {
           "title": "Scalable content refresh workflow",
@@ -339,9 +343,13 @@
         {
           "title": "AI For Thought, with Muhammad Hassan Khan",
           "url": "https://www.youtube.com/watch?v=R_XSFA9q7Dg"
+        },
+        {
+          "title": "DataForSEO Monthly Community Digest",
+          "url": "https://www.linkedin.com/posts/dataforseo_dfs-activity-7444737781844701184-L8sB"
         }
       ],
-      "ms": 201
+      "ms": 241
     },
     {
       "id": "github",
@@ -360,7 +368,7 @@
           "url": "https://github.com/anishsingh20"
         }
       ],
-      "ms": 2136
+      "ms": 732
     },
     {
       "id": "technical",
@@ -396,14 +404,14 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Long-form articles and deep dives, tutorials and developer docs, video, infographics and carousels, short-form linkedin posts, ghostwriting, newsletters, and content strategy and search visibility. All of it for B2B, SaaS, AI-native, and developer-tool companies, backed by an engineering background. Each format has a real example on the [services page](https://anishsinghwalia.com/services#what-i-make), like [SEO-to-GEO Identity Crisis, sponsored by Semrush](https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306).",
+      "answer": "Tutorials and deep dives, developer docs, launch content, linkedin ghostwriting for founders, short video and infographics, and content and ai-search strategy, plus newsletters. All of it for B2B, SaaS, AI-native, and developer-tool companies, backed by an engineering background. Each format has a real example on the [services page](https://anishsinghwalia.com/services#what-i-make), like [SEO-to-GEO Identity Crisis, sponsored by Semrush](https://medium.com/readers-club/seo-geo-identity-crisis-fix-traffic-revenue-gap-9e4154003306).",
       "sources": [
         {
           "title": "What I make",
           "url": "https://anishsinghwalia.com/services#what-i-make"
         }
       ],
-      "ms": 120
+      "ms": 121
     },
     {
       "id": "video",
@@ -414,10 +422,10 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Yes. Product walkthroughs and explainers, scripted and produced with AI tools where that saves a crew. The example on the site is [how he helped a five-person team rebuild its video library](https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94). He also appeared on the [AI For Thought podcast](https://www.youtube.com/watch?v=R_XSFA9q7Dg). All formats are on the [what-I-make section](https://anishsinghwalia.com/services#what-i-make).",
+      "answer": "Yes. Short videos and infographics for product walkthroughs and explainers. One write-up is [how he helped a five-person team rebuild its video library](https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94). He also appeared on the [AI For Thought podcast](https://www.youtube.com/watch?v=R_XSFA9q7Dg). All formats are on the [services page](https://anishsinghwalia.com/services#what-i-make).",
       "sources": [
         {
-          "title": "How I helped a five-person team rebuild its video library",
+          "title": "Video library write-up",
           "url": "https://medium.com/@anishsingh20/this-is-how-i-helped-a-five-person-team-rebuild-its-video-library-6f06e5161b94"
         }
       ],
@@ -432,14 +440,14 @@
       ],
       "pass": true,
       "failures": [],
-      "answer": "Yes. Ghostwriting: Founders' voices on LinkedIn. Positioning, headline, banner, and the posts themselves. The clearest example is Renu Sharma at Tanot Solutions, whose LinkedIn rebrand he wrote; her note is on the [testimonials page](https://anishsinghwalia.com/testimonials#renu-sharma). Infographics and carousels: Visual explainers for LinkedIn. One idea per slide, numbers people can check. Nadia Fernández wrote about [the carousel they made](https://anishsinghwalia.com/testimonials#nadia-fernandez). For his own profile, see [how he uses Semrush with ChatGPT](https://www.linkedin.com/posts/anish-singh-walia_how-to-use-semrush-with-chatgpt-for-viral-activity-7297901444194611200-pCWD).",
+      "answer": "Yes. Ghostwriting: Positioning, profile and posts in your voice. You approve, it goes out under your name. The clearest example is Renu Sharma at Tanot Solutions, whose LinkedIn rebrand he wrote; her note is on the [testimonials page](https://anishsinghwalia.com/testimonials#renu-sharma). Infographics and carousels: Nadia Fernández wrote about [the carousel they made](https://anishsinghwalia.com/testimonials#nadia-fernandez). For his own profile, see [how he uses Semrush with ChatGPT](https://www.linkedin.com/posts/anish-singh-walia_how-to-use-semrush-with-chatgpt-for-viral-activity-7297901444194611200-pCWD).",
       "sources": [
         {
           "title": "Testimonials",
           "url": "https://anishsinghwalia.com/testimonials"
         }
       ],
-      "ms": 322
+      "ms": 242
     },
     {
       "id": "testimonials",
@@ -461,7 +469,7 @@
           "url": "https://www.linkedin.com/in/anish-singh-walia/details/recommendations/"
         }
       ],
-      "ms": 320
+      "ms": 321
     },
     {
       "id": "location",
@@ -548,7 +556,7 @@
           "url": "https://anishsinghwalia.com/contact"
         }
       ],
-      "ms": 80
+      "ms": 81
     },
     {
       "id": "career",
@@ -571,7 +579,7 @@
           "url": "https://www.linkedin.com/in/anish-singh-walia/"
         }
       ],
-      "ms": 282
+      "ms": 280
     },
     {
       "id": "web-needed",
@@ -593,7 +601,7 @@
           "url": "https://www.allaboutai.com/interviews/how-anish-used-chatgpt-semrush-to-hit-3m-views/"
         }
       ],
-      "ms": 162
+      "ms": 161
     },
     {
       "id": "off-topic-geo",
@@ -623,7 +631,7 @@
       "failures": [],
       "answer": "I only answer questions about Anish Singh Walia, so I'll pass on that one. Things I can help with: what he makes, who he has worked with, his career before DigitalOcean, his numbers, his hobbies, and how to start a project with him.",
       "sources": [],
-      "ms": 81
+      "ms": 80
     },
     {
       "id": "private-phone",
@@ -643,7 +651,7 @@
           "url": "https://anishsinghwalia.com/contact"
         }
       ],
-      "ms": 120
+      "ms": 121
     },
     {
       "id": "private-address",
@@ -684,7 +692,7 @@
           "url": "https://anishsinghwalia.com/contact"
         }
       ],
-      "ms": 121
+      "ms": 120
     }
   ]
 }
